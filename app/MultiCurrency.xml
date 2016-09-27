@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- This is BAXI.NET Multicurrency configuration file -->
+<!-- OperID defines the logical terminal ID  -->
+<!-- CurrencyCode defines the currency used with OperID  -->
+<!-- CurrencyFile defines the file which icludes the PANs mapped to OperID   -->
+<!-- All PANs which are not in CurrencyFiles fall into OperID without CurrencyFile   -->
+<MultiCurrency>
+<Terminal OperID="0001" CurrencyCode="978" />
+<Terminal OperID="0002" CurrencyCode="752" CurrencyFile="Currency752.txt"/>
+<!-- <Terminal OperID="0003" CurrencyCode="" CurrencyFile=""/> -->
+<!-- <Terminal OperID="0004" CurrencyCode="" CurrencyFile=""/> -->
+<!-- <Terminal OperID="0005" CurrencyCode="" CurrencyFile=""/> -->
+<!-- <Terminal OperID="0006" CurrencyCode="" CurrencyFile=""/> -->
+<!-- <Terminal OperID="0007" CurrencyCode="" CurrencyFile=""/> -->
+<!-- <Terminal OperID="0008" CurrencyCode="" CurrencyFile=""/> -->
+<!-- <Terminal OperID="0009" CurrencyCode="" CurrencyFile=""/> -->
+</MultiCurrency>
