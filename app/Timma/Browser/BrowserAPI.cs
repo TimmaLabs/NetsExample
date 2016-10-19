@@ -218,6 +218,15 @@ namespace Timma.Browser
         }
 
         /// <summary>
+        /// Boolean that tracks whether or not the terminal is currently printing
+        /// </summary>
+        /// <returns>true if the terminal is printing, false otherwise</returns>
+        public bool IsPrinting()
+        {
+            return terminalCtrl.IsPrinting();
+        }
+
+        /// <summary>
         /// API (admin operations) END
         /// </summary>
     }

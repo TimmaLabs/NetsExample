@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using BBS.BAXI;
-using Timma.Operations.Admin;
-using Timma.Operations.Transactions;
-using Timma.Print;
 using Timma.Operations;
 
 namespace Timma
@@ -18,6 +12,8 @@ namespace Timma
         private bool opening = false;
         char ASCII_REPORT_SEPARATOR = Convert.ToChar(30);
         char ASCII_UNIT_SEPARATOR = Convert.ToChar(31);
+
+        private bool _printing { get; set; }
 
         public TerminalController(BaxiCtrl terminal)
         {
@@ -65,6 +61,7 @@ namespace Timma
                 Console.WriteLine("PRINT TEXT CB CALLED!");
 
                 printText = args.PrintText;
+                _printing = true;
             };
 
             _OnReady = (sender, args) =>
@@ -78,9 +75,10 @@ namespace Timma
                 }
                 else
                 {
-                    string jsonStr = op.GenerateDocument(printText);
-                    Print(jsonStr);
+                    Print(op.GenerateDocument(printText));
                 }
+
+                _printing = false;
             };
 
             OnPrintText += _OnPrintText;
@@ -105,6 +103,39 @@ namespace Timma
             Console.WriteLine("Changing language to {0}", langID);
             int code =  _terminal.SendTLD(args);
             return Convert.ToBoolean(code) ? code : _terminal.MethodRejectCode;
+        }
+
+        public bool IsPrinting()
+        {
+            return _printing;
+        }
+
+        public void Open()
+        {
+            opening = true;
+
+            Console.WriteLine("Opening terminal...");
+            int code = _terminal.Open();
+
+            if (code == 0)
+            {
+                int errorCode = _terminal.MethodRejectCode;
+                opening = false;
+                OnError("Terminal failed to be opened", errorCode, code);
+            }
+        }
+
+        public void Close()
+        {
+            Console.WriteLine("Closing terminal...");
+            _terminal.Close();
+        }
+
+        public bool CanOpen()
+        {
+            Console.WriteLine("TERMINAL OPEN {0}; OPENING TERMINAL: {1}", _terminal.IsOpen(), opening);
+            // TODO: IsOpen() return true even if USB has gotten USB disconnected
+            return !_terminal.IsOpen() && !opening;
         }
 
         public delegate void SuccessHandler(object sender, LocalModeEventArgs args);
@@ -162,34 +193,6 @@ namespace Timma
         private void HandleJsonReceived(object sender, JsonReceivedArgs args)
         {
             Console.Write("JSON received: {0}", args.JsonString);
-        }
-
-        public void Open()
-        {
-            opening = true;
-
-            Console.WriteLine("Opening terminal...");
-            int code = _terminal.Open();
-
-            if (code == 0)
-            {
-                int errorCode = _terminal.MethodRejectCode;
-                opening = false;
-                OnError("Terminal failed to be opened", errorCode, code);
-            }
-        }
-
-        internal void Close()
-        {
-            Console.WriteLine("Closing terminal...");
-            _terminal.Close();
-        }
-
-        internal bool CanOpen()
-        {
-            Console.WriteLine("TERMINAL OPEN {0}; OPENING TERMINAL: {1}", _terminal.IsOpen(), opening);
-            // TODO: IsOpen() return true even if USB has gotten USB disconnected
-            return !_terminal.IsOpen() && !opening;
         }
     }
 }
