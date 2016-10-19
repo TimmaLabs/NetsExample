@@ -8,6 +8,7 @@ using CefSharp.Wpf;
 using BBS.BAXI;
 using System.Threading;
 using Timma.Browser;
+using System.Diagnostics;
 
 namespace Timma
 {
@@ -53,13 +54,13 @@ namespace Timma
         private void HandleTerminalSuccess(object sender, LocalModeEventArgs args)
         {
             var json = Newtonsoft.Json.JsonConvert.SerializeObject(args);
-            Console.WriteLine(json);
-            Console.WriteLine("OnSuccess result: {0}", args.Result);
+            Debug.WriteLine(json);
+            Debug.WriteLine("OnSuccess result: {0}", args.Result);
         }
 
         private void HandleTerminalOpen(object sender, LocalModeEventArgs args)
         {
-            Console.WriteLine("IS OPEN");
+            Debug.WriteLine("IS OPEN");
             ctx.Post(HideErrorBox, null);
         }
 
@@ -103,7 +104,7 @@ namespace Timma
         private void Reload(object sender, ExecutedRoutedEventArgs e)
         {
             browserReloading = true;
-            Console.WriteLine("RELOAD");
+            Debug.WriteLine("RELOAD");
             
             if (terminalCtrl.CanOpen())
             {

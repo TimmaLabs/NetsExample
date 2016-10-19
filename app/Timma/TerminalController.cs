@@ -2,6 +2,7 @@
 using System.Text;
 using BBS.BAXI;
 using Timma.Operations;
+using System.Diagnostics;
 
 namespace Timma
 {
@@ -58,7 +59,7 @@ namespace Timma
             _OnPrintText = (sender, args) =>
             {
                 OnPrintText -= _OnPrintText;
-                Console.WriteLine("PRINT TEXT CB CALLED!");
+                Debug.WriteLine("PRINT TEXT CB CALLED!");
 
                 printText = args.PrintText;
                 _printing = true;
@@ -67,11 +68,11 @@ namespace Timma
             _OnReady = (sender, args) =>
             {
                 OnReady -= _OnReady;
-                Console.WriteLine("TERMINAL READY CB CALLED!");
+                Debug.WriteLine("TERMINAL READY CB CALLED!");
 
                 if (string.IsNullOrWhiteSpace(printText))
                 {
-                    Console.WriteLine("Nothing to print!");
+                    Debug.WriteLine("Nothing to print!");
                 }
                 else
                 {
@@ -89,8 +90,8 @@ namespace Timma
         {
             var json = new SendJsonArgs(jsonStr);
             int code = _terminal.SendJson(json);
-            Console.WriteLine("SendJson return content {0}:", json.JsonData);
-            Console.WriteLine("SendJson return code: {0}", code);
+            Debug.WriteLine("SendJson return content {0}:", json.JsonData);
+            Debug.WriteLine("SendJson return code: {0}", code);
             return code;
         }
 
@@ -100,7 +101,7 @@ namespace Timma
             args.TldType = "CMD";
             args.TldField = Encoding.ASCII.GetBytes("1014" + ASCII_UNIT_SEPARATOR + "0002" + ASCII_UNIT_SEPARATOR + langID + ASCII_REPORT_SEPARATOR);
 
-            Console.WriteLine("Changing language to {0}", langID);
+            Debug.WriteLine("Changing language to {0}", langID);
             int code =  _terminal.SendTLD(args);
             return Convert.ToBoolean(code) ? code : _terminal.MethodRejectCode;
         }
@@ -114,7 +115,7 @@ namespace Timma
         {
             opening = true;
 
-            Console.WriteLine("Opening terminal...");
+            Debug.WriteLine("Opening terminal...");
             int code = _terminal.Open();
 
             if (code == 0)
@@ -127,13 +128,13 @@ namespace Timma
 
         public void Close()
         {
-            Console.WriteLine("Closing terminal...");
+            Debug.WriteLine("Closing terminal...");
             _terminal.Close();
         }
 
         public bool CanOpen()
         {
-            Console.WriteLine("TERMINAL OPEN {0}; OPENING TERMINAL: {1}", _terminal.IsOpen(), opening);
+            Debug.WriteLine("TERMINAL OPEN {0}; OPENING TERMINAL: {1}", _terminal.IsOpen(), opening);
             // TODO: IsOpen() return true even if USB has gotten USB disconnected
             return !_terminal.IsOpen() && !opening;
         }
@@ -180,7 +181,7 @@ namespace Timma
 
         private void HandleError(object sender, BaxiErrorEventArgs args)
         {
-            Console.WriteLine("Error code: {0}; message: {1}", args.ErrorCode, args.ErrorString);
+            Debug.WriteLine("Error code: {0}; message: {1}", args.ErrorCode, args.ErrorString);
             opening = false;
             OnError(args.ErrorString, args.ErrorCode, -1);
         }

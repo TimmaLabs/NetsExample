@@ -5,6 +5,7 @@ using CefSharp.Wpf;
 using Newtonsoft.Json;
 using System.Threading;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace Timma.Browser
 {
@@ -91,9 +92,14 @@ namespace Timma.Browser
             AddJSFunction(JS_FUNC_ONERROR, JSLogFunction("error", "red"));
             AddJSFunction(JS_FUNC_ONPRINT, JSLogFunction("print", "gray"));
 
-            browser.ShowDevTools();
-
+            ShowDevTools();
             BrowserLoaded();
+        }
+
+        [ConditionalAttribute("DEBUG")]
+        private void ShowDevTools()
+        {
+            browser.ShowDevTools();
         }
 
         private string JSLogFunction(string ns = "success", string color = "green")

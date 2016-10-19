@@ -1,6 +1,7 @@
 ﻿using BBS.BAXI;
 using Newtonsoft.Json;
 using System;
+using System.Diagnostics;
 using Timma.Operations;
 using Timma.Operations.Admin;
 using Timma.Operations.Transactions;
@@ -118,13 +119,13 @@ namespace Timma.Browser
 
             if (hard)
             {
-                Console.WriteLine(" hard...");
+                Debug.WriteLine(" hard...");
                 HardCancel op = new HardCancel(printText: opts.printText);
                 terminalCtrl.SendAdminOperation(op);
             }
             else
             {
-                Console.WriteLine(" soft...");
+                Debug.WriteLine(" soft...");
                 SoftCancel op = new SoftCancel(printText: opts.printText);
                 terminalCtrl.SendAdminOperation(op);
             }
@@ -184,7 +185,7 @@ namespace Timma.Browser
                     throw new NotImplementedException(string.Format("Report of type {0} is not supported.", type));
             }
 
-            Console.WriteLine("Generating report of type {0}...", type);
+            Debug.WriteLine("Generating report of type {0}...", type);
             terminalCtrl.SendAdminOperation(op, print: true);
             return JsonConvert.SerializeObject(op.Args);
         }
