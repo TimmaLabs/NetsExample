@@ -14,8 +14,8 @@ namespace Timma.Operations.Transactions
         public Transaction(int amount, string printText = "", string payload = "{}")
         {
             TransferAmountArgs args = getTransactionArgs(payload);
-            PrintText = printText;
             args.Amount1 = args.Amount1 == 0 ? amount : args.Amount1;
+            PrintText = printText;
             setup(args);
         }
 

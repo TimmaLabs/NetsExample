@@ -8,16 +8,21 @@ namespace Timma.Operations
         public abstract string PrintText { get; protected set; }
         public abstract T Args { get; protected set; }
 
-        public virtual Document GenerateDocument(string baxiTxt)
+        public virtual string GenerateDocument(string baxiTxt)
         {
             baxiTxt = string.IsNullOrWhiteSpace(baxiTxt) ? EmptyPrintText : baxiTxt;
-            return string.IsNullOrWhiteSpace(PrintText) ? DefaultDocument(baxiTxt) : CustomDocument(baxiTxt);
+            // TODO: ideally this logic would be encapsulated by Document
+            if (string.IsNullOrWhiteSpace(PrintText))
+            {
+                var doc = DefaultDocument(baxiTxt);
+                return Newtonsoft.Json.JsonConvert.SerializeObject(doc);
+            }
+            return CustomDocument(baxiTxt);
         }
 
-        private Document CustomDocument(string baxiTxt)
+        private string CustomDocument(string baxiTxt)
         {
-            // TODO: Implement support for custom print templates...
-            throw new System.NotImplementedException("TODO: implement support for custom print templates.");
+            return PrintText.Replace("{{baxiTxt}}", baxiTxt);
         }
 
         private Document DefaultDocument(string baxiTxt)
@@ -34,6 +39,6 @@ namespace Timma.Operations
 
     internal interface IOperation
     {
-        Document GenerateDocument(string baxiTxt);
+        string GenerateDocument(string baxiTxt);
     }
 }

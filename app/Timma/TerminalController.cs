@@ -78,8 +78,8 @@ namespace Timma
                 }
                 else
                 {
-                    Document doc = op.GenerateDocument(printText);
-                    Print(doc);
+                    string jsonStr = op.GenerateDocument(printText);
+                    Print(jsonStr);
                 }
             };
 
@@ -87,14 +87,13 @@ namespace Timma
             OnReady += _OnReady;
         }
 
-        private string Print(Document doc)
+        public int Print(string jsonStr)
         {
-            var jsonStr = Newtonsoft.Json.JsonConvert.SerializeObject(doc);
             var json = new SendJsonArgs(jsonStr);
             int code = _terminal.SendJson(json);
             Console.WriteLine("SendJson return content {0}:", json.JsonData);
             Console.WriteLine("SendJson return code: {0}", code);
-            return json.JsonData;
+            return code;
         }
 
         public int SetLanguage(String langID = "en")
@@ -118,13 +117,6 @@ namespace Timma
         public event ErrorHandler OnError;
 
         public delegate void PrintTextHandler(object sender, PrintTextEventArgs args);
-
-        internal int Print(string printText)
-        {
-            var json = new SendJsonArgs(printText);
-            return _terminal.SendJson(json);
-        }
-
         public event PrintTextHandler OnPrintText = delegate { };
 
         public delegate void OpenHandler(object sender, LocalModeEventArgs args);

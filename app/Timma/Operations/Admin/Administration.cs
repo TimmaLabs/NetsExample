@@ -20,7 +20,7 @@ namespace Timma.Operations.Admin
 
         private AdministrationArgs getAdministrationArgs(string payload)
         {
-            payload = String.IsNullOrWhiteSpace(payload) ? "{}" : payload;
+            payload = string.IsNullOrWhiteSpace(payload) ? "{}" : payload;
             return JsonConvert.DeserializeObject<AdministrationArgs>(payload);
         }
 
