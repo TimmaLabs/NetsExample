@@ -103,32 +103,25 @@ namespace Timma.Browser
         /// Cancel ongoing operation
         /// </summary>
         /// <param name="hard">
-        ///         Whether or not to prompt the user for cancellation
-        /// (does seem to be supported by the Baxi API / terminal, though...)
-        /// </param>
-        /// <param name="options">Options in JSON string format</param>
-        /// <param name="options.printText">
-        ///     Custom print text, use the {{baxiTxt}} placeholder tag
-        ///     to embed the Baxi print: { type: 'txt', data: '{{baxiTxt}}' }
+        ///     Whether or not to prompt the user for cancellation
+        ///     (does seem to be supported by the Baxi API / terminal, though...)
         /// </param>
         /// <param name="options.payload">TransferAmount arguments in JSON string format</param>
-        public void Cancel(bool hard = true, string options = "{}")
+        public void Cancel(bool hard = true)
         {
-            var opts = JsonConvert.DeserializeObject<OperationOptions>(options);
-            var shouldPrint = !string.IsNullOrWhiteSpace(opts.printText);
             Console.Write("Canceling");
 
             if (hard)
             {
                 Debug.WriteLine(" hard...");
-                HardCancel op = new HardCancel(printText: opts.printText);
-                terminalCtrl.SendAdminOperation(op, print: shouldPrint);
+                HardCancel op = new HardCancel();
+                terminalCtrl.SendAdminOperation(op);
             }
             else
             {
                 Debug.WriteLine(" soft...");
-                SoftCancel op = new SoftCancel(printText: opts.printText);
-                terminalCtrl.SendAdminOperation(op, print: shouldPrint);
+                SoftCancel op = new SoftCancel();
+                terminalCtrl.SendAdminOperation(op);
             }
         }
 

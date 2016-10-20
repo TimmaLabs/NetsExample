@@ -2,7 +2,7 @@
 {
     class SoftCancel : Administration
     {
-        public SoftCancel(string printText = "") : base(printText) { }
+        public SoftCancel() : base() { }
 
         protected override int AdmCode
         {
