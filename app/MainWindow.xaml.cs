@@ -23,7 +23,18 @@ namespace Timma
         private ErrorBox box;
         private SynchronizationContext ctx;
         private bool browserReloading;
-        
+
+        private string Address {
+            get
+            {
+                #if DEBUG
+                return "http://admin.timma.dev";
+                #else
+                return "http://testi.timma.fi/admin";
+                #endif
+            }
+        }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -31,7 +42,7 @@ namespace Timma
             BaxiCtrl terminal = new BaxiCtrl();
             browser = new ChromiumWebBrowser()
             {
-                Address = "http://admin.timma.dev"
+                Address = Address
             };
 
             terminalCtrl = new TerminalController(terminal);
