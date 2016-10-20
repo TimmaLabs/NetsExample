@@ -9,19 +9,19 @@ namespace Timma.Operations.Admin
         public override AdministrationArgs Args { get; protected set; }
         public override string PrintText { get; protected set; }
 
-        public Administration(string printText = "", string payload = "{}")
+        public Administration(string printText = "", string baxiArgs = "{}")
         {
-            AdministrationArgs args = getAdministrationArgs(payload);
+            AdministrationArgs args = getAdministrationArgs(baxiArgs);
             PrintText = printText;
             setup(args);
         }
 
         protected abstract int AdmCode { get; }
 
-        private AdministrationArgs getAdministrationArgs(string payload)
+        private AdministrationArgs getAdministrationArgs(string baxiArgs)
         {
-            payload = string.IsNullOrWhiteSpace(payload) ? "{}" : payload;
-            return JsonConvert.DeserializeObject<AdministrationArgs>(payload);
+            baxiArgs = string.IsNullOrWhiteSpace(baxiArgs) ? "{}" : baxiArgs;
+            return JsonConvert.DeserializeObject<AdministrationArgs>(baxiArgs);
         }
 
         private void setup(AdministrationArgs args)

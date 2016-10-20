@@ -3,6 +3,6 @@
     internal class OperationOptions
     {
         public string printText = "";
-        public string payload = "{}";
+        public string baxiArgs = "{}";
     }
 }

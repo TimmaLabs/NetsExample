@@ -2,7 +2,7 @@
 {
     internal class Reversal : Transaction
     {
-        public Reversal(int amount, string printText, string payload) : base(amount, printText, payload) { }
+        public Reversal(int amount, string printText, string baxiArgs) : base(amount, printText, baxiArgs) { }
 
         override protected int Type1
         {

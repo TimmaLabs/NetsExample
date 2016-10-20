@@ -4,7 +4,7 @@ namespace Timma.Operations.Transactions
 {
     internal class VATPurchase : Transaction
     {
-        public VATPurchase(int amount, int VATamount, string printText = "", string payload = "{}") : base(amount, printText, payload)
+        public VATPurchase(int amount, int VATamount, string printText = "", string baxiArgs = "{}") : base(amount, printText, baxiArgs)
         {
             Args.Amount3 = Args.Amount3 == 0 ? VATamount : Args.Amount3;
         }

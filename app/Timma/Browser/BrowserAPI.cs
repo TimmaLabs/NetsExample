@@ -32,7 +32,7 @@ namespace Timma.Browser
         ///     Custom print text, use the {{baxiTxt}} placeholder tag
         ///     to embed the Baxi print: { type: 'txt', data: '{{baxiTxt}}' }
         /// </param>
-        /// <param name="options.payload">TransferAmount arguments in JSON string format</param>
+        /// <param name="options.baxiArgs">TransferAmount arguments in JSON string format</param>
         /// <returns>JSON payload sent to the terminal</returns>
         public string ProcessPurchase(int amount, int VAT = 0, string options = "{}")
         {
@@ -41,11 +41,11 @@ namespace Timma.Browser
 
             if (VAT > 0)
             {
-                t = new VATPurchase(amount, VAT, printText: opts.printText, payload: opts.payload);
+                t = new VATPurchase(amount, VAT, printText: opts.printText, baxiArgs: opts.baxiArgs);
             }
             else
             {
-                t = new Purchase(amount, printText: opts.printText, payload: opts.payload);
+                t = new Purchase(amount, printText: opts.printText, baxiArgs: opts.baxiArgs);
             }
 
             terminalCtrl.SendTransactionOperation(t, print: true);
@@ -61,12 +61,12 @@ namespace Timma.Browser
         ///     Custom print text, use the {{baxiTxt}} placeholder tag
         ///     to embed the Baxi print: { type: 'txt', data: '{{baxiTxt}}' }
         /// </param>
-        /// <param name="options.payload">TransferAmount arguments in JSON string format</param>
+        /// <param name="options.baxiArgs">TransferAmount arguments in JSON string format</param>
         /// <returns>JSON payload sent to the terminal</returns>
         public string ProcessReversal(int amount, string options = "{}")
         {
             var opts = JsonConvert.DeserializeObject<OperationOptions>(options);
-            Reversal t = new Reversal(amount, printText: opts.printText, payload: opts.payload);
+            Reversal t = new Reversal(amount, printText: opts.printText, baxiArgs: opts.baxiArgs);
             terminalCtrl.SendTransactionOperation(t, print: true);
             return JsonConvert.SerializeObject(t.Args);
         }
@@ -80,12 +80,12 @@ namespace Timma.Browser
         ///     Custom print text, use the {{baxiTxt}} placeholder tag
         ///     to embed the Baxi print: { type: 'txt', data: '{{baxiTxt}}' }
         /// </param>
-        /// <param name="options.payload">TransferAmount arguments in JSON string format</param>
+        /// <param name="options.baxiArgs">TransferAmount arguments in JSON string format</param>
         /// <returns>JSON payload sent to the terminal</returns>
         public string ProcessReturn(int amount, string options = "{}")
         {
             var opts = JsonConvert.DeserializeObject<OperationOptions>(options);
-            Return t = new Return(amount, printText: opts.printText, payload: opts.payload);
+            Return t = new Return(amount, printText: opts.printText, baxiArgs: opts.baxiArgs);
             terminalCtrl.SendTransactionOperation(t, print: true);
             return JsonConvert.SerializeObject(t.Args);
         }
@@ -106,7 +106,7 @@ namespace Timma.Browser
         ///     Whether or not to prompt the user for cancellation
         ///     (does seem to be supported by the Baxi API / terminal, though...)
         /// </param>
-        /// <param name="options.payload">TransferAmount arguments in JSON string format</param>
+        /// <param name="options.baxiArgs">TransferAmount arguments in JSON string format</param>
         public void Cancel(bool hard = true)
         {
             Console.Write("Canceling");
@@ -133,12 +133,12 @@ namespace Timma.Browser
         ///     Custom print text, use the {{baxiTxt}} placeholder tag
         ///     to embed the Baxi print: { type: 'txt', data: '{{baxiTxt}}' }
         /// </param>
-        /// <param name="options.payload">TransferAmount arguments in JSON string format</param>
+        /// <param name="options.baxiArgs">TransferAmount arguments in JSON string format</param>
         /// <returns>JSON payload sent to the terminal</returns>
         public string Reconcile(string options = "{}")
         {
             var opts = JsonConvert.DeserializeObject<OperationOptions>(options);
-            Reconciliation r = new Reconciliation(printText: opts.printText, payload: opts.payload);
+            Reconciliation r = new Reconciliation(printText: opts.printText, baxiArgs: opts.baxiArgs);
             terminalCtrl.SendAdminOperation(r, print: true);
             return JsonConvert.SerializeObject(r.Args);
         }

@@ -40,11 +40,9 @@ $(function () {
    */
   terminal.onPrint = function (printTextEventArgs) {}
 
+
   /**
    * Below 'operation' refers to either a transactional or an administrative operation.
-   *
-   * The Baxi payload parameter (JSON.stringify()) passed to some of the functions
-   * is documented here only for completeness (while largely redundant for our use case).
    */
 
   /*
@@ -53,15 +51,15 @@ $(function () {
   terminal.processPurchase(1500); // 15€ purchase
   terminal.processPurchase(1500, 400); // 15€ purchase with 4€ VAT
   terminal.processPurchase(1500, 400, JSON.stringify({ printText: foobar }) ); // ... with custom print text (stored in variable `foobar`, see Baxi API for the valid print text format)
-  terminal.processPurchase(1500, 400, JSON.stringify({ payload: JSON.stringify({ Amount2: 1234 }) }) ); // ... with custom Baxi payload (see Baxi API docs for the valid keys/fields)
+  terminal.processPurchase(1500, 400, JSON.stringify({ baxiArgs: JSON.stringify({ Amount2: 1234 }) }) ); // ... with custom Baxi arguments (see Baxi API docs for the valid keys/fields)
 
   terminal.processReversal(1500); // Reverse/undo previous transaction
   terminal.processReversal(1500, JSON.stringify({ printText: foobar }) ); // ... with custom print text
-  terminal.processReversal(1500, JSON.stringify({ payload: JSON.stringify({ Type2: 0x31 }) }) ); // ... with custom Baxi payload
+  terminal.processReversal(1500, JSON.stringify({ baxiArgs: JSON.stringify({ Type2: 0x31 }) }) ); // ... with custom Baxi arguments
 
   terminal.processReturn(2000); // Refund 20€
   terminal.processReturn(2000, JSON.stringify({ printText: foobar }) ); // ... with custom print text
-  terminal.processReturn(2000, JSON.stringify({ payload: JSON.stringify({ AuthCode: 567 }) }) ); // ... with custom Baxi payload
+  terminal.processReturn(2000, JSON.stringify({ baxiArgs: JSON.stringify({ AuthCode: 567 }) }) ); // ... with custom Baxi arguments
 
 
   /*
@@ -73,7 +71,7 @@ $(function () {
 
   terminal.reconcile(); // AKA "päivänpäätös"
   terminal.reconcile(JSON.stringify({ printText: foobar }) ); // ... with custom print text
-  terminal.reconcile(JSON.stringify({ payload: JSON.stringify({ Amount2: 1234 }) }) ); // ... with custom Baxi payload
+  terminal.reconcile(JSON.stringify({ baxiArgs: JSON.stringify({ Amount2: 1234 }) }) ); // ... with custom Baxi arguments
 
   terminal.printReport('x') // Print X-report (see app/Timma/Browser/BrowserAPI.cs in TimmaLabs/TimmaNets for all the supported report types)
   terminal.printReport('x', JSON.stringify({ printText: foobar }) ); // ... with custom print text
