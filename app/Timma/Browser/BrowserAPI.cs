@@ -115,19 +115,20 @@ namespace Timma.Browser
         public void Cancel(bool hard = true, string options = "{}")
         {
             var opts = JsonConvert.DeserializeObject<OperationOptions>(options);
+            var shouldPrint = !string.IsNullOrWhiteSpace(opts.printText);
             Console.Write("Canceling");
 
             if (hard)
             {
                 Debug.WriteLine(" hard...");
                 HardCancel op = new HardCancel(printText: opts.printText);
-                terminalCtrl.SendAdminOperation(op);
+                terminalCtrl.SendAdminOperation(op, print: shouldPrint);
             }
             else
             {
                 Debug.WriteLine(" soft...");
                 SoftCancel op = new SoftCancel(printText: opts.printText);
-                terminalCtrl.SendAdminOperation(op);
+                terminalCtrl.SendAdminOperation(op, print: shouldPrint);
             }
         }
 
@@ -158,7 +159,6 @@ namespace Timma.Browser
         ///     Custom print text, use the {{baxiTxt}} placeholder tag
         ///     to embed the Baxi print: { type: 'txt', data: '{{baxiTxt}}' }
         /// </param>
-        /// <param name="options.payload">TransferAmount arguments in JSON string format</param>
         /// <returns>JSON payload sent to the terminal</returns>
         public string PrintReport(string type, string options = "{}")
         {
@@ -191,6 +191,16 @@ namespace Timma.Browser
         }
 
         /// <summary>
+        /// Change terminal UI language (receipts will still use the card's language)
+        /// </summary>
+        /// <param name="langID">Language ID</param>
+        /// <returns>Success code (1 = success, 0 = fail)</returns>
+        public int ChangeLanguage(string langID = "en")
+        {
+            return terminalCtrl.SetLanguage(langID);
+        }
+
+        /// <summary>
         /// Raw print
         /// </summary>
         /// <param name="printText">
@@ -203,19 +213,14 @@ namespace Timma.Browser
             return terminalCtrl.Print(printText);
         }
 
+        /// <summary>
+        /// API (admin operations) END
+        /// </summary>
+
+
         public string OptionalData(string txnref = "", int autodcc = 1, int merch = -1)
         {
             return Utils.OptionalData(autodcc: autodcc, merch: merch, txnref: txnref);
-        }
-
-        /// <summary>
-        /// Change terminal UI language (receipts will still use the card's language)
-        /// </summary>
-        /// <param name="langID">Language ID</param>
-        /// <returns>Success code (1 = success, 0 = fail)</returns>
-        public int ChangeLanguage(string langID = "en")
-        {
-            return terminalCtrl.SetLanguage(langID);
         }
 
         /// <summary>
@@ -226,9 +231,5 @@ namespace Timma.Browser
         {
             return terminalCtrl.IsPrinting();
         }
-
-        /// <summary>
-        /// API (admin operations) END
-        /// </summary>
     }
 }
