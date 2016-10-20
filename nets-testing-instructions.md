@@ -26,7 +26,8 @@
 
   1. Valitse kalenterista jo maksuun viety aika (merkittynä `€`-merkillä)
   2. Valitse `Tee hyvitys` aukeavasta modaalista
-  3. Suorita hyvitys maksupäätteellä
+  3. Valitse `OK`, minkä jälkeen maksupäätteessä tulisi näkyä `Kortti`-kentän ilmoittama summa
+  4. Suorita hyvitys maksupäätteellä
 
 ## Päiväraportin (päivänpäätöksen) tulostaminen
 
