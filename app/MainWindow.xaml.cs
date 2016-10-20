@@ -28,10 +28,6 @@ namespace Timma
         {
             InitializeComponent();
 
-            var settings = new CefSettings();
-            settings.SetOffScreenRenderingBestPerformanceArgs();
-            Cef.Initialize(settings);
-
             BaxiCtrl terminal = new BaxiCtrl();
             browser = new ChromiumWebBrowser()
             {
