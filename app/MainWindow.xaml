@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:Timma"
         xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
         mc:Ignorable="d"
-        Title="Timma" Height="720" Width="1280"
+        Title="Timma"
+        Height="720" Width="1280"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Maximized"
         Closing="MainWindow_Closing"
         Background="#1AB394">
     <Window.InputBindings>
