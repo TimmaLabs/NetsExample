@@ -33,3 +33,4 @@
     192.168.0.5 customer-sites.timma.dev
     # </TimmaDocker>
     ```
+* See [example.js](./example.js) for usage examples
