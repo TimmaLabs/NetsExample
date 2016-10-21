@@ -38,6 +38,12 @@ terminal.onReady = function () {}
  */
 terminal.onPrint = function (printTextEventArgs) {}
 
+/**
+ * Triggered when text is displayed on the terminal screen
+ * @param  {Object} displayTextEventArgs
+ */
+terminal.onDisplay = function (displayTextEventArgs) {}
+
 
 /**
  * Below 'operation' refers to either a transactional or an administrative operation.
