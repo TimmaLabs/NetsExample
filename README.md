@@ -4,6 +4,8 @@
 
 * Install the required USB drivers for ECR communication: [IngenicoUSBDrivers_2.80_setup.exe](./IngenicoUSBDrivers_2.80/)
 
+* Install the required [Visual C++ runtime components](https://www.microsoft.com/en-us/download/details.aspx?id=40784)
+
 * Set the following COM configuration via `Device Manager` -> `Ports (COM & LPT)` -> `Sagem Telium Comm Port` -> `Port Settings`:
 
   * `Bits per second`: 57600

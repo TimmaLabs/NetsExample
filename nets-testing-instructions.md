@@ -1,7 +1,7 @@
 # Setup
 
-  0. See [README.md#General](./README.md#general) on how to configure the USB connection
-  1. Connect the terminal via USB and launch `Timma.exe` (under `x64`/`x86` directory)
+  0. See [README.md#General](./README.md#general) on how to configure the USB connection & dependencies
+  1. Connect the terminal via USB and launch `Timma.exe` (under `bin/x64` and `bin/x86` directories, respectively)
   2. Login credentials: `harri@timma.fi` / `timma`
 
 # Flows
