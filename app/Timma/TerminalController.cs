@@ -120,9 +120,8 @@ namespace Timma
 
             if (code == 0)
             {
-                int errorCode = _terminal.MethodRejectCode;
                 opening = false;
-                OnError("Terminal failed to be opened", errorCode, code);
+                OnError("Terminal failed to be opened", _terminal.MethodRejectCode, code);
             }
         }
 
@@ -161,7 +160,7 @@ namespace Timma
 
             if (args.Result == 2)
             {
-                OnError("Rejected", args.AccumulatorUpdate, args.Result);
+                OnError("Rejected", _terminal.MethodRejectCode, args.Result);
                 return;
             }
 
