@@ -160,7 +160,7 @@ namespace Timma
 
             if (args.Result == 2)
             {
-                OnError("Rejected", _terminal.MethodRejectCode, args.Result);
+                OnError("Rejected", -1, args.Result);
                 return;
             }
 

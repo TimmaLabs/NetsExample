@@ -107,7 +107,7 @@ namespace Timma
             if (error["code"].Equals("2011"))
             {
                 terminalCtrl.Close();
-                box.SetMessage("Payment terminal not connected. Please connect the USB to the terminal and then press F5 or Ctrl+R to refresh this window.");
+                box.SetMessage("Payment terminal not connected. Please re-connect the terminal USB cable and press Ctrl+R or F5, or restart the application.");
                 box.Show();
             }
         }
