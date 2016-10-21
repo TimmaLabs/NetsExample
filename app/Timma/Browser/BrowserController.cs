@@ -22,6 +22,7 @@ namespace Timma.Browser
         private readonly string JS_FUNC_ONREADY = "onReady";
         private readonly string JS_FUNC_ONERROR = "onError";
         private readonly string JS_FUNC_ONPRINT = "onPrint";
+        private readonly string JS_FUNC_ONDISPLAY = "onDisplay";
 
         public BrowserController(ChromiumWebBrowser browser, TerminalController terminalCtrl)
         {
@@ -34,6 +35,7 @@ namespace Timma.Browser
             terminalCtrl.OnError += HandleTerminalError;
             terminalCtrl.OnReady += HandleTerminalReady;
             terminalCtrl.OnPrintText += HandleTerminalPrint;
+            terminalCtrl.OnDisplayText += HandleTerminalDisplay;
             browser.FrameLoadEnd += HandleFrameLoaded;
         }
 
@@ -42,6 +44,16 @@ namespace Timma.Browser
             Dictionary<string, string> data = new Dictionary<string, string>()
             {
                 { "method", JS_FUNC_ONPRINT },
+                { "payload", JsonConvert.SerializeObject(args) }
+            };
+            ctx.Post(CallJSCallback, data);
+        }
+
+        private void HandleTerminalDisplay(object sender, DisplayTextEventArgs args)
+        {
+            Dictionary<string, string> data = new Dictionary<string, string>()
+            {
+                { "method", JS_FUNC_ONDISPLAY },
                 { "payload", JsonConvert.SerializeObject(args) }
             };
             ctx.Post(CallJSCallback, data);
@@ -86,11 +98,12 @@ namespace Timma.Browser
 
         private void HandleFrameLoaded(object sender, FrameLoadEndEventArgs e)
         {
-            AddJSFunction(JS_FUNC_ONLOADED, JSLogFunction("loaded", "orange"));
+            AddJSFunction(JS_FUNC_ONLOADED, JSLogFunction("loaded", "magenta"));
             AddJSFunction(JS_FUNC_ONSUCCESS, JSLogFunction("success", "green"));
             AddJSFunction(JS_FUNC_ONREADY, JSLogFunction("ready", "blue"));
             AddJSFunction(JS_FUNC_ONERROR, JSLogFunction("error", "red"));
-            AddJSFunction(JS_FUNC_ONPRINT, JSLogFunction("print", "gray"));
+            AddJSFunction(JS_FUNC_ONPRINT, JSLogFunction("print", "orange"));
+            AddJSFunction(JS_FUNC_ONDISPLAY, JSLogFunction("print", "gray"));
 
             ShowDevTools();
             BrowserLoaded();

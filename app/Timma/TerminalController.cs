@@ -26,6 +26,7 @@ namespace Timma
             _terminal.OnLocalMode += HandleLocalMode;
             _terminal.OnError += HandleError;
             _terminal.OnPrintText += HandlePrintText;
+            _terminal.OnDisplayText += HandleDisplayText;
             _terminal.OnTerminalReady += HandleReady;
             _terminal.OnJsonReceived += HandleJsonReceived;
 
@@ -150,6 +151,9 @@ namespace Timma
         public delegate void PrintTextHandler(object sender, PrintTextEventArgs args);
         public event PrintTextHandler OnPrintText = delegate { };
 
+        public delegate void DisplayTextHandler(object sender, DisplayTextEventArgs args);
+        public event DisplayTextHandler OnDisplayText = delegate { };
+
         public delegate void OpenHandler(object sender, LocalModeEventArgs args);
         public event OpenHandler OnOpen;
 
@@ -188,6 +192,11 @@ namespace Timma
         private void HandlePrintText(object sender, PrintTextEventArgs args)
         {
             OnPrintText(sender, args);
+        }
+
+        private void HandleDisplayText(object sender, DisplayTextEventArgs args)
+        {
+            OnDisplayText(sender, args);
         }
 
         private void HandleJsonReceived(object sender, JsonReceivedArgs args)
