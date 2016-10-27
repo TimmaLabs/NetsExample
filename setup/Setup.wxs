@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    
+	<Product Id="313E5B5C-02DA-4459-A39D-A78491B8E344" Name="Timma" Language="1033" Version="1.0.0.0" Manufacturer="Timma Oy Ab" UpgradeCode="dced035b-2e9a-4337-9976-d0684aefbad0">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    
+		<MajorUpgrade DowngradeErrorMessage="A newer version of Timma is already installed." />
+		<MediaTemplate />
+    
+    <Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+        <Directory Id="APPLICATION_ROOT_DIRECTORY" Name="Timma">
+          <Directory Id="LOCALES_DIRECTORY" Name="locales" />
+        </Directory>
+      </Directory>
+		</Directory>
+
+		<Feature Id="ProgFiles" Title="Timma" Level="1">
+			<ComponentGroupRef Id="RootFiles" />
+      <ComponentGroupRef Id="Locales" />
+		</Feature>
+  
+    <Property Id="WIXUI_INSTALLDIR" Value="APPLICATION_ROOT_DIRECTORY" />
+
+    <UIRef Id="WixUI_InstallDir" />
+  
+    <WixVariable Id="WixUIBannerBmp" Value="gfx\top_banner.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value="gfx\background.bmp" />
+    <WixVariable Id="WixUILicenseRtf" Value="LICENSE.rtf" />
+
+    <Property Id="SignOutput" Value="true" />
+    
+	</Product>
+
+</Wix>

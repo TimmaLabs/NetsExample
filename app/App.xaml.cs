@@ -3,6 +3,11 @@ using System.Windows;
 
 namespace Timma
 {
+    public static class Version
+    {
+        public const string Value = "1.0";
+    }
+
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>

@@ -14,8 +14,6 @@ namespace Timma
         char ASCII_REPORT_SEPARATOR = Convert.ToChar(30);
         char ASCII_UNIT_SEPARATOR = Convert.ToChar(31);
 
-        private bool _printing { get; set; }
-
         public TerminalController(BaxiCtrl terminal)
         {
             _terminal = terminal;
@@ -30,61 +28,19 @@ namespace Timma
             _terminal.OnTerminalReady += HandleReady;
             _terminal.OnJsonReceived += HandleJsonReceived;
 
+            _terminal.ComPort = Timma.Properties.Settings.Default.COM_PORT;
+
             Open();
         }
 
-        internal int SendTransactionOperation(Operation<TransferAmountArgs> op, bool print = false)
+        internal int SendTransactionOperation(Operation<TransferAmountArgs> op)
         {
-            if (print)
-            {
-                PreparePrintOperation(op);
-            }
             return _terminal.TransferAmount(op.Args);
         }
 
-        internal int SendAdminOperation(Operation<AdministrationArgs> op, bool print = false)
+        internal int SendAdminOperation(Operation<AdministrationArgs> op)
         {
-            if (print)
-            {
-                PreparePrintOperation(op);
-            }
             return _terminal.Administration(op.Args);
-        }
-
-        private void PreparePrintOperation(IOperation op)
-        {
-            PrintTextHandler _OnPrintText = delegate { };
-            ReadyHandler _OnReady = delegate { };
-            string printText = string.Empty;
-
-            _OnPrintText = (sender, args) =>
-            {
-                OnPrintText -= _OnPrintText;
-                Debug.WriteLine("PRINT TEXT CB CALLED!");
-
-                printText = args.PrintText;
-                _printing = true;
-            };
-
-            _OnReady = (sender, args) =>
-            {
-                OnReady -= _OnReady;
-                Debug.WriteLine("TERMINAL READY CB CALLED!");
-
-                if (string.IsNullOrWhiteSpace(printText))
-                {
-                    Debug.WriteLine("Nothing to print!");
-                }
-                else
-                {
-                    Print(op.GenerateDocument(printText));
-                }
-
-                _printing = false;
-            };
-
-            OnPrintText += _OnPrintText;
-            OnReady += _OnReady;
         }
 
         public int Print(string jsonStr)
@@ -105,11 +61,6 @@ namespace Timma
             Debug.WriteLine("Changing language to {0}", langID);
             int code =  _terminal.SendTLD(args);
             return Convert.ToBoolean(code) ? code : _terminal.MethodRejectCode;
-        }
-
-        public bool IsPrinting()
-        {
-            return _printing;
         }
 
         public void Open()

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"
+     xmlns:bal="http://schemas.microsoft.com/wix/BalExtension">
+	<Bundle Name="Timma" Version="1.0.0.0" Manufacturer="Timma Oy Ab" UpgradeCode="885495c3-4e11-4bfd-af87-caf965e9c29e">
+    <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense">
+      <bal:WixStandardBootstrapperApplication LicenseFile="$(var.Setup.ProjectDir)LICENSE.rtf" LogoFile="$(var.Setup.ProjectDir)gfx/logo.bmp" />
+    </BootstrapperApplicationRef>
+
+		<Chain>
+      <!-- Ingenico USB for iCT250 Nets payment terminal -->
+      <PackageGroupRef Id="ingenico" />
+
+      <!-- .NET Framework 4.5.2 web setup -->
+      <PackageGroupRef Id="NetFx452Web" />
+      
+      <!-- redist packages -->
+      <PackageGroupRef Id="redist_vcpp"/>
+
+      <RollbackBoundary />
+      
+			<MsiPackage Id="TimmaSetup" SourceFile="$(var.Setup.TargetPath)" Vital="yes" Compressed="yes" />
+		</Chain>
+	</Bundle>
+
+  <Fragment>
+    <util:FileSearch Id="MFC120_Version_x86" Variable="MFC120_Version_x86" Path="[SystemFolder]mfc120.dll" Result="version"/>
+
+    <!--visual studio runtime 12 (https://www.microsoft.com/en-us/download/confirmation.aspx?id=40784) -->
+    <PackageGroup Id="redist_vcpp">
+      <!-- For x86 -->
+      <ExePackage Id="vc120x86" Cache="yes" PerMachine="yes" Permanent="yes" Vital="yes" Compressed="yes"
+                  Name="vcredist_x86.exe"
+                  SourceFile="redist\vc120\vcredist_x86.exe"
+                  InstallCommand="/quiet /norestart"
+                  InstallCondition="NOT VersionNT64 AND (NOT MFC120_Version_x86 >= v12.0.21005.1) OR NOT MFC120_Version_x86"
+                  Protocol="burn"
+                  />
+      <!-- For x64 -->
+      <ExePackage Id="vc120x64" Cache="yes" PerMachine="yes" Permanent="yes" Vital="yes" Compressed="yes"
+                  Name="vcredist_x64.exe"
+                  SourceFile="redist\vc120\vcredist_x64.exe"
+                  InstallCommand="/quiet /norestart"
+                  InstallCondition="VersionNT64 AND (NOT MFC120_Version_x86 >= v12.0.21005.1) OR NOT MFC120_Version_x64"
+                  Protocol="burn"
+                  />
+    </PackageGroup>
+        
+    <PackageGroup Id="ingenico">
+      <ExePackage Id="ingenico_280" Cache="yes" PerMachine="yes" Vital="yes" Compressed="yes"
+                  Name="IngenicoUSBDrivers_2.80_setup.exe"
+                  SourceFile="IngenicoUSBDrivers\IngenicoUSBDrivers_2.80_setup.exe" 
+                  InstallCommand="/PORT=9"
+                  UninstallCommand="/U"
+                  />
+    </PackageGroup>
+  </Fragment>
+</Wix>

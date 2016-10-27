@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+    <ComponentGroup Id="RootFiles" Directory="APPLICATION_ROOT_DIRECTORY">
+
+      <!-- baxi.ini -->
+      <Component Id="baxiIni" Guid="309AAD13-5CFC-442B-82B2-DF214E5DDE8D">
+        <File Id="baxi.ini" KeyPath="yes" Name="baxi.ini" Source="$(var.Timma.TargetDir)baxi.ini" Vital="yes" />
+      </Component>
+
+      <!-- baxi_dotnet.dll -->
+      <Component Id="baxiDotNet" Guid="1F4E924A-DAD1-4A35-AF12-CF991631BDB8">
+        <File Id="baxi_dotnet.dll" KeyPath="yes" Name="baxi_dotnet.dll" Source="$(var.Timma.TargetDir)baxi_dotnet.dll" Vital="yes" />
+      </Component>
+
+      <Component Id="cmp3FB8BF159B1C075645A3916D4F242332" Guid="A29A5C91-54F2-4419-BE95-B57820D4110E">
+        <File Id="fil898A7E3753ECB981A88388D4F497A637" KeyPath="yes" Name="cef.pak" Source="$(var.Timma.TargetDir)cef.pak" />
+      </Component>
+      <Component Id="cmpDB7A0D3C65CFCECE5D2AA2A00FD71004" Guid="38FCD06D-6C56-4B9F-A103-97793513F9CF">
+        <File Id="filA7CFA72B3705207AA2713AF05D69B86E" KeyPath="yes" Name="CefSharp.BrowserSubprocess.Core.dll" Source="$(var.Timma.TargetDir)CefSharp.BrowserSubprocess.Core.dll" Vital="yes" />
+      </Component>
+      <Component Id="cmpA2C18CB1583E159423A2577ABDEBFB3D" Guid="40EBE07C-B79A-4865-9A0B-011A767D82B7">
+        <File Id="filA7261F800908F7D703FEB3728D855B4A" KeyPath="yes" Name="CefSharp.BrowserSubprocess.exe" Source="$(var.Timma.TargetDir)CefSharp.BrowserSubprocess.exe" Checksum="yes" />
+      </Component>
+      <Component Id="cmpD3619BD252FAC7D991E6C9107AA4860B" Guid="B889D47E-B39C-4A64-99EB-5CD2B60A4747">
+        <File Id="filADCD8CA4B5DB0C91F1B097CE42F214A5" KeyPath="yes" Name="CefSharp.Core.dll" Source="$(var.Timma.TargetDir)CefSharp.Core.dll" Vital="yes" />
+      </Component>
+      <Component Id="cmpEE8BE37258D02FC185179F64E64D515B" Guid="BF2DDB13-612E-441A-9F77-51C82D1F6E2D">
+        <File Id="fil09FCDEFD27EA3886F7FE55C5D4514CD0" KeyPath="yes" Name="CefSharp.Core.xml" Source="$(var.Timma.TargetDir)CefSharp.Core.xml" />
+      </Component>
+      <Component Id="cmpD7210D75948E3406F81409A81AB97F0B" Guid="C84166FF-5375-40C2-8AEC-DBEC898B00FC">
+        <File Id="fil7B4DC4829009E707CB3F926DB61CFED0" KeyPath="yes" Name="CefSharp.dll" Source="$(var.Timma.TargetDir)CefSharp.dll" Vital="yes" />
+      </Component>
+      <Component Id="cmpD70EE404082F061E20EF048383E9BC50" Guid="51848EEF-EAAE-46B4-9C37-744096FB5375">
+        <File Id="filC55BFE8EE6318A77C7E3CB2015053BB6" KeyPath="yes" Name="CefSharp.Wpf.dll" Source="$(var.Timma.TargetDir)CefSharp.Wpf.dll"  Vital="yes" />
+      </Component>
+      <Component Id="cmpAE8FBC34162E5ECF794A2521193E7FBB" Guid="B3113BB8-E128-46ED-B8EB-38FBE84A8B4C">
+        <File Id="fil64954AA4914024AE28643E09CAC29B3E" KeyPath="yes" Name="CefSharp.Wpf.xml" Source="$(var.Timma.TargetDir)CefSharp.Wpf.xml" />
+      </Component>
+      <Component Id="cmp879DC68963CACBA20AA7F399D6B27368" Guid="73EA5830-7C9F-4B2F-A52E-C2E594872DDA">
+        <File Id="fil398D1556C1D654457FA3EA0B5C749BA1" KeyPath="yes" Name="CefSharp.xml" Source="$(var.Timma.TargetDir)CefSharp.xml" />
+      </Component>
+      <Component Id="cmp75DA44872C4B9149D1A925E224C3815F" Guid="A5A4993F-EBCC-4D50-A4C6-E7BE9FC16574">
+        <File Id="filEBE47A96BD531A56C8727A13B70FAB81" KeyPath="yes" Name="cef_100_percent.pak" Source="$(var.Timma.TargetDir)cef_100_percent.pak" />
+      </Component>
+      <Component Id="cmpE510F173475E1EE61732508BEA2E1CFC" Guid="BA67F4D3-BEE8-47B3-9D86-EE43AFD17563">
+        <File Id="fil8D8E57804FF68F7C932FCFB2CA5B9FF1" KeyPath="yes" Name="cef_200_percent.pak" Source="$(var.Timma.TargetDir)cef_200_percent.pak" />
+      </Component>
+      <Component Id="cmpD516894CF734D5FC6122BC2EC7927A34" Guid="4964A22A-C7DE-4E4C-9EAB-39CBC0FD7505">
+        <File Id="fil84B5BEB2AA5F4E3C3DA44917582E2DC4" KeyPath="yes" Name="cef_extensions.pak" Source="$(var.Timma.TargetDir)cef_extensions.pak" />
+      </Component>
+      <Component Id="cmp2AEA8B2F6BC0057463D03E475725C7F2" Guid="0A250E17-E546-4AC9-87F5-6B41843E5B1B">
+        <File Id="fil9DA621742D2C31AB36FA4261345B73C2" KeyPath="yes" Name="d3dcompiler_43.dll" Source="$(var.Timma.TargetDir)d3dcompiler_43.dll" />
+      </Component>
+      <Component Id="cmp765A5EB5226549FF0D13045827C2801D" Guid="F851E7F0-BB3B-42E3-BB4C-D7E00C633A9A">
+        <File Id="fil22B932A7107F07BD768F7502B5217030" KeyPath="yes" Name="d3dcompiler_47.dll" Source="$(var.Timma.TargetDir)d3dcompiler_47.dll" />
+      </Component>
+      <Component Id="cmpFEB098C44FF0D4981536FD0A4DDA27B4" Guid="3E1DBDEA-0E6E-4A43-884F-883F7E5EDEB4">
+        <File Id="fil309294753CD0169EEDD04D6C3E64A474" KeyPath="yes" Name="icudtl.dat" Source="$(var.Timma.TargetDir)icudtl.dat" />
+      </Component>
+      <Component Id="cmpB1133649A6439A7EE492312220083DBD" Guid="8552EB5E-4549-40A1-9DA4-BD444F96CD9B">
+        <File Id="fil4EBD3C7ED5D731A147E37D281FC0DFE2" KeyPath="yes" Name="libcef.dll" Source="$(var.Timma.TargetDir)libcef.dll" />
+      </Component>
+      <Component Id="cmp81853991DC9F9BDCD08ACAB6C52DBDFF" Guid="55E92A51-9BC4-4F27-B4F9-7EE86C7AA171">
+        <File Id="filBF449420A941D31D55EACF2D3954E07C" KeyPath="yes" Name="libEGL.dll" Source="$(var.Timma.TargetDir)libEGL.dll" />
+      </Component>
+      <Component Id="cmp2060D1B27AAE8A8C0A6B7C65BC52B640" Guid="CE49470D-5909-40D2-9B5E-2394876BE777">
+        <File Id="fil7AA2D9DA2902688E9137DC5761B0ADC3" KeyPath="yes" Name="libGLESv2.dll" Source="$(var.Timma.TargetDir)libGLESv2.dll" />
+      </Component>
+      <Component Id="cmpA8A8FF71AD78F2446BD8EDA6DCFEE5CE" Guid="839DE7EE-B6FC-45CC-9220-C6552CC82225">
+        <File Id="filB2D245C504082AAF0CC76D6364CC4922" KeyPath="yes" Name="natives_blob.bin" Source="$(var.Timma.TargetDir)natives_blob.bin" />
+      </Component>
+      <Component Id="cmp1F628E6E1F2340F1B045287895BA90F8" Guid="F6364D55-0356-4B6B-85BD-019CA3BAE3C6">
+        <File Id="fil94F47DD4629D87B8878BF727BE5F7853" KeyPath="yes" Name="Newtonsoft.Json.dll" Source="$(var.Timma.TargetDir)Newtonsoft.Json.dll" Vital="yes" />
+      </Component>
+      <Component Id="cmpFA06409C524B9A7CB08FEE46BF488864" Guid="BB790EDF-1EC7-4B4D-9C1C-EDACEB5E8E37">
+        <File Id="filFC2427FAED0A7AB17F7D8FAA7C4F9C88" KeyPath="yes" Name="Newtonsoft.Json.xml" Source="$(var.Timma.TargetDir)Newtonsoft.Json.xml" />
+      </Component>
+      <Component Id="cmp6EC58855A1D11659E72FADBE6DF4B403" Guid="8F8E9570-9D64-48C6-A872-52B29C211A41">
+        <File Id="fil2E8935338DB7C6287F3D6B6622C64277" KeyPath="yes" Name="snapshot_blob.bin" Source="$(var.Timma.TargetDir)snapshot_blob.bin" />
+      </Component>
+      <Component Id="cmp6FE561C13FA606041D2896E0FE415EC4" Guid="11A6FDEA-17BE-4992-8DF5-8E8994A25360">
+        <File Id="filF4A67B34681FD21200629911EC9EE98C" KeyPath="yes" Name="Timma.application" Source="$(var.Timma.TargetDir)Timma.application" />
+      </Component>
+
+      <!-- Timma.exe -->
+      <Component Id="cmpB16257A69836DA234696292F94E28E51" Guid="3DE3B34A-92B0-481F-9EBD-7A0A6AD2F9E2">
+        <File Id="fil5DDC5EA7D30049B50CEBEDAAE405D85B" KeyPath="yes" Name="Timma.exe" Source="$(var.Timma.TargetDir)Timma.exe" Vital="yes" Checksum="yes" />
+      </Component>
+      <Component Id="cmp7482614C5E5737248B1C55377E52ADB4" Guid="9DE8DDE3-E423-40BF-B378-2EC8B4C3E911">
+        <File Id="filA1D85EB8E879EE2F91DA3322DE4B8DCC" KeyPath="yes" Name="Timma.exe.config" Source="$(var.Timma.TargetDir)Timma.exe.config" />
+      </Component>
+      <Component Id="cmp8300F2E14211DE2B09C53A43B2CA9C56" Guid="065FC3A4-A810-4B74-B856-D3D70648B861">
+        <File Id="fil5B8BBD95E0498ED7D166EF765E3A06E0" KeyPath="yes" Name="Timma.exe.manifest" Source="$(var.Timma.TargetDir)Timma.exe.manifest" />
+      </Component>
+      <Component Id="cmp212EDA11C16B3FF660C59D47BB2DBFA4" Guid="0A0CC5AB-173D-404B-BCC8-48FCBD5FDE01">
+        <File Id="filD7AC57CF4F61E82C2C3AB728AAA8A849" KeyPath="yes" Name="widevinecdmadapter.dll" Source="$(var.Timma.TargetDir)widevinecdmadapter.dll" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

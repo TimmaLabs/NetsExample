@@ -48,7 +48,7 @@ namespace Timma.Browser
                 t = new Purchase(amount, printText: opts.printText, baxiArgs: opts.baxiArgs);
             }
 
-            terminalCtrl.SendTransactionOperation(t, print: true);
+            terminalCtrl.SendTransactionOperation(t);
             return JsonConvert.SerializeObject(t.Args);
         }
 
@@ -67,7 +67,7 @@ namespace Timma.Browser
         {
             var opts = JsonConvert.DeserializeObject<OperationOptions>(options);
             Reversal t = new Reversal(amount, printText: opts.printText, baxiArgs: opts.baxiArgs);
-            terminalCtrl.SendTransactionOperation(t, print: true);
+            terminalCtrl.SendTransactionOperation(t);
             return JsonConvert.SerializeObject(t.Args);
         }
 
@@ -86,7 +86,7 @@ namespace Timma.Browser
         {
             var opts = JsonConvert.DeserializeObject<OperationOptions>(options);
             Return t = new Return(amount, printText: opts.printText, baxiArgs: opts.baxiArgs);
-            terminalCtrl.SendTransactionOperation(t, print: true);
+            terminalCtrl.SendTransactionOperation(t);
             return JsonConvert.SerializeObject(t.Args);
         }
 
@@ -139,7 +139,7 @@ namespace Timma.Browser
         {
             var opts = JsonConvert.DeserializeObject<OperationOptions>(options);
             Reconciliation r = new Reconciliation(printText: opts.printText, baxiArgs: opts.baxiArgs);
-            terminalCtrl.SendAdminOperation(r, print: true);
+            terminalCtrl.SendAdminOperation(r);
             return JsonConvert.SerializeObject(r.Args);
         }
 
@@ -179,7 +179,7 @@ namespace Timma.Browser
             }
 
             Debug.WriteLine("Generating report of type {0}...", type);
-            terminalCtrl.SendAdminOperation(op, print: true);
+            terminalCtrl.SendAdminOperation(op);
             return JsonConvert.SerializeObject(op.Args);
         }
 
@@ -216,13 +216,9 @@ namespace Timma.Browser
             return Utils.OptionalData(autodcc: autodcc, merch: merch, txnref: txnref);
         }
 
-        /// <summary>
-        /// Boolean that tracks whether or not the terminal is currently printing
-        /// </summary>
-        /// <returns>true if the terminal is printing, false otherwise</returns>
-        public bool IsPrinting()
+        public string GetVersion()
         {
-            return terminalCtrl.IsPrinting();
+            return Version.Value;
         }
     }
 }

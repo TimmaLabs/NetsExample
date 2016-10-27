@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Fragment>
+      <ComponentGroup Id="Locales" Directory="LOCALES_DIRECTORY">
+        <Component Id="cmpDC5985E0B744F5CA609E7F7D6BAD8493" Guid="E152DA6E-7590-4176-91AA-26BFAFCE3792">
+          <File Id="fil897D43928CE653453EA0FA799BAF14D3" KeyPath="yes" Name="da.pak" Source="$(var.Timma.TargetDir)locales\da.pak" />
+        </Component>
+        <Component Id="cmpD86038A38D51831F955AA43DB8AE8A23" Guid="7504EFCE-FBA7-49EF-8C6B-90921E52321D">
+          <File Id="filD30A0EF44E9F11EFF019CE6650049752" KeyPath="yes" Name="de.pak" Source="$(var.Timma.TargetDir)locales\de.pak" />
+        </Component>
+        <Component Id="cmp2BD3F761BE95BC3BDA0749A4B741EAA6" Guid="0B40457E-B4A9-4ABE-B14F-FB92622B2B86">
+          <File Id="fil195F15419907CCC84FEA08CD8F7BC522" KeyPath="yes" Name="en-GB.pak" Source="$(var.Timma.TargetDir)locales\en-GB.pak" />
+        </Component>
+        <Component Id="cmp6C925C07A01C1BFA8D05384C9BE892CE" Guid="201821C6-E5FF-45A5-BFB8-178CA38A0A81">
+          <File Id="fil85DE16EFE30C5F409958D58AA815535D" KeyPath="yes" Name="en-US.pak" Source="$(var.Timma.TargetDir)locales\en-US.pak" />
+        </Component>
+        <Component Id="cmp8AD8B561CF9E976DF318C2EBF4BEA049" Guid="61D1E485-40AE-439F-950E-846153D5F564">
+          <File Id="fil26666F30B1EB30C4A6831D506C0400D6" KeyPath="yes" Name="fi.pak" Source="$(var.Timma.TargetDir)locales\fi.pak" />
+        </Component>
+        <Component Id="cmpDB9691777D41A1D9D9FFF09DC9CF366F" Guid="76160BA3-7F17-4545-B8C1-463DA677F8ED">
+          <File Id="fil3CFFCCE69EC76EAA23D17193E3146EA6" KeyPath="yes" Name="sv.pak" Source="$(var.Timma.TargetDir)locales\sv.pak" />
+        </Component>
+        <!--<Component Id="cmpE5661AAB174F64158C4FA6A555253F9A" Guid="C630784D-9808-4744-AC23-0D9B0122A761">
+            <File Id="fil8907961063900F169441E04ADFDAD32F" KeyPath="yes" Name="locales/am.pak" Source="$(var.Timma.TargetDir)locales\am.pak" />
+        </Component>
+        <Component Id="cmp96C175FA758685BD62FCEDBCAE73A255" Guid="5838F698-C2F5-4468-9011-E5F8ED9622EB">
+            <File Id="fil705AAFF219FC675D9AF2FE4A0CCEADE6" KeyPath="yes" Name="locales/ar.pak" Source="$(var.Timma.TargetDir)locales\ar.pak" />
+        </Component>
+        <Component Id="cmp7A11D89C6E3A673279F3E6E78BF9E665" Guid="E778B1A2-20ED-46A9-82CD-1B64FF5452F5">
+            <File Id="fil085C3D6055FD9F3250D8B08F02B24CA2" KeyPath="yes" Name="locales/bg.pak" Source="$(var.Timma.TargetDir)locales\bg.pak" />
+        </Component>
+        <Component Id="cmp97659FB14994408F0F43EA969176888A" Guid="2B2EFE8D-B846-4F47-B9DF-9AC3E4A82394">
+            <File Id="filB08F95943FAD4CC0E848232D42599E06" KeyPath="yes" Name="locales/bn.pak" Source="$(var.Timma.TargetDir)locales\bn.pak" />
+        </Component>
+        <Component Id="cmp78F7DD0E0AA22D3A14DFF314AC96CF6A" Guid="3E252A40-4EF2-42C6-9C98-AB464AD7033D">
+            <File Id="filFBDF1CE2ADDC72EEA39EC70839F0B520" KeyPath="yes" Name="locales/ca.pak" Source="$(var.Timma.TargetDir)locales\ca.pak" />
+        </Component>
+        <Component Id="cmpBD72C8AFC62B33516DC2A8CE32CDC7D0" Guid="01D28C33-D74F-4EF3-849D-B4BC63BE83F3">
+            <File Id="fil8B5ECE6A9A8E899ECD6588958AE1CF35" KeyPath="yes" Name="locales/cs.pak" Source="$(var.Timma.TargetDir)locales\cs.pak" />
+        </Component>
+        <Component Id="cmp2E659EAA343F7A91D39A1D413C5805A3" Guid="DC622364-9D51-454A-ADA1-214CBE0FA4F0">
+            <File Id="filD883DED27E407796EC26EB5F9C65E869" KeyPath="yes" Name="locales/el.pak" Source="$(var.Timma.TargetDir)locales\el.pak" />
+        </Component>
+        <Component Id="cmpF9941875CE02ECEAABC513C66B49247A" Guid="AABB52AB-9DB4-4B95-9B22-3CF3C833C6CD">
+            <File Id="filFADE2A3DF9B580F48B516F96695C6ECB" KeyPath="yes" Name="locales/es-419.pak" Source="$(var.Timma.TargetDir)locales\es-419.pak" />
+        </Component>
+        <Component Id="cmpC3E33B2D712B334C71498994A65F8A65" Guid="E4C43078-89A1-471A-80E7-0CF574EB1662">
+            <File Id="fil9592BB86BC6D94F324571A45CC7F6D85" KeyPath="yes" Name="locales/es.pak" Source="$(var.Timma.TargetDir)locales\es.pak" />
+        </Component>
+        <Component Id="cmpF39FD5325C2DADF4BEC9F80D74DB9468" Guid="AAC32E48-2264-419B-B963-ABD47FB8B4DA">
+            <File Id="fil9974DE227A9867BB0B4174D2AE8CCB4E" KeyPath="yes" Name="locales/et.pak" Source="$(var.Timma.TargetDir)locales\et.pak" />
+        </Component>
+        <Component Id="cmp5AC1DF1811D80C3FD44DA0AE719E1AF4" Guid="92EB435F-3E0C-46A7-81AA-FBF34C1863CD">
+            <File Id="fil79AF29AA326C3657CFEADF3628E79690" KeyPath="yes" Name="locales/fa.pak" Source="$(var.Timma.TargetDir)locales\fa.pak" />
+        </Component>
+        <Component Id="cmp621F22E43FBAAD1EE4BED38CEA39C8BB" Guid="A838F543-070A-4AFA-985B-42AB653CF993">
+            <File Id="filDF10E420C90F6EC8C0C1380EF7B08DC3" KeyPath="yes" Name="locales/fil.pak" Source="$(var.Timma.TargetDir)locales\fil.pak" />
+        </Component>
+        <Component Id="cmpE5494BDF7529821ADE0124352D097F04" Guid="32E05C78-8F15-40C5-AB5D-0620B4AE79E0">
+            <File Id="filFEA5D7A7467486C7DCFDB102463CB15C" KeyPath="yes" Name="locales/fr.pak" Source="$(var.Timma.TargetDir)locales\fr.pak" />
+        </Component>
+        <Component Id="cmpDFBDA4008CFC0EDE9746652212FA71BE" Guid="D6D61A05-83AF-4925-9EE6-5CD7DAC48B89">
+            <File Id="filECB53028270DC12FB195E3C8408B6633" KeyPath="yes" Name="locales/gu.pak" Source="$(var.Timma.TargetDir)locales\gu.pak" />
+        </Component>
+        <Component Id="cmp4B6CE1C1D1F5987A614960AE5AC14465" Guid="58D05278-80A3-4E4B-B720-8F3AD8236E00">
+            <File Id="filD991E8A3DD008FB13A0AB16134CE6628" KeyPath="yes" Name="locales/he.pak" Source="$(var.Timma.TargetDir)locales\he.pak" />
+        </Component>
+        <Component Id="cmp06435EE7E303E7E58FD1BC64F9BEDDF9" Guid="FB34BF48-DDF4-43F7-9646-C194A1F8C6B1">
+            <File Id="filD2701EE840242720FA3CC8C12C4E8ADE" KeyPath="yes" Name="locales/hi.pak" Source="$(var.Timma.TargetDir)locales\hi.pak" />
+        </Component>
+        <Component Id="cmp27996F19BFFFA8147DC02AA6F41DC416" Guid="34249C32-CAE9-4122-8AFA-AD83C600EEFF">
+            <File Id="filFAE791E11C584F7F014C8157B6D75542" KeyPath="yes" Name="locales/hr.pak" Source="$(var.Timma.TargetDir)locales\hr.pak" />
+        </Component>
+        <Component Id="cmp486F819BC25DC8958F242A0D8EAC2CFC" Guid="8283FDD2-BFDD-48AB-85A2-95CF718278D5">
+            <File Id="filC840385AD07C855F8E57CD12C2DF21FE" KeyPath="yes" Name="locales/hu.pak" Source="$(var.Timma.TargetDir)locales\hu.pak" />
+        </Component>
+        <Component Id="cmpFE0C5E5950DB5B7FEAC93D9D1C64BBC5" Guid="72B5FC0B-E899-4495-93C5-BD77D94DADCB">
+            <File Id="fil13334942BA30340AC3115C87B7CE2FBC" KeyPath="yes" Name="locales/id.pak" Source="$(var.Timma.TargetDir)locales\id.pak" />
+        </Component>
+        <Component Id="cmp601CFF387BBBC2FCDF5CF92929400D60" Guid="052F00A0-0A96-41C3-B321-72D834BC985E">
+            <File Id="filF46EA4AF0D90DD7DA480B48E0DF4A486" KeyPath="yes" Name="locales/it.pak" Source="$(var.Timma.TargetDir)locales\it.pak" />
+        </Component>
+        <Component Id="cmpADA059433F834CC52F8A2FB3FC303906" Guid="149746DA-CAB3-4791-933C-4E6FDE54AC2E">
+            <File Id="fil4300966B2745A4B3749C6DA649B25B9F" KeyPath="yes" Name="locales/ja.pak" Source="$(var.Timma.TargetDir)locales\ja.pak" />
+        </Component>
+        <Component Id="cmpD0FE2747704746036F5EB8423CCFA346" Guid="69E793CC-5FA8-4DA9-B920-69A373F6923B">
+            <File Id="filDA6207DAFC5CDC1A9B883234464FD92A" KeyPath="yes" Name="locales/kn.pak" Source="$(var.Timma.TargetDir)locales\kn.pak" />
+        </Component>
+        <Component Id="cmpA5BC3F1A32E13B4A2431A4BD6D023181" Guid="FD998B69-DEF1-4845-8B01-D0CB37BA8C56">
+            <File Id="fil3FEA3C3F1296A52855C706C244A2F7EB" KeyPath="yes" Name="locales/ko.pak" Source="$(var.Timma.TargetDir)locales\ko.pak" />
+        </Component>
+        <Component Id="cmpA9F501220D55F23A5883C3FFD5D91FD7" Guid="C4503CFF-1010-47E9-A6DC-46B6AA7CB816">
+            <File Id="fil9769388741D9D78D75AC9FBC69A75185" KeyPath="yes" Name="locales/lt.pak" Source="$(var.Timma.TargetDir)locales\lt.pak" />
+        </Component>
+        <Component Id="cmp1AFBA8239352F0DB3EF0227C7EA5718C" Guid="FBB38D17-2F19-4B12-9CB2-7CEA54C4E57A">
+            <File Id="fil86576AB5AF65513080C042E9748AF03E" KeyPath="yes" Name="locales/lv.pak" Source="$(var.Timma.TargetDir)locales\lv.pak" />
+        </Component>
+        <Component Id="cmpD85D596CD0967F5FA3B5780922968440" Guid="04771D63-2E49-4A80-9BCB-9C8E045028A7">
+            <File Id="fil5E1252A84D6242CB2DC17638AE9E2557" KeyPath="yes" Name="locales/ml.pak" Source="$(var.Timma.TargetDir)locales\ml.pak" />
+        </Component>
+        <Component Id="cmp240E00B37C5062EFDBB0AB20C6DDDD40" Guid="384BB4C8-A7C0-4F3C-AE69-BA5C6550C04E">
+            <File Id="filADED4DDED3A70622770EC4089ABE1763" KeyPath="yes" Name="locales/mr.pak" Source="$(var.Timma.TargetDir)locales\mr.pak" />
+        </Component>
+        <Component Id="cmpE84BD02C858BBB1068441C1CE065878A" Guid="2482E003-CE91-4CE2-8782-A46266C950D2">
+            <File Id="fil873835AE956359E7C18D8CA4F3603727" KeyPath="yes" Name="locales/ms.pak" Source="$(var.Timma.TargetDir)locales\ms.pak" />
+        </Component>
+        <Component Id="cmpA8858DABE5796164DA5B0805468D2F5C" Guid="67705B1A-1D2E-4454-8106-2751B62188B3">
+            <File Id="fil68D666E54A1FAA9145F87CB785FF4BC1" KeyPath="yes" Name="locales/nb.pak" Source="$(var.Timma.TargetDir)locales\nb.pak" />
+        </Component>
+        <Component Id="cmp80A6D3E9272E0DD841902085BBBDEB6F" Guid="410F853E-4A21-43B3-A959-157D4D150495">
+            <File Id="filEB88B14D09652ED63F2303BD4AB7397E" KeyPath="yes" Name="locales/nl.pak" Source="$(var.Timma.TargetDir)locales\nl.pak" />
+        </Component>
+        <Component Id="cmpF3F4EAF4F006BF53B3D61004DA50EB42" Guid="975C8401-645F-4CAC-895B-DF20F88AD82E">
+            <File Id="filBA3D104CCBDF35A6B2B51857EDB370E1" KeyPath="yes" Name="locales/pl.pak" Source="$(var.Timma.TargetDir)locales\pl.pak" />
+        </Component>
+        <Component Id="cmp4643646F9113EE8ED563FBF76E3B53AA" Guid="AADDB288-D36A-4669-BEE3-6250615B94C4">
+            <File Id="fil8293C3203A7EBAE17512FA8BB50D2B76" KeyPath="yes" Name="locales/pt-BR.pak" Source="$(var.Timma.TargetDir)locales\pt-BR.pak" />
+        </Component>
+        <Component Id="cmp4DB744C29916B151C88E3589BBC3DEC1" Guid="614B4A70-DB34-4781-923A-5DE490155307">
+            <File Id="fil4774D45C9C2BF22562B7C0A7F8FCB91A" KeyPath="yes" Name="locales/pt-PT.pak" Source="$(var.Timma.TargetDir)locales\pt-PT.pak" />
+        </Component>
+        <Component Id="cmpA3ED546A04816ECC02F9ABC008BFD5C9" Guid="2564F7D5-6161-42FC-8D07-C9AC18EB11F3">
+            <File Id="fil670F2C02B269A7719469AEC3DFB65DEB" KeyPath="yes" Name="locales/ro.pak" Source="$(var.Timma.TargetDir)locales\ro.pak" />
+        </Component>
+        <Component Id="cmp29E0CAE87D8CBDE963CFA95AE5B052A6" Guid="96E990F3-74B7-46BD-BD0E-D71141A024FF">
+            <File Id="fil5A28D79127FC95CE3CC530E9DD43445B" KeyPath="yes" Name="locales/ru.pak" Source="$(var.Timma.TargetDir)locales\ru.pak" />
+        </Component>
+        <Component Id="cmp6592EF67E5EC50B42D035F37F2896C58" Guid="0D5D98D7-3170-4880-A0B6-E3E68521AF31">
+            <File Id="fil6C57E7DD2093C8375F174AD3B415C69D" KeyPath="yes" Name="locales/sk.pak" Source="$(var.Timma.TargetDir)locales\sk.pak" />
+        </Component>
+        <Component Id="cmp6354F6CF092E96BB5E7D63B1100C74D1" Guid="B07D1C7C-8E77-47E6-8C81-54FD505D1702">
+            <File Id="fil87FC934B38DB314243C6F10F9689ED32" KeyPath="yes" Name="locales/sl.pak" Source="$(var.Timma.TargetDir)locales\sl.pak" />
+        </Component>
+        <Component Id="cmp5FB60A028EE3958108D205945F8A0807" Guid="66E419E5-9CFC-4AF3-8C31-C74E09E9BBB1">
+            <File Id="filB7EC2083028A704A1C44CC690230F371" KeyPath="yes" Name="locales/sr.pak" Source="$(var.Timma.TargetDir)locales\sr.pak" />
+        </Component>
+        <Component Id="cmp7CF0580A29BAA381FB358FCD6D3B14F2" Guid="B0F47668-3A3C-411C-841A-99512DFEEB09">
+            <File Id="fil73096FB7D78D592E2C5DAEDB5AE9E9B7" KeyPath="yes" Name="locales/sw.pak" Source="$(var.Timma.TargetDir)locales\sw.pak" />
+        </Component>
+        <Component Id="cmp578DE5F695F5DF46AD3EDFA50F8E61E2" Guid="0AF71ECA-38F7-440E-82E4-A723BFAAC1BA">
+            <File Id="filC9FEF5B4F57F9DD5865D0805F441E469" KeyPath="yes" Name="locales/ta.pak" Source="$(var.Timma.TargetDir)locales\ta.pak" />
+        </Component>
+        <Component Id="cmp31C264E92BA9223F109D68CA9378EB26" Guid="A78892E8-7D1B-4559-BB0D-77E460C32E2F">
+            <File Id="fil82EB8E41E0BA2C1ECA9A380A25348F31" KeyPath="yes" Name="locales/te.pak" Source="$(var.Timma.TargetDir)locales\te.pak" />
+        </Component>
+        <Component Id="cmp8E3F35DEC8443E4BD7BC73D1F9819AE6" Guid="A451354F-CFEF-4C8F-8D44-15A4FE6E4E5B">
+            <File Id="filEF9BACEDEE9021A48FCBEF1004D46AE9" KeyPath="yes" Name="locales/th.pak" Source="$(var.Timma.TargetDir)locales\th.pak" />
+        </Component>
+        <Component Id="cmpC39EB14F28E744BC69B6CB3E0C578A82" Guid="23B29078-199F-43B9-87CA-903897EB010F">
+            <File Id="fil5C011845412F9DB1C3CFCBFD958EB06D" KeyPath="yes" Name="locales/tr.pak" Source="$(var.Timma.TargetDir)locales\tr.pak" />
+        </Component>
+        <Component Id="cmpB10F5E7276769F8BDAE6AFA3F0DD2209" Guid="62009775-86A3-4A6B-9464-4B11E4725A6E">
+            <File Id="filFDA8EEFE7B0947FBEF1BA4091236BEDA" KeyPath="yes" Name="locales/uk.pak" Source="$(var.Timma.TargetDir)locales\uk.pak" />
+        </Component>
+        <Component Id="cmp2D75F546D1D545F4DD14C77601E2845F" Guid="1CE814CB-85CA-4FEA-865D-0BCC9C188785">
+            <File Id="filD249C582A0532E97B6F300B84111D8E3" KeyPath="yes" Name="locales/vi.pak" Source="$(var.Timma.TargetDir)locales\vi.pak" />
+        </Component>
+        <Component Id="cmp1D71928245F4CC1EA3AFC22B3E71BDAE" Guid="3DB61172-D4C3-4CD5-A56E-BDBA6BF8ECDF">
+            <File Id="fil809DEE40A52EBFE69E339DA2B9D9AC93" KeyPath="yes" Name="locales/zh-CN.pak" Source="$(var.Timma.TargetDir)locales\zh-CN.pak" />
+        </Component>
+        <Component Id="cmp1881D1CDDD4ABCA4E952F1DC3C20B0D0" Guid="6222C697-BD6C-4BBB-A326-324516F4EFA2">
+            <File Id="fil62F54269588414905AD99AFD71112A28" KeyPath="yes" Name="locales/zh-TW.pak" Source="$(var.Timma.TargetDir)locales\zh-TW.pak" />
+        </Component>-->
+      </ComponentGroup>
+  </Fragment>
+</Wix>
