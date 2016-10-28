@@ -44,20 +44,24 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Files" />
-    <Folder Include="gfx" />
+    <Folder Include="Gfx" />
+    <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="gfx\background.bmp" />
     <Content Include="gfx\logo.bmp" />
     <Content Include="gfx\top_banner.bmp" />
     <Content Include="LICENSE.rtf" />
+    <Content Include="Scripts\create-cert-key.bat" />
+    <Content Include="Scripts\create-pfx.bat" />
+    <Content Include="Scripts\sign-msi.bat" />
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <PropertyGroup>
-    <PostBuildEvent>signtool sign /a "$(TargetDir)cab1.cab"</PostBuildEvent>
+    <PreBuildEvent />
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>signtool sign /a "$(TargetDir)cab1.cab"</PreBuildEvent>
+    <PostBuildEvent>$(ProjectDir)Scripts\sign-msi.bat $(ProjectDir)Scripts\Timma.pfx $(TargetDir) voittaja</PostBuildEvent>
   </PropertyGroup>
   <!--
 	To modify your build process, add your task inside one of the targets below and uncomment it.
