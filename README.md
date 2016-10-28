@@ -50,3 +50,7 @@
     # </TimmaDocker>
     ```
 * See [example.js](./example.js) for usage examples
+
+* Optional: download [Microsoft Expression Design 4](https://www.microsoft.com/en-us/download/details.aspx?id=36180) for converting vector art (e.g. `.ai`) into XAML
+
+  * .ico generator: https://iconverticons.com/online/
