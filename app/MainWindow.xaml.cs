@@ -57,7 +57,7 @@ namespace Timma
             terminalCtrl.OnSuccess += HandleTerminalSuccess;
             browser.FrameLoadEnd += HandleFrameLoaded;
 
-            terminalCtrl.Initialize();
+            terminalCtrl.Initialize(Timma.Properties.Settings.Default);
 
             CommandBindings.Add(new CommandBinding(NavigationCommands.Refresh, Reload));
         }

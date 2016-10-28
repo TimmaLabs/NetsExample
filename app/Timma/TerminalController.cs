@@ -19,7 +19,7 @@ namespace Timma
             _terminal = terminal;
         }
 
-        public void Initialize()
+        public void Initialize(Properties.Settings settings)
         {
             _terminal.OnLocalMode += HandleLocalMode;
             _terminal.OnError += HandleError;
@@ -28,7 +28,7 @@ namespace Timma
             _terminal.OnTerminalReady += HandleReady;
             _terminal.OnJsonReceived += HandleJsonReceived;
 
-            _terminal.ComPort = Timma.Properties.Settings.Default.COM_PORT;
+            _terminal.ComPort = settings.COM_PORT;
 
             Open();
         }
