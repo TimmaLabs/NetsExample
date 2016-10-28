@@ -92,4 +92,4 @@ terminal.optionalData('txnref-goes-here', 1, 567); // Output OptionalData struct
 terminal.optionalData('txnref-goes-here');
 terminal.optionalData('', 2);
 
-terminal.isPrinting(); // Check if the terminal is currently printing / about to print
+terminal.getVersion(); // Get TimmaNets version
