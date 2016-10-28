@@ -2,6 +2,8 @@
 
 ## General
 
+### For development/testing
+
 * Install the required USB drivers for ECR communication: [IngenicoUSBDrivers_2.80_setup.exe](./IngenicoUSBDrivers_2.80/)
 
 * Install the required [Visual C++ runtime components](https://www.microsoft.com/en-us/download/details.aspx?id=40784)
@@ -9,9 +11,21 @@
 * Set the following COM configuration via `Device Manager` -> `Ports (COM & LPT)` -> `Sagem Telium Comm Port` -> `Port Settings`:
 
   * `Bits per second`: 57600
-  * `Advanced...` -> `COM Port Number`: COM3
+  * `Advanced...` -> `COM Port Number`: COM9
+
+### For production (merchant) deployment
+
+  * Install Timma
+
+  * [baxi.ini](app/baxi.ini):
+
+    * Modify the fields in `VendorInfoExtended` to match the business ID and application version
+
+    * Make `HostIpAddress` to point to the Nets production server
 
 ## Development
+
+* Download & install the Windows 10 SDK: https://go.microsoft.com/fwlink/?LinkID=698771
 
 * Expose USB from the host machine to your VM: `Devices` -> `USB` -> `Sagem`
 
