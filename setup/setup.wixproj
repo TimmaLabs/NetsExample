@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="gfx\logo.bmp" />
+    <Content Include="Gfx\Timma.ico" />
     <Content Include="gfx\top_banner.bmp" />
     <Content Include="LICENSE.rtf" />
     <Content Include="Scripts\create-cert-key.bat" />

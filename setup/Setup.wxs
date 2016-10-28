@@ -13,13 +13,20 @@
           <Directory Id="LOCALES_DIRECTORY" Name="locales" />
         </Directory>
       </Directory>
+      <Directory Id="DesktopFolder" />
+      <Directory Id="ProgramMenuFolder" />
 		</Directory>
+
+    <Icon Id="Timma.ico" SourceFile="Gfx\Timma.ico" />
 
 		<Feature Id="ProgFiles" Title="Timma" Level="1">
 			<ComponentGroupRef Id="RootFiles" />
       <ComponentGroupRef Id="Locales" />
+      <ComponentRef Id="ApplicationDesktopShortcutComp" />
+      <ComponentRef Id="ApplicationStartMenuShortcutComp" />
 		</Feature>
-  
+
+    <Property Id="ARPPRODUCTICON" Value="Timma.ico" />
     <Property Id="WIXUI_INSTALLDIR" Value="APPLICATION_ROOT_DIRECTORY" />
 
     <UIRef Id="WixUI_InstallDir" />
@@ -29,7 +36,34 @@
     <WixVariable Id="WixUILicenseRtf" Value="LICENSE.rtf" />
 
     <Property Id="SignOutput" Value="true" />
+  </Product>
+
+  <Fragment>
+    <DirectoryRef Id="DesktopFolder">
+      <Component Id="ApplicationDesktopShortcutComp" Guid="9EFD060B-7050-451F-B9FF-380DD4CC8F3C">
+        <Shortcut Id="ApplicationDesktopShortcut"
+                  Name="Timma"
+                  Description="Launch Timma"
+                  Target="[#Timma.exe]"
+                  WorkingDirectory="APPLICATION_ROOT_DIRECTORY"
+                  Icon="Timma.ico" />
+        <RemoveFile Id="ApplicationDesktopShortcut" Name="Timma" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\Microsoft\Timma" Name="installedDesktopSC" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
     
-	</Product>
+    <DirectoryRef Id="ProgramMenuFolder">
+      <Component Id="ApplicationStartMenuShortcutComp" Guid="E286A628-8CE2-4047-806D-F96323DD3871">
+        <Shortcut Id="ApplicationStartMenuShortcut"
+                  Name="Timma"
+                  Description="Launch Timma"
+                  Target="[#Timma.exe]"
+                  WorkingDirectory="APPLICATION_ROOT_DIRECTORY"
+                  Icon="Timma.ico" />
+        <RemoveFile Id="ApplicationStartMenuShortcut" Name="Timma" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\Microsoft\Timma" Name="installedStartMenuSC" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
 
 </Wix>

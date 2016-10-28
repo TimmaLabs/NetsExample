@@ -85,7 +85,7 @@
 
       <!-- Timma.exe -->
       <Component Id="cmpB16257A69836DA234696292F94E28E51" Guid="3DE3B34A-92B0-481F-9EBD-7A0A6AD2F9E2">
-        <File Id="fil5DDC5EA7D30049B50CEBEDAAE405D85B" KeyPath="yes" Name="Timma.exe" Source="$(var.Timma.TargetDir)Timma.exe" Vital="yes" Checksum="yes" />
+        <File Id="Timma.exe" KeyPath="yes" Name="Timma.exe" Source="$(var.Timma.TargetDir)Timma.exe" Vital="yes" Checksum="yes" />
       </Component>
       <Component Id="cmp7482614C5E5737248B1C55377E52ADB4" Guid="9DE8DDE3-E423-40BF-B378-2EC8B4C3E911">
         <File Id="filA1D85EB8E879EE2F91DA3322DE4B8DCC" KeyPath="yes" Name="Timma.exe.config" Source="$(var.Timma.TargetDir)Timma.exe.config" />
