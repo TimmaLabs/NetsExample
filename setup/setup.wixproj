@@ -48,7 +48,6 @@
     <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="gfx\background.bmp" />
     <Content Include="gfx\logo.bmp" />
     <Content Include="gfx\top_banner.bmp" />
     <Content Include="LICENSE.rtf" />

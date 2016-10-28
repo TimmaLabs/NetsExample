@@ -24,8 +24,8 @@
 
     <UIRef Id="WixUI_InstallDir" />
   
-    <WixVariable Id="WixUIBannerBmp" Value="gfx\top_banner.bmp" />
-    <WixVariable Id="WixUIDialogBmp" Value="gfx\background.bmp" />
+    <WixVariable Id="WixUIBannerBmp" Value="Gfx\top_banner.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value="Gfx\background.bmp" />
     <WixVariable Id="WixUILicenseRtf" Value="LICENSE.rtf" />
 
     <Property Id="SignOutput" Value="true" />
