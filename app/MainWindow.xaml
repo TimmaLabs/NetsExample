@@ -5,28 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Timma"
         xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
-        mc:Ignorable="d"
+        xmlns:PresentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
+        mc:Ignorable="d PresentationOptions"
         Title="Timma"
         Height="720" Width="1280"
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         Closing="MainWindow_Closing"
-        Background="#1AB394">
+        Background="#158F77">
     <Window.InputBindings>
         <KeyBinding Key="r" Modifiers="Ctrl" Command="Refresh" />
     </Window.InputBindings>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Grid x:Name="TimmaErrorBoxWrapper" VerticalAlignment="Top" Background="#FFCF3333" Grid.Row="0" Height="30" Visibility="Collapsed">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid x:Name="TimmaErrorBoxWrapper" Grid.Row="0" Grid.ColumnSpan="3" VerticalAlignment="Top" Background="#C34A4A" Height="30" Visibility="Collapsed">
             <TextBlock x:Name="TimmaErrorBox" HorizontalAlignment="Center"  Foreground="White" FontFamily="Helvetica" Cursor="Arrow" FontSize="16" IsEnabled="True" Padding="0,5">
             </TextBlock>
         </Grid>
 
-        <Grid x:Name="TimmaBrowser" Grid.Row="1">
-        </Grid>
+        <Rectangle Grid.Row="1" Grid.Column="1" PresentationOptions:Freeze="True" Fill="{StaticResource logo_white}"  />
+
+        <Grid Grid.Row="1" Grid.ColumnSpan="3" x:Name="TimmaBrowser" ZIndex="1"></Grid>
     </Grid>
 </Window>
