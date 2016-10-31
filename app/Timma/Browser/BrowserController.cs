@@ -23,6 +23,7 @@ namespace Timma.Browser
         private readonly string JS_FUNC_ONERROR = "onError";
         private readonly string JS_FUNC_ONPRINT = "onPrint";
         private readonly string JS_FUNC_ONDISPLAY = "onDisplay";
+        private readonly string JS_FUNC_LOG = "log";
 
         public BrowserController(ChromiumWebBrowser browser, TerminalController terminalCtrl)
         {
@@ -98,12 +99,13 @@ namespace Timma.Browser
 
         private void HandleFrameLoaded(object sender, FrameLoadEndEventArgs e)
         {
-            AddJSFunction(JS_FUNC_ONLOADED, JSLogFunction("loaded", "magenta"));
-            AddJSFunction(JS_FUNC_ONSUCCESS, JSLogFunction("success", "green"));
-            AddJSFunction(JS_FUNC_ONREADY, JSLogFunction("ready", "blue"));
-            AddJSFunction(JS_FUNC_ONERROR, JSLogFunction("error", "red"));
-            AddJSFunction(JS_FUNC_ONPRINT, JSLogFunction("print", "orange"));
-            AddJSFunction(JS_FUNC_ONDISPLAY, JSLogFunction("print", "gray"));
+            AddJSFunction(JS_FUNC_ONLOADED, JSLogFunction(JS_FUNC_ONLOADED, "magenta"));
+            AddJSFunction(JS_FUNC_ONSUCCESS, JSLogFunction(JS_FUNC_ONSUCCESS, "green"));
+            AddJSFunction(JS_FUNC_ONREADY, JSLogFunction(JS_FUNC_ONREADY, "blue"));
+            AddJSFunction(JS_FUNC_ONERROR, JSLogFunction(JS_FUNC_ONERROR, "red"));
+            AddJSFunction(JS_FUNC_ONPRINT, JSLogFunction(JS_FUNC_ONPRINT, "gray"));
+            AddJSFunction(JS_FUNC_ONDISPLAY, JSLogFunction(JS_FUNC_ONDISPLAY, "orange"));
+            AddJSFunction(JS_FUNC_LOG, JSLogFunction());
 
             ShowDevTools();
             BrowserLoaded();
@@ -115,12 +117,12 @@ namespace Timma.Browser
             browser.ShowDevTools();
         }
 
-        private string JSLogFunction(string ns = "success", string color = "green")
+        private string JSLogFunction(string ns = "LOG", string color = "gray")
         {
             return string.Format(@"
-            function(payload = '') {{
+            function(payload = '', color = '{1}') {{
                 const timestamp = window.moment ? moment().format('HH:mm:ss:SSS') : (new Date()).toLocaleTimeString()
-                console.log(`%c ${{timestamp}} TimmaECR:{0}`, 'color: {1}', payload ? '>' : '', payload)
+                console.log(`%c ${{timestamp}} TimmaECR:{0}`, `color: ${{color}}`, payload ? '>' : '', payload)
             }}", ns, color);
         }
 
