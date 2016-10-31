@@ -22,14 +22,5 @@ namespace Timma.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("9")]
-        public int COM_PORT {
-            get {
-                return ((int)(this["COM_PORT"]));
-            }
-        }
     }
 }
