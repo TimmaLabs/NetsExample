@@ -50,7 +50,7 @@
       <ExePackage Id="ingenico_280" Cache="yes" PerMachine="yes" Vital="yes" Compressed="yes"
                   Name="IngenicoUSBDrivers_2.80_setup.exe"
                   SourceFile="IngenicoUSBDrivers\IngenicoUSBDrivers_2.80_setup.exe" 
-                  InstallCommand="/PORT=9"
+                  InstallCommand="/S /PORT=9"
                   UninstallCommand="/U"
                   />
     </PackageGroup>
