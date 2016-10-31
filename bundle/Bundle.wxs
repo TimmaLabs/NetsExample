@@ -24,7 +24,7 @@
 	</Bundle>
 
   <Fragment>
-    <util:FileSearch Id="MFC120_Version_x86" Variable="MFC120_Version_x86" Path="[SystemFolder]mfc120.dll" Result="version"/>
+    <util:FileSearch Id="MFC120_Version" Variable="MFC120_Version" Path="[SystemFolder]mfc120.dll" Result="version"/>
 
     <!--visual studio runtime 12 (https://www.microsoft.com/en-us/download/confirmation.aspx?id=40784) -->
     <PackageGroup Id="redist_vcpp">
@@ -33,7 +33,7 @@
                   Name="vcredist_x86.exe"
                   SourceFile="redist\vc120\vcredist_x86.exe"
                   InstallCommand="/quiet /norestart"
-                  InstallCondition="NOT VersionNT64 AND (NOT MFC120_Version_x86 >= v12.0.21005.1) OR NOT MFC120_Version_x86"
+                  InstallCondition="NOT VersionNT64 AND (NOT MFC120_Version OR NOT MFC120_Version >= v12.0.21005.1)"
                   Protocol="burn"
                   />
       <!-- For x64 -->
@@ -41,7 +41,7 @@
                   Name="vcredist_x64.exe"
                   SourceFile="redist\vc120\vcredist_x64.exe"
                   InstallCommand="/quiet /norestart"
-                  InstallCondition="VersionNT64 AND (NOT MFC120_Version_x86 >= v12.0.21005.1) OR NOT MFC120_Version_x64"
+                  InstallCondition="VersionNT64 AND (NOT MFC120_Version OR NOT MFC120_Version >= v12.0.21005.1)"
                   Protocol="burn"
                   />
     </PackageGroup>
