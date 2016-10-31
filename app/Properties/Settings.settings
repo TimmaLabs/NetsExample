@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="COM_PORT" Type="System.Int32" Scope="Application">
-      <Value Profile="(Default)">33</Value>
+      <Value Profile="(Default)">9</Value>
     </Setting>
   </Settings>
 </SettingsFile>
