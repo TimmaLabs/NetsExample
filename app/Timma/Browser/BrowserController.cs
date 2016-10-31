@@ -120,9 +120,9 @@ namespace Timma.Browser
         private string JSLogFunction(string ns = "LOG", string color = "gray")
         {
             return string.Format(@"
-            function(payload = '', color = '{1}', ns = '{0}') {{
+            function(payload = '', ns = '{0}', color = '{1}') {{
                 const timestamp = window.moment ? moment().format('HH:mm:ss:SSS') : (new Date()).toLocaleTimeString()
-                console.log(`%c ${{timestamp}} TimmaECR:${{0}}`, `color: ${{color}}`, payload ? '>' : '', payload)
+                console.log(`%c ${{timestamp}} TimmaECR:${{ns}}`, `color: ${{color}}`, payload ? '>' : '', payload)
             }}", ns, color);
         }
 
