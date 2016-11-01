@@ -27,8 +27,6 @@ namespace Timma
             _terminal.OnDisplayText += HandleDisplayText;
             _terminal.OnTerminalReady += HandleReady;
             _terminal.OnJsonReceived += HandleJsonReceived;
-
-            Open();
         }
 
         internal int SendTransactionOperation(Operation<TransferAmountArgs> op)
@@ -84,18 +82,18 @@ namespace Timma
         public bool CanOpen()
         {
             Debug.WriteLine("TERMINAL OPEN {0}; OPENING TERMINAL: {1}", _terminal.IsOpen(), opening);
-            // TODO: IsOpen() return true even if USB has gotten USB disconnected
+            // TODO: IsOpen() returns true even if USB has gotten USB disconnected
             return !_terminal.IsOpen() && !opening;
         }
 
         public delegate void SuccessHandler(object sender, LocalModeEventArgs args);
-        public event SuccessHandler OnSuccess;
+        public event SuccessHandler OnSuccess = delegate { };
 
         public delegate void ReadyHandler(object sender, TerminalReadyEventArgs args);
         public event ReadyHandler OnReady = delegate { };
 
         public delegate void ErrorHandler(string errorMessage, int errorCode, int errorCodeParent);
-        public event ErrorHandler OnError;
+        public event ErrorHandler OnError = delegate { };
 
         public delegate void PrintTextHandler(object sender, PrintTextEventArgs args);
         public event PrintTextHandler OnPrintText = delegate { };
@@ -104,7 +102,7 @@ namespace Timma
         public event DisplayTextHandler OnDisplayText = delegate { };
 
         public delegate void OpenHandler(object sender, LocalModeEventArgs args);
-        public event OpenHandler OnOpen;
+        public event OpenHandler OnOpen = delegate { };
 
         private void HandleLocalMode(object sender, LocalModeEventArgs args)
         {

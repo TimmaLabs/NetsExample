@@ -17,24 +17,14 @@
         <KeyBinding Key="r" Modifiers="Ctrl" Command="Refresh" />
     </Window.InputBindings>
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="2*" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Grid x:Name="TimmaErrorBoxWrapper" Grid.Row="0" Grid.ColumnSpan="3" VerticalAlignment="Top" Background="#C34A4A" Height="30" Visibility="Collapsed">
-            <TextBlock x:Name="TimmaErrorBox" HorizontalAlignment="Center"  Foreground="White" FontFamily="Helvetica" Cursor="Arrow" FontSize="16" IsEnabled="True" Padding="0,5">
-            </TextBlock>
-        </Grid>
+        <Rectangle Grid.Column="1" PresentationOptions:Freeze="True" Fill="{StaticResource logo_white}"  />
 
-        <Rectangle Grid.Row="1" Grid.Column="1" PresentationOptions:Freeze="True" Fill="{StaticResource logo_white}"  />
-
-        <Grid Grid.Row="1" Grid.ColumnSpan="3" x:Name="TimmaBrowser" ZIndex="1"></Grid>
+        <Grid Grid.ColumnSpan="3" x:Name="TimmaBrowser" ZIndex="1"></Grid>
     </Grid>
 </Window>

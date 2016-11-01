@@ -180,7 +180,6 @@
     <Compile Include="Timma\Operations\Transactions\Return.cs" />
     <Compile Include="Timma\Browser\BrowserController.cs" />
     <Compile Include="Timma\Operations\Transactions\Type.cs" />
-    <Compile Include="Timma\ErrorBox.cs" />
     <Compile Include="Timma\TerminalController.cs" />
     <Compile Include="Timma\Operations\Transactions\Reversal.cs" />
     <Compile Include="Timma\Operations\Transactions\Transaction.cs" />

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Input;
 using System.ComponentModel;
 using CefSharp;
 using CefSharp.Wpf;
 using BBS.BAXI;
-using System.Threading;
 using Timma.Browser;
 using System.Diagnostics;
 
@@ -20,9 +17,7 @@ namespace Timma
         private ChromiumWebBrowser browser;
         private BrowserController browserApi;
         private TerminalController terminalCtrl;
-        private ErrorBox box;
-        private SynchronizationContext ctx;
-        private bool browserReloading;
+        private bool browserReloading = false;
 
         private string Address {
             get
@@ -40,44 +35,21 @@ namespace Timma
             InitializeComponent();
 
             BaxiCtrl terminal = new BaxiCtrl();
+            terminalCtrl = new TerminalController(terminal);
+            terminalCtrl.Initialize();
+
             browser = new ChromiumWebBrowser()
             {
                 Address = Address
             };
 
-            terminalCtrl = new TerminalController(terminal);
-            browserApi = new BrowserController(browser, terminalCtrl);
-            box = new ErrorBox(this);
-            ctx = SynchronizationContext.Current;
-
             TimmaBrowser.Children.Add(browser);
 
-            terminalCtrl.OnError += HandleTerminalError;
-            terminalCtrl.OnOpen += HandleTerminalOpen;
-            terminalCtrl.OnSuccess += HandleTerminalSuccess;
+            browserApi = new BrowserController(browser, terminalCtrl);
+
             browser.FrameLoadEnd += HandleFrameLoaded;
 
-            terminalCtrl.Initialize();
-
             CommandBindings.Add(new CommandBinding(NavigationCommands.Refresh, Reload));
-        }
-
-        private void HandleTerminalSuccess(object sender, LocalModeEventArgs args)
-        {
-            var json = Newtonsoft.Json.JsonConvert.SerializeObject(args);
-            Debug.WriteLine(json);
-            Debug.WriteLine("OnSuccess result: {0}", args.Result);
-        }
-
-        private void HandleTerminalOpen(object sender, LocalModeEventArgs args)
-        {
-            Debug.WriteLine("IS OPEN");
-            ctx.Post(HideErrorBox, null);
-        }
-
-        private void HideErrorBox(object state)
-        {
-            box.Hide();
         }
 
         private void HandleFrameLoaded(object sender, FrameLoadEndEventArgs e)
@@ -87,28 +59,10 @@ namespace Timma
             {
                 browserReloading = false;
             }
-        }
 
-        private void HandleTerminalError(string errorMessage, int errorCode, int errorCodeParent)
-        {
-            Dictionary<string, string> errorData = new Dictionary<string, string>()
+            if (terminalCtrl.CanOpen())
             {
-                { "code", errorCode.ToString() },
-                { "codeParent", errorCodeParent.ToString() },
-                { "message", errorMessage }
-            };
-            ctx.Post(DisplayTerminalError, errorData);
-        }
-
-        private void DisplayTerminalError(object state)
-        {
-            var error = state as Dictionary<string, string>;
-
-            if (error["code"].Equals("2011"))
-            {
-                terminalCtrl.Close();
-                box.SetMessage("Payment terminal not connected. Please re-connect the terminal USB cable and press Ctrl+R or F5, or restart the application.");
-                box.Show();
+                terminalCtrl.Open();
             }
         }
 
@@ -116,11 +70,6 @@ namespace Timma
         {
             browserReloading = true;
             Debug.WriteLine("RELOAD");
-            
-            if (terminalCtrl.CanOpen())
-            {
-                terminalCtrl.Open();
-            }
 
             browser.Reload(true);
         }
