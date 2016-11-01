@@ -13,3 +13,4 @@ CALL %insignia% -v -nologo -ib %bundlePath% -o %enginePath%
 CALL %signtool% sign /v /f %pfxPath% /p %password% %enginePath%
 CALL %insignia% -v -nologo -ab %enginePath% %bundlePath% -o %bundlePath%
 CALL %signtool% sign /v /f %pfxPath% /d Timma /du https://timma.fi/company /p %password% %bundlePath%
+CALL del %enginePath%

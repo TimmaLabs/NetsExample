@@ -57,7 +57,8 @@
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <PropertyGroup>
-    <PostBuildEvent>$(ProjectDir)Scripts\sign-bundle.bat "$(SolutionDir)..\setup\Scripts\Timma.pfx"  $(TargetDir) voittaja</PostBuildEvent>
+    <PostBuildEvent>copy "$(SolutionDir)..\setup\Scripts\Timma.cer"  "$(TargetDir)"
+$(ProjectDir)Scripts\sign-bundle.bat "$(SolutionDir)..\setup\Scripts\Timma.pfx"  $(TargetDir) voittaja</PostBuildEvent>
   </PropertyGroup>
   <!--
 	To modify your build process, add your task inside one of the targets below and uncomment it.
