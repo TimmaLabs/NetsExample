@@ -93,3 +93,5 @@ terminal.optionalData('txnref-goes-here');
 terminal.optionalData('', 2);
 
 terminal.getVersion(); // Get TimmaNets version
+
+terminal.isOpen(); // Check if connection to the terminal was ever established
