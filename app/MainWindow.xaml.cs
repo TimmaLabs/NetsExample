@@ -76,12 +76,8 @@ namespace Timma
 
         void MainWindow_Closing(object sender, CancelEventArgs e)
         {
-            MessageBoxResult result =
-                  MessageBox.Show(
-                    "Are you sure you want to exit the application?",
-                    "Timma",
-                    MessageBoxButton.YesNo,
-                    MessageBoxImage.Warning);
+            MessageBoxResult result = MessageBox.Show("Are you sure you want to exit the application?", "Timma", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+
             if (result == MessageBoxResult.No)
             {
                 e.Cancel = true;
