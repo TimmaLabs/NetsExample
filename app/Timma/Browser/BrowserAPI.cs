@@ -210,6 +210,10 @@ namespace Timma.Browser
         /// API (admin operations) END
         /// </summary>
 
+        public bool IsOpen()
+        {
+            return terminalCtrl.IsOpen();
+        }
 
         public string OptionalData(string txnref = "", int autodcc = 1, int merch = -1)
         {

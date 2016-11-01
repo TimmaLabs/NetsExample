@@ -82,8 +82,13 @@ namespace Timma
         public bool CanOpen()
         {
             Debug.WriteLine("TERMINAL OPEN {0}; OPENING TERMINAL: {1}", _terminal.IsOpen(), opening);
-            // TODO: IsOpen() returns true even if USB has gotten USB disconnected
-            return !_terminal.IsOpen() && !opening;
+            return !IsOpen() && !opening;
+        }
+
+        internal bool IsOpen()
+        {
+            // TODO: IsOpen() returns true even if USB has gotten USB disconnected after successful open
+            return _terminal.IsOpen();
         }
 
         public delegate void SuccessHandler(object sender, LocalModeEventArgs args);
