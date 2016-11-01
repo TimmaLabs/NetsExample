@@ -43,11 +43,11 @@ namespace Timma
                 Address = Address
             };
 
-            TimmaBrowser.Children.Add(browser);
-
             browserApi = new BrowserController(browser, terminalCtrl);
 
             browser.FrameLoadEnd += HandleFrameLoaded;
+
+            TimmaBrowser.Children.Add(browser);
 
             CommandBindings.Add(new CommandBinding(NavigationCommands.Refresh, Reload));
         }
