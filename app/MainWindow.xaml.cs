@@ -25,7 +25,7 @@ namespace Timma
                 #if DEBUG
                 return "http://admin.timma.dev";
                 #else
-                return "http://testi.timma.fi/admin";
+                return "http://timma.fi/admin";
                 #endif
             }
         }
