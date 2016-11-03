@@ -11,6 +11,7 @@
     <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
     <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
     <Name>Setup</Name>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
     <OutputPath>bin\$(Configuration)\</OutputPath>
@@ -45,30 +46,21 @@
   <ItemGroup>
     <Folder Include="Files" />
     <Folder Include="Gfx" />
-    <Folder Include="Scripts" />
+    <Folder Include="Includes" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="gfx\logo.bmp" />
     <Content Include="Gfx\Timma.ico" />
     <Content Include="gfx\top_banner.bmp" />
+    <Content Include="Includes\Variables.wxi" />
     <Content Include="LICENSE.rtf" />
-    <Content Include="Scripts\create-cert-key.bat" />
-    <Content Include="Scripts\create-pfx.bat" />
-    <Content Include="Scripts\sign-msi.bat" />
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <PropertyGroup>
     <PreBuildEvent />
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>if not exist "$(SolutionDir)..\msi" mkdir "$(SolutionDir)..\msi"
-
-if "$(ConfigurationName)" == "Debug" (
-    copy "!(TargetPath)" "$(SolutionDir)..\msi\$(TargetName).$(PlatformName).debug$(TargetExt)" /Y /V )
-if "$(ConfigurationName)" == "Release" (
-    copy "!(TargetPath)" "$(SolutionDir)..\msi\$(TargetName).$(PlatformName)$(TargetExt)" /Y /V )
-
-$(ProjectDir)Scripts\sign-msi.bat $(ProjectDir)Scripts\Timma.pfx $(TargetDir) voittaja</PostBuildEvent>
+    <PostBuildEvent />
   </PropertyGroup>
   <!--
 	To modify your build process, add your task inside one of the targets below and uncomment it.

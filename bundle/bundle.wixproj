@@ -52,9 +52,6 @@
   <ItemGroup>
     <Folder Include="Scripts" />
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="Scripts\sign-bundle.bat" />
-  </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Foo|x86' ">
     <DefineConstants>Debug</DefineConstants>
@@ -70,16 +67,7 @@
     <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>if not exist "$(SolutionDir)..\msi" mkdir "$(SolutionDir)..\msi"
-
-if "$(ConfigurationName)" == "Debug" (
-    copy "!(TargetPath)" "$(SolutionDir)..\msi\$(TargetName).$(PlatformName).bundle.debug$(TargetExt)" /Y /V )
-if "$(ConfigurationName)" == "Release" (
-    copy "!(TargetPath)" "$(SolutionDir)..\msi\$(TargetName).$(PlatformName).bundle$(TargetExt)" /Y /V )
-
-copy "$(SolutionDir)..\setup\Scripts\Timma.cer"  "$(TargetDir)"
-
-$(ProjectDir)Scripts\sign-bundle.bat "$(SolutionDir)..\setup\Scripts\Timma.pfx"  $(TargetDir) voittaja</PostBuildEvent>
+    <PostBuildEvent />
   </PropertyGroup>
   <!--
 	To modify your build process, add your task inside one of the targets below and uncomment it.
