@@ -61,7 +61,14 @@
     <PreBuildEvent />
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>$(ProjectDir)Scripts\sign-msi.bat $(ProjectDir)Scripts\Timma.pfx $(TargetDir) voittaja</PostBuildEvent>
+    <PostBuildEvent>if not exist "$(SolutionDir)..\msi" mkdir "$(SolutionDir)..\msi"
+
+if "$(ConfigurationName)" == "Debug" (
+    copy "!(TargetPath)" "$(SolutionDir)..\msi\$(TargetName).$(PlatformName).debug$(TargetExt)" /Y /V )
+if "$(ConfigurationName)" == "Release" (
+    copy "!(TargetPath)" "$(SolutionDir)..\msi\$(TargetName).$(PlatformName)$(TargetExt)" /Y /V )
+
+$(ProjectDir)Scripts\sign-msi.bat $(ProjectDir)Scripts\Timma.pfx $(TargetDir) voittaja</PostBuildEvent>
   </PropertyGroup>
   <!--
 	To modify your build process, add your task inside one of the targets below and uncomment it.

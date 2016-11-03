@@ -14,6 +14,18 @@ namespace Timma
         char ASCII_REPORT_SEPARATOR = Convert.ToChar(30);
         char ASCII_UNIT_SEPARATOR = Convert.ToChar(31);
 
+        private string HostIpAddress
+        {
+            get
+            {
+                #if DEBUG
+                return "91.102.24.111"; // Nets test server
+                #else
+                return "91.102.24.142"; // Nets production server
+                #endif
+            }
+        }
+
         public TerminalController(BaxiCtrl terminal)
         {
             _terminal = terminal;
@@ -21,12 +33,16 @@ namespace Timma
 
         public void Initialize()
         {
+            // Handlers
             _terminal.OnLocalMode += HandleLocalMode;
             _terminal.OnError += HandleError;
             _terminal.OnPrintText += HandlePrintText;
             _terminal.OnDisplayText += HandleDisplayText;
             _terminal.OnTerminalReady += HandleReady;
             _terminal.OnJsonReceived += HandleJsonReceived;
+
+            // Baxi.ini settings (see baxi.ini for defaults)
+            _terminal.HostIpAddress = HostIpAddress;
         }
 
         internal int SendTransactionOperation(Operation<TransferAmountArgs> op)

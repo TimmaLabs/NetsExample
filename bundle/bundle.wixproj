@@ -56,8 +56,29 @@
     <Content Include="Scripts\sign-bundle.bat" />
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Foo|x86' ">
+    <DefineConstants>Debug</DefineConstants>
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Foo|AnyCPU' ">
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Foo|Any CPU' ">
+    <OutputPath>bin\$(Platform)\$(Configuration)\</OutputPath>
+    <IntermediateOutputPath>obj\$(Platform)\$(Configuration)\</IntermediateOutputPath>
+  </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>copy "$(SolutionDir)..\setup\Scripts\Timma.cer"  "$(TargetDir)"
+    <PostBuildEvent>if not exist "$(SolutionDir)..\msi" mkdir "$(SolutionDir)..\msi"
+
+if "$(ConfigurationName)" == "Debug" (
+    copy "!(TargetPath)" "$(SolutionDir)..\msi\$(TargetName).$(PlatformName).bundle.debug$(TargetExt)" /Y /V )
+if "$(ConfigurationName)" == "Release" (
+    copy "!(TargetPath)" "$(SolutionDir)..\msi\$(TargetName).$(PlatformName).bundle$(TargetExt)" /Y /V )
+
+copy "$(SolutionDir)..\setup\Scripts\Timma.cer"  "$(TargetDir)"
+
 $(ProjectDir)Scripts\sign-bundle.bat "$(SolutionDir)..\setup\Scripts\Timma.pfx"  $(TargetDir) voittaja</PostBuildEvent>
   </PropertyGroup>
   <!--
