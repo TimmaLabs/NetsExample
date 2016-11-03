@@ -22,10 +22,12 @@ namespace Timma
         private string Address {
             get
             {
-                #if DEBUG
-                return "http://admin.timma.dev";
+                #if (PRODUCTION && !DEBUG)
+                return "https://timma.fi/admin";
+                #elif (PRODUCTION && DEBUG)
+                return "http://testi.timma.fi/admin";
                 #else
-                return "http://timma.fi/admin";
+                return "http://admin.timma.dev";
                 #endif
             }
         }

@@ -18,10 +18,10 @@ namespace Timma
         {
             get
             {
-                #if DEBUG
-                return "91.102.24.111"; // Nets test server
-                #else
+                #if (PRODUCTION && !DEBUG)
                 return "91.102.24.142"; // Nets production server
+                #else
+                return "91.102.24.111"; // Nets test server
                 #endif
             }
         }
