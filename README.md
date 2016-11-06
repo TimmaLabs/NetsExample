@@ -6,7 +6,7 @@
 
 1. Install the required USB drivers for ECR communication: [IngenicoUSBDrivers_2.80_setup.exe](./IngenicoUSBDrivers_2.80/)
 
-  * Enable the `Force COM Port` feature and type in `9` in the leftmost input field at the bottom of the dialog
+  * Enable the `Force COM Port Feature` and type in `9` in the [leftmost input field at the bottom of the dialog](./assets/images/force-com-port.png)
 
 2. Install the required [Visual C++ runtime components](https://www.microsoft.com/en-us/download/details.aspx?id=40784)
 
