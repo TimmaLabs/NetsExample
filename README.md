@@ -2,6 +2,10 @@
 
 ## General
 
+### Production
+
+See the relevant section in the [Deployment Checklist](./docs/deployment-checklist.md#installation-on-site--remote).
+
 ### Development
 
 1. Install the required USB drivers for ECR communication: [IngenicoUSBDrivers_2.80_setup.exe](./IngenicoUSBDrivers_2.80/)
@@ -40,7 +44,3 @@ If Visual Studio complains about a missing `BBS` (Baxi API) reference when you t
   1. Right-click on the `Timma` project
   2. `Add` -> `Reference...`
   3. Select `..Baxi.net_1.4.2.1\baxi.net45\baxi_dotnet.dll`
-
-### Production
-
-See the relevant section in the [Deployment Checklist](./docs/deployment-checklist.md#installation-on-site--remote).
