@@ -41,7 +41,7 @@ If the customer consists of multiple proprietorships, Nets will need to enable a
 
 ### Does the customer have a need to add multiple users (sellers) to the payment terminal?
 
-If the customer wishes to have their personnel added as sellers to the payment terminal, see below for [instructions](). Make a note about the IDs assigned to each seller as this information (`OperID`) will be used for identifying each seller during a payment terminal transaction.
+If the customer wishes to have their personnel added as sellers to the payment terminal, see below for [instructions](#how-do-i-add-sellers-users-to-the-payment-terminal). Make a note about the IDs assigned to each seller as this information (`OperID`) will be used for identifying each seller during a payment terminal transaction.
 
 ### What extra equipment & materials does the customer need?
 
