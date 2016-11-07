@@ -27,7 +27,7 @@
 
   These should match the respective entries in your Mac's `/etc/hosts`.
 
-5. Expose USB from the host machine to your VM: `Devices` -> `USB` -> `Sagem`
+5. [Expose USB from the host machine to your VM](./assets/images/share-host-usb.jpeg) (`Devices` -> `USB` -> `Sagem`)
 
 6. Optional: download [Microsoft Expression Design 4](https://www.microsoft.com/en-us/download/details.aspx?id=36180) for converting vector art (e.g. `.ai`) into XAML
 

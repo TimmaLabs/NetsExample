@@ -21,28 +21,33 @@ Payment terminals provided by Nets that we currently support:
 
 * Windows: the supported versions are 7, 8 and 10 (both 32-bit and 64-bit)
 
-* OS X (Mac): the customer will need to run Windows in a VM (Virtual Machine). See the docs for [OS X Integration](./osx-integraton.md).
+* OS X (Mac): the customer will need to run Windows in a VM (Virtual Machine). See the docs for [OS X Integration](./osx-integration.md).
 
 ### What type of payment terminal solution does the customer currently have?
 
-* None: instruct the customer to contact [Nets sales](https://shop.nets.eu/) for ordering one of the [supported payment terminals](#supported-payment-terminals)
+* None: ask which one of the [supported terminals](#supported-payment-terminals) the customer would be interested in. We will then deal with contacting [Nets sales](https://shop.nets.eu/) for ordering it.
 
 * Standalone or integrated:
-  * If the terminal is **not** one that we support, proceed as above. Otherwise...
-  * If the terminal is **not** provided by Nets, ask the customer to switch over to Nets.
+  * If the terminal is **not** provided by Nets, ask the customer to terminate his/her current contract and proceed as above
+  * If the terminal is **not** one that we support, proceed as above.
 
 ### What do I need to register a customer with Nets?
 
-Once the customer has a Nets provided terminal we support, ask the customer for their [payment terminal ID](#how-do-i-figure-out-the-id-of-the-payment-terminal). Then, contact Nets and to check if the customer's payment terminal is running the latest (supported) version. They'll need the **payment terminal ID** for this. Any required updates to payment terminal software will be taken care of during the [installation process](#installation-on-site--remote).
+Once the customer has a Nets provided terminal we support, ask the customer for their [payment terminal ID](#how-do-i-figure-out-the-id-of-the-payment-terminal). Then, contact Nets to check if the customer's payment terminal is running the latest (supported) version. Nets will need the **payment terminal ID** for this. Any updates required to the payment terminal software will be done during the [installation process](#installation-on-site--remote).
 
 ### What type of business is the customer running? Does it include multiple proprietorships or is everybody under a single company?
 
-If the customer consists of multiple proprietorships, Nets will need to enable a so-called **Multi-banking support** on the payment terminal. Contact Nets about this and they'll provide us the respective IDs (`OperID`) for identifying each sole proprietorship.
+If the customer consists of multiple proprietorships, Nets will need to enable a so-called **Multi-banking support** on the payment terminal. Contact Nets about this and they'll provide us the respective IDs (`OperID`) for identifying each sole proprietorship. **Forward this information to the dev team!**
+
+### Does the customer have a need to add multiple users (sellers) to the payment terminal?
+
+If the customer wishes to have their personnel added as sellers to the payment terminal, see below for [instructions](). Make a note about the IDs assigned to each seller as this information (`OperID`) will be used for identifying each seller during a payment terminal transaction.
 
 ### What extra equipment & materials does the customer need?
 
 * Receipt rolls (Nets ships only 2 along with the original packaging)
 * [USB A to USB B](../assets/images/usb-a-to-usb-b.jpg) cable (with a 90° angle)
+* If the customer is running on a Mac: pre-packaged Windows on a USB stick (see [OS X Integration](./osx-integration.md) for more)
 
 
 ## Installation (on-site / remote)
@@ -51,7 +56,7 @@ If the customer consists of multiple proprietorships, Nets will need to enable a
 
   * Download the installer from [bit.ly/timma-for-windows](http://bit.ly/timma-for-windows)
   * If the customer is running Windows, install the version corresponding to the processor (either `32-bit` or `64-bit`)
-  * If the customer is running OS X, see the docs for [OS X Integration](./osx-integraton.md).
+  * If the customer is running OS X, see the docs for [OS X Integration](./osx-integration.md).
 
 The installation might take up to 10 minutes to complete depending on the OS & existing software installed, so be patient.
 
@@ -106,3 +111,11 @@ Make sure power is turned on the terminal, swipe the merchant card on the termin
 `8. Program` -> `1. Fetch Program`
 
 If updates are avaialble, this will download & install the latest software (rebooting the terminal in the process). If the payment terminal has the most up-to-date version of the software, it will print the software version number on a receipt. The version of the software should be at least that of the [abovementioned version](#supported-terminal-version).
+
+### How do I add sellers (users) to the payment terminal?
+
+Make sure power is turned on the terminal, swipe the merchant card on the terminal and select:
+
+`8. Sellers` -> `1. Add Seller` (proceed with adding a seller, make a note about the user ID assigned)
+
+By default, the terminal has a default admin user. When creating additional sellers, the terminal prompts for a password, try `0000`, unless previously specified.
