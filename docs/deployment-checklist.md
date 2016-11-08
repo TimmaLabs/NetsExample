@@ -39,10 +39,6 @@ Once the customer has a Nets provided terminal we support, ask the customer for 
 
 If the customer consists of multiple proprietorships, Nets will need to enable a so-called **Multi-banking support** on the payment terminal. Contact Nets about this and they'll provide us the respective IDs (`OperID`) for identifying each sole proprietorship. **Forward this information to the dev team!**
 
-### Does the customer have a need to add multiple users (sellers) to the payment terminal?
-
-If the customer wishes to have their personnel added as sellers to the payment terminal, see below for [instructions](#how-do-i-add-sellers-users-to-the-payment-terminal). Make a note about the IDs assigned to each seller as this information (`OperID`) will be used for identifying each seller during a payment terminal transaction.
-
 ### What extra equipment & materials does the customer need?
 
 * Receipt rolls (Nets ships only 2 along with the original packaging)
@@ -72,7 +68,7 @@ The installation might take up to 10 minutes to complete depending on the OS & e
 You can check the terminal for updates via Timma (skip to step 2.), or directly over the Ethernet cable (faster alternative):
 
   1. If you wish to do the update over the Ethernet cable, [change the terminal settings accordingly](#how-do-i-connect-the-payment-terminal-directly-to-nets-over-ethernet)
-  2. Check/update the payment terminal software](#how-do-i-checkupdate-the-payment-terminal-software-version)
+  2. [Check/update the payment terminal software](#how-do-i-checkupdate-the-payment-terminal-software-version)
   3. After the terminal is finished with the update, remember to [set the communication type back to USB](#2-integrating-the-payment-terminal-with-timma)
 
 
@@ -111,11 +107,3 @@ Make sure power is turned on the terminal, swipe the merchant card on the termin
 `8. Program` -> `1. Fetch Program`
 
 If updates are avaialble, this will download & install the latest software (rebooting the terminal in the process). If the payment terminal has the most up-to-date version of the software, it will print the software version number on a receipt. The version of the software should be at least that of the [abovementioned version](#supported-terminal-version).
-
-### How do I add sellers (users) to the payment terminal?
-
-Make sure power is turned on the terminal, swipe the merchant card on the terminal and select:
-
-`8. Sellers` -> `1. Add Seller` (proceed with adding a seller, make a note about the user ID assigned)
-
-By default, the terminal has a default admin user. When creating additional sellers, the terminal prompts for a password, try `0000`, unless previously specified.
