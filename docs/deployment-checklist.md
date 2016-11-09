@@ -68,8 +68,8 @@ The installation might take up to 10 minutes to complete depending on the OS & e
 You can check the terminal for updates via Timma (skip to step 2.), or directly over the Ethernet cable (faster alternative):
 
   1. If you wish to do the update over the Ethernet cable, [change the terminal settings accordingly](#how-do-i-connect-the-payment-terminal-directly-to-nets-over-ethernet)
-  2. [Check/update the payment terminal software](#how-do-i-checkupdate-the-payment-terminal-software-version)
-  3. After the terminal is finished with the update, remember to [set the communication type back to USB](#2-integrating-the-payment-terminal-with-timma)
+  2. [Check/update the payment terminal software](#how-do-i-updatecheck-the-version-of-the-payment-terminal-software)
+  3. After the terminal is finished with the update, remember to [set the communication type back to USB](#how-do-i-prepare-the-payment-terminal-to-be-connected-to-timma)
 
 
 
@@ -90,6 +90,8 @@ Make sure power is turned on the terminal, swipe the merchant card on the termin
   * `3. Cashier` -> `Cashier = Yes`
   * `3. Cashier` -> `Comm. type = USB SLAVE`
 
+Then connect the payment terminal to the computer using a [USB A to USB B](../assets/images/usb-a-to-usb-b.jpg) cable.
+
 ### How do I connect the payment terminal directly to Nets (over Ethernet)?
 
 Make sure power is turned on the terminal, swipe the merchant card on the terminal and select:
@@ -99,6 +101,8 @@ Make sure power is turned on the terminal, swipe the merchant card on the termin
   * `2. Connections` -> `Host IP Address = 91.102.24.142` (might be different in Sweden?)
   * `2. Connections` -> `Host Port = 9670`
   * `3. Cashier` -> `Cashier = No`
+
+Then connect the payment terminal to the Internet via the Ethernet cable, that is, plug in the Ethernet cable to the payment terminal and a nearby router/switch. The merchant should have an Ethernet cable available as it's typically provided by Nets together with the payment terminal.
 
 ### How do I update/check the version of the payment terminal software?
 
