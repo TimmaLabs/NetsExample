@@ -49,6 +49,9 @@
       <Component Id="cmpD516894CF734D5FC6122BC2EC7927A34" Guid="4964A22A-C7DE-4E4C-9EAB-39CBC0FD7505">
         <File Id="fil84B5BEB2AA5F4E3C3DA44917582E2DC4" KeyPath="yes" Name="cef_extensions.pak" Source="$(var.Timma.TargetDir)cef_extensions.pak" />
       </Component>
+      <Component Id="cmpD516894CF734D5FC6122BC2EC7927A99" Guid="EEC6188F-65CA-4CC2-B829-3029034DB0A6">
+        <File Id="fil84B5BEB2AA5F4E3C3DA44917582E2DA2" KeyPath="yes" Name="devtools_resources.pak" Source="$(var.Timma.TargetDir)devtools_resources.pak" />
+      </Component>
       <Component Id="cmp2AEA8B2F6BC0057463D03E475725C7F2" Guid="0A250E17-E546-4AC9-87F5-6B41843E5B1B">
         <File Id="fil9DA621742D2C31AB36FA4261345B73C2" KeyPath="yes" Name="d3dcompiler_43.dll" Source="$(var.Timma.TargetDir)d3dcompiler_43.dll" />
       </Component>
