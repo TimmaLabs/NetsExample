@@ -70,17 +70,17 @@ terminal.processReturn(2000, JSON.stringify({ baxiArgs: JSON.stringify({ AuthCod
  * Administration
  */
 terminal.cancel(); // (Hard) Cancel a pending operation
-terminal.cancel(2000, JSON.stringify({ printText: foobar }) ); // ... with custom print text
 terminal.cancel(false); // Soft cancel a pending operation (soft, as in, ask the user first. The test terminal doesn't seem to support this, though...)
 
 terminal.reconcile(); // AKA "päivänpäätös"
 terminal.reconcile(JSON.stringify({ printText: foobar }) ); // ... with custom print text
 terminal.reconcile(JSON.stringify({ baxiArgs: JSON.stringify({ Amount2: 1234 }) }) ); // ... with custom Baxi arguments
 
-terminal.printReport('x') // Print X-report (see app/Timma/Browser/BrowserAPI.cs in TimmaLabs/TimmaNets for all the supported report types)
-terminal.printReport('x', JSON.stringify({ printText: foobar }) ); // ... with custom print text
+// Print custom receipt (see Baxi API docs for valid print payload format)
+terminal.print( JSON.stringify({ printmsg: { ver:'1.0', rows: [{ type:'txt', data: 'foo' },{ type: 'txt', blank: 15 }] } }) );
 
-terminal.print( JSON.stringify({ printmsg: { ver:'1.0', rows: [{ type:'txt', data: 'foo' },{ type: 'txt', blank: 15 }] } }) ); // Print custom receipt (see Baxi API docs for valid print payload format)
+terminal.printReport('x') // Print X-report (see app/Timma/Browser/BrowserAPI.cs in TimmaLabs/TimmaNets for all the supported report types)
+terminal.printReport('x', JSON.stringify({ printText: foobar }) ); // ... with custom print text (stored in variable `foobar`)
 
 terminal.changeLanguage('se'); // Change terminal language to Swedish
 terminal.changeLanguage(); // Change terminal language to English (default)
@@ -88,7 +88,8 @@ terminal.changeLanguage(); // Change terminal language to English (default)
 /**
  * Helpers
  */
-terminal.optionalData('txnref-goes-here', 1, 567); // Output OptionalData structure including the available fields (txnref, autodcc, merch)
+// Output OptionalData structure including the available fields (txnref, autodcc, merch)
+terminal.optionalData('txnref-goes-here', 1, 567);
 terminal.optionalData('txnref-goes-here');
 terminal.optionalData('', 2);
 
