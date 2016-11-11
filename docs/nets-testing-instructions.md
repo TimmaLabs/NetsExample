@@ -1,7 +1,7 @@
 # Setup
 
-  0. See [README.md#General](./README.md#general) on how to configure the USB connection & dependencies
-  1. Connect the terminal via USB and launch `Timma.exe` (under `bin/x64` and `bin/x86` directories, respectively)
+  0. Install `Timma`
+  1. Connect the terminal via USB and launch `Timma.exe` (shortcut should be available on the Desktop)
   2. Login credentials: `harri@timma.fi` / `timma`
 
 # Flows
@@ -14,7 +14,7 @@
     * palvelun hintaa ja ALVia voit säätää kohdista `Alv %` ja `Hinta/kpl`
   4. Suorita maksu maksupäätteellä
 
-  Virhetapauksessa maksupääte tulostaa virhekuitin ja sovellusikkunassa näytetään virheilmoitus.
+  Virhetapauksessa maksupääte sovellusikkunassa näytetään virheilmoitus (oikeassa yläkulmassa).
   Näin menetellään myös, jos maksun vahvistuksen aikana klikataan `Peruuta`-painiketta
 
 ## Maksun mitätöinti/palautus
@@ -29,7 +29,6 @@
   3. Valitse `OK`, minkä jälkeen maksupäätteessä tulisi näkyä `Kortti`-kentän ilmoittama summa
   4. Suorita hyvitys maksupäätteellä
 
-## Päiväraportin (päivänpäätöksen) tulostaminen
+## Päivänpäätös sekä raporttien tulostaminen
 
-  1. Valitse _Tulot_-sivu sivunavigaatiosta
-  2. Valitse `Maksupääteraportti` tulotaulukon oikeasta yläkulmasta
+_Maksupääte_-sivulla (kts. navigaatiopalkki vasemmalla) voit tulostaa X-, Z- ja päivänpäätösraportin sekä kuitin viimeisimmästä maksutapahtumasta. Voit lisäksi tehdä päivänpäätöksen.
