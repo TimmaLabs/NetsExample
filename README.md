@@ -12,7 +12,7 @@ See the relevant section in the [Deployment Checklist](./docs/deployment-checkli
 
   * Enable the `Force COM Port Feature` and type in `9` in the [leftmost input field at the bottom of the dialog](./assets/images/force-com-port.png)
 
-2. Install the required [Visual C++ runtime components](https://www.microsoft.com/en-us/download/details.aspx?id=40784)
+2. Install the required [Visual C++ runtime components](https://www.microsoft.com/en-us/download/details.aspx?id=40784) (both `x86` and `x64` architectures if you're running Windows 10)
 
 3. Download & install the Windows 10 SDK: https://go.microsoft.com/fwlink/?LinkID=698771
 
