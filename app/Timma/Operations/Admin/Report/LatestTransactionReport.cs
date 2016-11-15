@@ -2,7 +2,7 @@
 {
     internal class LatestTransactionReport : Administration
     {
-        public LatestTransactionReport(string printText = "") : base(printText) { }
+        public LatestTransactionReport(string printText = "", string baxiArgs = "{}") : base(printText, baxiArgs) { }
 
         protected override int AdmCode
         {

@@ -103,10 +103,9 @@ namespace Timma.Browser
         /// Cancel ongoing operation
         /// </summary>
         /// <param name="hard">
-        ///     Whether or not to prompt the user for cancellation
-        ///     (does seem to be supported by the Baxi API / terminal, though...)
+        ///     If set to false, the terminal has the choice to ignore the request. 
+        ///     The OnLocalMode result will determine the final status of the transaction.
         /// </param>
-        /// <param name="options.baxiArgs">TransferAmount arguments in JSON string format</param>
         public void Cancel(bool hard = true)
         {
             Console.Write("Canceling");
@@ -152,6 +151,7 @@ namespace Timma.Browser
         ///     Custom print text, use the {{baxiTxt}} placeholder tag
         ///     to embed the Baxi print: { type: 'txt', data: '{{baxiTxt}}' }
         /// </param>
+        /// <param name="options.baxiArgs">TransferAmount arguments in JSON string format</param>
         /// <returns>JSON payload sent to the terminal</returns>
         public string PrintReport(string type, string options = "{}")
         {
@@ -161,18 +161,18 @@ namespace Timma.Browser
             switch (type.ToUpper())
             {
                 case "Z":
-                    op = new ZReport(printText: opts.printText);
+                    op = new ZReport(printText: opts.printText, baxiArgs: opts.baxiArgs);
                     break;
                 case "X":
-                    op = new XReport(printText: opts.printText);
+                    op = new XReport(printText: opts.printText, baxiArgs: opts.baxiArgs);
                     break;
                 case "EOT":
-                    op = new EOTReport(printText: opts.printText);
+                    op = new EOTReport(printText: opts.printText, baxiArgs: opts.baxiArgs);
                     break;
                 case "LATEST":
                 case "TRANSACTION":
                 case "LATESTTRANSACTION":
-                    op = new LatestTransactionReport(printText: opts.printText);
+                    op = new LatestTransactionReport(printText: opts.printText, baxiArgs: opts.baxiArgs);
                     break;
                 default:
                     throw new NotImplementedException(string.Format("Report of type {0} is not supported.", type));

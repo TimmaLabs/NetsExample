@@ -187,7 +187,7 @@
     <Compile Include="Timma\Print\Rows\BlankRow.cs" />
     <Compile Include="Timma\Print\Rows\Logo.cs" />
     <Compile Include="Timma\Print\Rows\Row.cs" />
-    <Compile Include="Timma\Operations\Admin\Report\Reconciliation.cs" />
+    <Compile Include="Timma\Operations\Admin\Reconciliation.cs" />
     <Compile Include="Timma\Operations\Admin\Report\LatestTransactionReport.cs" />
     <Compile Include="Timma\Operations\Admin\Report\EOTReport.cs" />
     <Compile Include="Timma\Operations\Admin\Report\XReport.cs" />
