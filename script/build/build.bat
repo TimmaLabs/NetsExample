@@ -4,16 +4,22 @@ setlocal enabledelayedexpansion
 
 SET mode=%1
 SET arch=%2
+SET local_build=%3
+
 SET ROOT_DIR=%cd%
 SET SCRIPT_DIR=%ROOT_DIR%\script
 SET BIN_DIR=bin
-SET OUTPUT_DIR=%BIN_DIR%\%arch%\%mode%
+SET OUTPUT_DIR=%BIN_DIR%\%mode%\%arch%
 SET CONSTANTS=PRODUCTION
 
 SET msbuild="%PROGRAMFILES(x86)%\MSBuild\14.0\Bin\MSBuild"
 
 if "%mode%" == "Debug" (
 	SET CONSTANTS=%CONSTANTS%;DEBUG
+)
+
+if DEFINED local_build  (
+	SET CONSTANTS=%CONSTANTS%;LOCAL
 )
 
 %msbuild% "app\timma.csproj" /t:rebuild /p:Configuration=%mode%;Platform=%arch%;DefineConstants="!CONSTANTS!"
