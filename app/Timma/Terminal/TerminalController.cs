@@ -169,7 +169,7 @@ namespace Timma.Terminal
 
         private void HandleJsonReceived(object sender, JsonReceivedArgs args)
         {
-            Console.Write("JSON received: {0}", args.JsonString);
+            Debug.Write("JSON received: {0}", args.JsonString);
         }
 
         internal TerminalInfo GetInfo()

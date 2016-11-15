@@ -109,7 +109,7 @@ namespace Timma.Browser
         /// </param>
         public void Cancel(bool hard = true)
         {
-            Console.Write("Canceling");
+            Debug.Write("Canceling");
 
             if (hard)
             {
@@ -185,16 +185,6 @@ namespace Timma.Browser
         }
 
         /// <summary>
-        /// Change terminal UI language (receipts will still use the card's language)
-        /// </summary>
-        /// <param name="langID">Language ID</param>
-        /// <returns>Success code (1 = success, 0 = fail)</returns>
-        public int ChangeLanguage(string langID = "en")
-        {
-            return terminalCtrl.SetLanguage(langID);
-        }
-
-        /// <summary>
         /// Raw print
         /// </summary>
         /// <param name="printText">
@@ -205,6 +195,27 @@ namespace Timma.Browser
         public int Print(string printText)
         {
             return terminalCtrl.Print(printText);
+        }
+
+        /// <summary>
+        /// Check/update the terminal software
+        /// </summary>
+        /// <returns>JSON payload sent to the terminal</returns>
+        public string Update()
+        {
+            Update r = new Update();
+            terminalCtrl.SendAdminOperation(r);
+            return JsonConvert.SerializeObject(r.Args);
+        }
+
+        /// <summary>
+        /// Change terminal UI language (receipts will still use the card's language)
+        /// </summary>
+        /// <param name="langID">Language ID</param>
+        /// <returns>Success code (1 = success, 0 = fail)</returns>
+        public int ChangeLanguage(string langID = "en")
+        {
+            return terminalCtrl.SetLanguage(langID);
         }
 
         /// <summary>
