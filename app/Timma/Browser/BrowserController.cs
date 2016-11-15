@@ -6,6 +6,7 @@ using Newtonsoft.Json;
 using System.Threading;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Timma.Terminal;
 
 namespace Timma.Browser
 {

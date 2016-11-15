@@ -4,7 +4,7 @@ using BBS.BAXI;
 using Timma.Operations;
 using System.Diagnostics;
 
-namespace Timma
+namespace Timma.Terminal
 {
     class TerminalController
     {
@@ -170,6 +170,11 @@ namespace Timma
         private void HandleJsonReceived(object sender, JsonReceivedArgs args)
         {
             Console.Write("JSON received: {0}", args.JsonString);
+        }
+
+        internal TerminalInfo GetInfo()
+        {
+            return new TerminalInfo(_terminal);
         }
     }
 }

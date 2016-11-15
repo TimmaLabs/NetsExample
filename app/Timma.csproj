@@ -199,12 +199,13 @@
     <Compile Include="Timma\Operations\Admin\Report\ZReport.cs" />
     <Compile Include="Timma\Print\Document.cs" />
     <Compile Include="Timma\Print\Rows\TextRow.cs" />
+    <Compile Include="Timma\Terminal\TerminalInfo.cs" />
     <Compile Include="Timma\Utils.cs" />
     <Compile Include="Timma\Operations\Transactions\Purchase.cs" />
     <Compile Include="Timma\Operations\Transactions\Return.cs" />
     <Compile Include="Timma\Browser\BrowserController.cs" />
     <Compile Include="Timma\Operations\Transactions\Type.cs" />
-    <Compile Include="Timma\TerminalController.cs" />
+    <Compile Include="Timma\Terminal\TerminalController.cs" />
     <Compile Include="Timma\Operations\Transactions\Reversal.cs" />
     <Compile Include="Timma\Operations\Transactions\Transaction.cs" />
     <Compile Include="Timma\Operations\Transactions\VATPurchase.cs" />

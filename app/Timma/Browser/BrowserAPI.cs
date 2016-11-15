@@ -5,6 +5,7 @@ using System.Diagnostics;
 using Timma.Operations;
 using Timma.Operations.Admin;
 using Timma.Operations.Transactions;
+using Timma.Terminal;
 
 namespace Timma.Browser
 {
@@ -223,6 +224,12 @@ namespace Timma.Browser
         public string GetVersion()
         {
             return Version.Value;
+        }
+
+        public string GetTerminalInfo()
+        {
+            TerminalInfo info = terminalCtrl.GetInfo();
+            return JsonConvert.SerializeObject(info);
         }
     }
 }

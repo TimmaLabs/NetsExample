@@ -5,7 +5,7 @@ using CefSharp;
 using CefSharp.Wpf;
 using BBS.BAXI;
 using Timma.Browser;
-using System.Diagnostics;
+using Timma.Terminal;
 
 namespace Timma
 {
@@ -70,9 +70,8 @@ namespace Timma
 
         private void Reload(object sender, ExecutedRoutedEventArgs e)
         {
+            System.Diagnostics.Debug.WriteLine("RELOAD");
             browserReloading = true;
-            Debug.WriteLine("RELOAD");
-
             browser.Reload(true);
         }
 
