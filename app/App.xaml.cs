@@ -3,16 +3,20 @@ using System.Windows;
 
 namespace Timma
 {
-    public static class Version
-    {
-        public const string Value = "1.0.0";
-    }
-
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
     public partial class App : Application
     {
+        public static string Version {
+            get
+            {
+                System.Reflection.Assembly assembly = System.Reflection.Assembly.GetExecutingAssembly();
+                System.Diagnostics.FileVersionInfo fvi = System.Diagnostics.FileVersionInfo.GetVersionInfo(assembly.Location);
+                return fvi.FileVersion;
+            }
+        }
+
         protected override void OnStartup(StartupEventArgs e)
         {
             var settings = new CefSettings();

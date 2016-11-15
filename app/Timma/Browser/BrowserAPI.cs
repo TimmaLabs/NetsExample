@@ -234,7 +234,7 @@ namespace Timma.Browser
 
         public string GetVersion()
         {
-            return Version.Value;
+            return App.Version;
         }
 
         public string GetTerminalInfo()
