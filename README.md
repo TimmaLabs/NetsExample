@@ -44,3 +44,14 @@ If Visual Studio complains about a missing `BBS` (Baxi API) reference when you t
   1. Right-click on the `Timma` project
   2. `Add` -> `Reference...`
   3. Select `..Baxi.net_1.4.2.1\baxi.net45\baxi_dotnet.dll`
+
+## Version Control
+
+If the release will include breaking changes, start with incrementing the version numbers (`major`/`minor`/`patch`):
+
+1. Assembly version: right-click on `Timma` project -> `Properties` -> `Application` -> `Assembly Information...` -> `Assembly Version` and `File Version` (can be identical)
+2. `Timma.Version`: see [App.xaml.cs](./app/App.xaml.cs)
+3. Installer ([Setup.wxs](setup/Setup.wxs) and [Bundle.wxs](Bundle/bundle.wxs)) versions: https://www.firegiant.com/wix/tutorial/upgrades-and-modularization/
+4. `NetsService` version in [TimmaAdmin](https://bitbucket.org/lauriorkoneva/timma_admin_new)
+
+The version format is `major.minor.patch.build`. The `build` version can be freely incremented for internal revisioning purposes, but changes to `major`/`minor`/`patch` versions require updating the version/GUID entries in the installer files as described in step 3 above.
