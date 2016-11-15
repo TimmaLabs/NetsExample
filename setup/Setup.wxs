@@ -3,8 +3,10 @@
 
   <?include $(sys.CURRENTDIR)Includes\Variables.wxi ?>
 
-  <Product Id="313E5B5C-02DA-4459-A39D-A78491B8E344" Name="Timma" Language="1033" Version="1.0.0.1" Manufacturer="Timma Oy Ab" UpgradeCode="dced035b-2e9a-4337-9976-d0684aefbad0">
-		<Package Id="DC169A50-AC70-44FE-B2D0-FCAB83C49AC8" InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+  <Product Id="313E5B5C-02DA-4459-A39D-A78491B8E344" Name="Timma" Language="1033" Version="1.1.0.0" Manufacturer="Timma Oy Ab" UpgradeCode="dced035b-2e9a-4337-9976-d0684aefbad0">
+    
+    <!-- Do not add an Id attribute for package to avoid collisions with non-identical .msi files -->
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
     
 		<MajorUpgrade DowngradeErrorMessage="A newer version of Timma is already installed." />
 		<MediaTemplate />
