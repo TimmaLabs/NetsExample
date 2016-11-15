@@ -5,7 +5,7 @@ namespace Timma
 {
     public static class Version
     {
-        public const string Value = "1.0";
+        public const string Value = "1.0.0";
     }
 
     /// <summary>
