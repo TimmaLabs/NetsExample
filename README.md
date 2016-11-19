@@ -53,4 +53,4 @@ If the release will include breaking changes, start with incrementing the versio
 2. Installer ([Setup.wxs](setup/Setup.wxs) and [Bundle.wxs](Bundle/bundle.wxs)) versions: https://www.firegiant.com/wix/tutorial/upgrades-and-modularization/
 3. `NetsService` version in [TimmaAdmin](https://bitbucket.org/lauriorkoneva/timma_admin_new)
 
-The version format is `major.minor.patch.build`. The `build` version can be freely incremented for internal revisioning purposes, but changes to `major`/`minor`/`patch` versions require updating the version/GUID entries in the installer files as described in step 3 above.
+The version format is `major.minor.patch.build`. The `build` version can be freely incremented for internal revisioning purposes, but changes to `major`/`minor`/`patch` versions require updating the version/GUID entries in the installer files as described in step 2 above.
