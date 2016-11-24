@@ -176,5 +176,13 @@ namespace Timma.Terminal
         {
             return new TerminalInfo(_terminal);
         }
+
+        internal int PingHost()
+        {
+            SendTldArgs a = new SendTldArgs();
+            a.TldType = "REQ";
+            a.TldField = Encoding.ASCII.GetBytes("1012");
+           return  _terminal.SendTLD(a);
+        }
     }
 }

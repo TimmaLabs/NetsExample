@@ -218,6 +218,11 @@ namespace Timma.Browser
             return terminalCtrl.SetLanguage(langID);
         }
 
+        public int PingHost()
+        {
+            return terminalCtrl.PingHost();
+        }
+
         /// <summary>
         /// API (admin operations) END
         /// </summary>
