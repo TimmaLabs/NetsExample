@@ -23,9 +23,10 @@ See the relevant section in the [Deployment Checklist](./docs/deployment-checkli
     192.168.0.10 db.timma.dev
     192.168.0.1 api.timma.dev
     192.168.0.2 timma.dev
-    192.168.0.3 admin.timma.dev
+    192.168.0.3 customer.timma.dev
     192.168.0.4 business.timma.dev
     192.168.0.5 customer-sites.timma.dev
+    192.168.0.6 admin.timma.dev
     # </TimmaDocker>
     ```
 
@@ -51,6 +52,6 @@ If the release will include breaking changes, start with incrementing the versio
 
 1. Assembly version: right-click on `Timma` project -> `Properties` -> `Application` -> `Assembly Information...` -> `Assembly Version` and `File Version` (can be identical, see http://stackoverflow.com/a/65062 for more information)
 2. Installer ([Setup.wxs](setup/Setup.wxs) and [Bundle.wxs](Bundle/bundle.wxs)) versions: https://www.firegiant.com/wix/tutorial/upgrades-and-modularization/
-3. `NetsService` version in [TimmaAdmin](https://bitbucket.org/lauriorkoneva/timma_admin_new)
+3. `NetsService` version in [timma_admin_new](https://bitbucket.org/lauriorkoneva/timma_admin_new)
 
 The version format is `major.minor.patch.build`. The `build` version can be freely incremented for internal revisioning purposes, but changes to `major`/`minor`/`patch` versions require updating the version/GUID entries in the installer files as described in step 2 above.

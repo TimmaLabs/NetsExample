@@ -27,7 +27,7 @@ namespace Timma
                 #elif (PRODUCTION && DEBUG && !LOCAL)
                 return "http://testi.timma.fi/admin";
                 #else
-                return "http://admin.timma.dev";
+                return "http://customer.timma.dev";
                 #endif
             }
         }
