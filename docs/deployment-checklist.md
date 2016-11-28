@@ -7,12 +7,12 @@
 Payment terminals provided by Nets that we currently support:
 
   * [iCT250](https://shop.nets.eu/fi/web/fin/40?terminal_id=TFIN4400-7648-R) (preferred)
-  * [iPP350](https://ingenico.us/smart-terminals/pinpads-terminals/ipp-350.html) (requires an external receipt printer)
+  * [iPP350](https://shop.nets.eu/fi/web/fin/40?terminal_id=TFIN4100-7641-R) (requires an external receipt printer)
   * [iWL250B](https://shop.nets.eu/fi/web/fin/40?terminal_id=TFIN4300-7648-R) (uses Bluetooth, not yet "fully supported")
 
 ### Supported terminal version
 
-`4.81` (equivalent test terminal version: `43.19`)
+`4.81` (equivalent test terminal version `43.19`)
 
 
 ## Before Going On-site
@@ -50,7 +50,7 @@ If the customer consists of multiple proprietorships, Nets will need to enable a
 
 ### 1. Installing the Timma software
 
-  * If the customer is running Windows, download the installer from [bit.ly/timma-for-windows](http://bit.ly/timma-for-windows) (either `32-bit` or `64-bit` architecture, check via `Search` -> `System`)
+  * If the customer is running Windows, download the installer from [bit.ly/timma-for-windows](http://bit.ly/timma-for-windows) (either `32-bit` or `64-bit` architecture, check via `Search` -> `System` in Windows) and install Timma
   * If the customer is running OS X, see the docs for [OS X Integration](./osx-integration.md).
 
 It might take up to 10 minutes for the installer to complete depending on the OS & existing software installed, so be patient.
@@ -59,7 +59,7 @@ It might take up to 10 minutes for the installer to complete depending on the OS
 
 You can check the terminal for updates via Timma (skip to step 3.), or directly over the Ethernet cable (preferred alternative):
 
-  1. If you wish to do the update over the Ethernet cable, first ensure the Ethernet cable is connected and [the terminal settings are set accordingly](#how-do-i-connect-the-payment-terminal-directly-to-nets-over-ethernet)
+  1. If you wish to do the update over the Ethernet cable, first ensure the Ethernet cable is connected to the payment terminal and that [the terminal settings are set accordingly](#how-do-i-connect-the-payment-terminal-directly-to-nets-over-ethernet)
   2. [Check/update the payment terminal software](#how-do-i-updatecheck-the-version-of-the-payment-terminal-software)
   3. It should take ~5 minutes for the terminal to complete the update
 
@@ -84,7 +84,7 @@ Make sure power is turned on the terminal, swipe the merchant card on the termin
 
 Make sure power is turned on the terminal, swipe the merchant card on the terminal and select:
 
-* `6. Parameters` -> `1. Other`
+  * `6. Parameters` -> `1. Other`
   * `2. Connections` -> `Comm. type = Cashier`
   * `3. Cashier` -> `Cashier = Yes`
   * `3. Cashier` -> `Comm. type = USB SLAVE`
@@ -95,7 +95,7 @@ Return to the default view by hitting the `Back` button (red) a couple of times.
 
 Make sure power is turned on the terminal, swipe the merchant card on the terminal and select:
 
-* `6. Parameters` -> `1. Other`
+  * `6. Parameters` -> `1. Other`
   * `2. Connections` -> `Comm. type = Ethernet`
   * `2. Connections` -> `Host IP Address = 91.102.24.142` (might be different in Sweden?)
   * `2. Connections` -> `Host Port = 9670`
