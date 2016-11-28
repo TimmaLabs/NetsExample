@@ -3,7 +3,7 @@
      xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"
      xmlns:bal="http://schemas.microsoft.com/wix/BalExtension">
   
-	<Bundle Name="Timma" Version="1.1.0.0" Manufacturer="Timma Oy Ab" UpgradeCode="885495c3-4e11-4bfd-af87-caf965e9c29e">
+	<Bundle Name="Timma" Version="1.1.0.1" Manufacturer="Timma Oy Ab" UpgradeCode="885495c3-4e11-4bfd-af87-caf965e9c29e">
     <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense">
       <bal:WixStandardBootstrapperApplication LicenseFile="$(var.Setup.ProjectDir)LICENSE.rtf" LogoFile="$(var.Setup.ProjectDir)Gfx/logo.bmp" />
     </BootstrapperApplicationRef>
