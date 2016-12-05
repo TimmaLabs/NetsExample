@@ -55,3 +55,8 @@ If the release will include breaking changes, start with incrementing the versio
 3. `NetsService` version in [timma_admin_new](https://bitbucket.org/lauriorkoneva/timma_admin_new)
 
 The version format is `major.minor.patch.build`. The `build` version can be freely incremented for internal revisioning purposes, but changes to `major`/`minor`/`patch` versions require updating the version/GUID entries in the installer files as described in step 2 above.
+
+## FAQ
+
+### What to do if the test payment terminal rejects all/some of test cards?
+The card parameters need to be updated. You can do this via `3. Cards` -> `1. Get cards` in the terminal's merchant menu.
