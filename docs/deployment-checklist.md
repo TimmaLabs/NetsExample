@@ -39,6 +39,10 @@ Once the customer has a Nets provided terminal we support, ask the customer for 
 
 If the customer consists of multiple proprietorships, Nets will need to enable a so-called **multi-banking support** on the payment terminal. Contact Nets about this and they'll provide us the respective IDs (`OperID`) for identifying each sole proprietorship. **Forward this information to the dev team!**
 
+### Does the customer want reconciliation ("päivänpäätös") to be done automatically?
+
+If so, inform Nets about this / mention this in the payment terminal order form.
+
 ### What extra equipment & materials does the customer need?
 
 * Receipt rolls (Nets ships only 2 along with the original packaging)
