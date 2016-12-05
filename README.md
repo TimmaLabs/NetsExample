@@ -58,5 +58,5 @@ The version format is `major.minor.patch.build`. The `build` version can be free
 
 ## FAQ
 
-### What to do if the test payment terminal rejects all/some of test cards?
+### What to do if the test payment terminal rejects all/some of the test cards?
 The card parameters need to be updated. You can do this via `3. Cards` -> `1. Get cards` in the terminal's merchant menu.
