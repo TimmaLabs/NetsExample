@@ -33,7 +33,7 @@ Payment terminals provided by Nets that we currently support:
 
 ### What do I need to register a customer with Nets?
 
-Once the customer has a Nets provided terminal we support, ask the customer for their [payment terminal ID](#how-do-i-figure-out-the-id-of-the-payment-terminal). Then, contact Nets to check if the customer's payment terminal is running the latest (supported) version. Nets will need the **payment terminal ID** for this. Any updates to the payment terminal software will be carried over during the [installation process](#installation-on-site--remote).
+Once the customer has a Nets provided terminal we support, ask the customer for their [payment terminal ID](#how-do-i-figure-out-the-id-of-the-payment-terminal). Then, contact Nets to check if the customer's payment terminal is running the latest (supported) version. Nets will need the **payment terminal ID** for this. Any updates to the payment terminal software will be carried over during the [installation process](#installation-on-site--remote). This also **very important** in guaranteeing that the customer does not own an outdated version (Lumo) of the iPP350/iCT250 terminals, for which the integration does not work. If this is the case, ask the customer to change his/her existing terminal to a newer one (Viking version). The customer should fill in a separate [terminal return form](../assets/palautusilmoitus.pdf) to process the return. 
 
 ### What type of business is the customer running? Does it include multiple proprietorships or is everybody under a single company?
 
@@ -42,6 +42,7 @@ If the customer consists of multiple proprietorships, Nets will need to enable a
 ### What extra equipment & materials does the customer need?
 
 * Receipt rolls (Nets ships only 2 along with the original packaging)
+* Receipt printer (only necessary for iPP350)
 * [USB A to USB B](../assets/images/usb-a-to-usb-b.jpg) cable (with a 90° angle). We should have these lying around
 * If the customer is running a Mac, a pre-packaged Windows on a USB stick (see [OS X Integration](./osx-integration.md) for more).
 
