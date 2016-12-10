@@ -60,8 +60,8 @@ namespace Timma.Terminal
             var json = new SendJsonArgs(jsonStr);
             int code = _terminal.SendJson(json);
             Debug.WriteLine("SendJson return content {0}:", json.JsonData);
-            Debug.WriteLine("SendJson return code: {0}", code);
-            return code;
+            Debug.WriteLine("SendJson reject code: {0}", _terminal.MethodRejectCode);
+            return _terminal.MethodRejectCode;
         }
 
         public int SetLanguage(String langID = "en")
@@ -71,8 +71,8 @@ namespace Timma.Terminal
             args.TldField = Encoding.ASCII.GetBytes("1014" + ASCII_UNIT_SEPARATOR + "0002" + ASCII_UNIT_SEPARATOR + langID + ASCII_REPORT_SEPARATOR);
 
             Debug.WriteLine("Changing language to {0}", langID);
-            int code =  _terminal.SendTLD(args);
-            return Convert.ToBoolean(code) ? code : _terminal.MethodRejectCode;
+            int code = _terminal.SendTLD(args);
+            return _terminal.MethodRejectCode;
         }
 
         public void Open()
