@@ -25,7 +25,7 @@ Payment terminals provided by Nets that we currently support:
 
 ### What type of payment terminal solution does the customer currently have?
 
-* None: ask which one of the [supported terminals](#supported-payment-terminals) the customer would be interested in. We will deal with ordering it from [Nets](https://shop.nets.eu/).
+* None: ask which one of the [supported terminals](#supported-payment-terminals) the customer would be interested in. We will deal with ordering it from [Nets](https://www.signom.com/nets/PowerForm.signom?powerFormId=NETS_FINLAND_HELPER).
 
 * Standalone or integrated:
   * If the terminal is **not** provided by Nets, ask the customer to terminate his/her current contract and proceed as above
@@ -33,7 +33,17 @@ Payment terminals provided by Nets that we currently support:
 
 ### What do I need to register a customer with Nets?
 
-Once the customer has a Nets provided terminal we support, ask the customer for their [payment terminal ID](#how-do-i-figure-out-the-id-of-the-payment-terminal). Then, contact Nets to check if the customer's payment terminal is running the latest (supported) version. Nets will need the **payment terminal ID** for this. Any updates to the payment terminal software will be carried over during the [installation process](#installation-on-site--remote). This also **very important** in guaranteeing that the customer does not own an outdated version (Lumo) of the iPP350/iCT250 terminals, for which the integration does not work. If this is the case, ask the customer to change his/her existing terminal to a newer one (Viking version). The customer should fill in a separate [terminal return form](../assets/palautusilmoitus.pdf) to process the return. 
+Use the [Nets registration form](https://www.signom.com/nets/PowerForm.signom?powerFormId=NETS_FINLAND_HELPER) for registering new/existing Nets customers. See [nets_registration_form.pdf](../assets/nets_registration_form.pdf) for instructions. Information you will need...
+
+* seller number: `108398`
+* password: `n87y62`
+* [customer information](https://timma.fi/hallinta)
+* device software version: `Viking`
+* cables: `USB`
+* terminals to replaced (if any): [payment terminal ID](#how-do-i-figure-out-the-id-of-the-payment-terminal) or serial number found on a sticker at the bottom of the terminal device (ask the customer to fill in the [terminal return form](../assets/palautusilmoitus.pdf) as well)
+* additional information: "Payment terminal version 4.81 required"
+
+For existing terminals that are not running the latest software version (4.81) any updates to the payment terminal software will be carried out during the [installation process](#installation-on-site--remote). 
 
 ### What type of business is the customer running? Does it include multiple proprietorships or is everybody under a single company?
 
@@ -115,3 +125,7 @@ Make sure power is turned on the terminal, swipe the merchant card on the termin
 `8. Program` -> `1. Fetch Program`
 
 If updates are avaialble, this will download & install the latest software (rebooting the terminal in the process). If the payment terminal has the most up-to-date version of the software, it will print out the software version number. The version of the software should be at least that of the [abovementioned version](#supported-terminal-version).
+
+### The terminal refuses to print receipt/reports and displays an "unknown function" error. What to do?
+
+Update the terminal (see [above](#how-do-i-updatecheck-the-version-of-the-payment-terminal-software)).
