@@ -8,7 +8,6 @@ Payment terminals provided by Nets that we currently support:
 
   * [iCT250](https://shop.nets.eu/fi/web/fin/40?terminal_id=TFIN4400-7648-R) (preferred)
   * [iPP350](https://shop.nets.eu/fi/web/fin/40?terminal_id=TFIN4100-7641-R) (requires an external receipt printer)
-  * [iWL250B](https://shop.nets.eu/fi/web/fin/40?terminal_id=TFIN4300-7648-R) (uses Bluetooth, not yet "fully supported")
 
 ### Supported terminal version
 
