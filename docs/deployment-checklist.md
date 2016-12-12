@@ -11,8 +11,8 @@ Payment terminals provided by Nets that we currently support:
 
 ### Supported terminal version
 
-🇫🇮 `4.81` (equivalent test terminal version `43.19`)
-🇸🇪 `4.62` 
+* 🇫🇮 `4.81` (equivalent test terminal version `43.19`)
+* 🇸🇪 `4.62` 
 
 
 ## Before Going On-site
