@@ -31,9 +31,12 @@ Payment terminals provided by Nets that we currently support:
   * If the terminal is **not** provided by Nets, ask the customer to terminate his/her current contract and proceed as above
   * If the terminal is **not** one that we support, proceed as above.
 
-### What do I need to register a customer with Nets?
+### What do I need to register a (new/existing) customer with Nets?
 
-Use the [Nets registration form](https://www.signom.com/nets/PowerForm.signom?powerFormId=NETS_FINLAND_HELPER) for registering new/existing Nets customers. See [nets_registration_form.pdf](../assets/nets_registration_form.pdf) for instructions. Information you will need...
+* 🇫🇮 [Nets registration form](https://www.signom.com/nets/PowerForm.signom?powerFormId=NETS_FINLAND_HELPER)
+* 🇸🇪 [PDF](../assets/bestallningsblankett.pdf)
+
+See [nets_registration_form.pdf](../assets/nets_registration_form.pdf) for instructions. Information you will need...
 
 * seller number: `108398`
 * password: `n87y62`
