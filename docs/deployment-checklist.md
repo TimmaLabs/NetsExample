@@ -21,7 +21,7 @@ Payment terminals provided by Nets that we currently support:
 
 * Windows: the supported versions are 7, 8 and 10 (both 32-bit and 64-bit)
 
-* OS X (Mac): the customer will need to run Windows in a VM (Virtual Machine). See the docs for [OS X Integration](./osx-integration.md). **Minimum system requirements**: 8GB of memory, 30GB of available disk space and at least 4 cores
+* OS X (Mac): the customer will need to run Windows in a VM (Virtual Machine). See the docs for [OS X Integration](./osx-integration.md). **Minimum system requirements**: 8GB of memory, 30GB of available disk space and at least 4 processor cores
 
 ### What type of payment terminal solution does the customer currently have?
 
