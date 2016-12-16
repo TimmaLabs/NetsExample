@@ -60,6 +60,7 @@ If so, inform Nets about this / mention this in the payment terminal order form.
 
 * Receipt rolls (Nets ships only 2 along with the original packaging)
 * Receipt printer (only necessary for iPP350)
+  * [Star TSP100 drivers](https://goo.gl/xEvKuw)
 * [USB A to USB B](../assets/images/usb-a-to-usb-b.jpg) cable (with a 90° angle). We should have these lying around
 * If the customer is running a Mac, a pre-packaged Windows on a USB stick (see [OS X Integration](./osx-integration.md) for more).
 
