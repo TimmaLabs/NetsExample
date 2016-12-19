@@ -12,7 +12,7 @@ Payment terminals provided by Nets that we currently support:
 ### Supported terminal version
 
 * 🇫🇮 `4.81` (equivalent test terminal version `43.19`)
-* 🇸🇪 `4.62` 
+* 🇸🇪 `4.62`
 
 
 ## Before Going On-site
@@ -46,11 +46,13 @@ See [nets_registration_form.pdf](../assets/nets_registration_form.pdf) for instr
 * terminals to replaced (if any): [payment terminal ID](#how-do-i-figure-out-the-id-of-the-payment-terminal) or serial number found on a sticker at the bottom of the terminal device (ask the customer to fill in the [terminal return form](../assets/palautusilmoitus.pdf) as well)
 * additional information: "Payment terminal version 4.81 required"
 
-For existing terminals that are not running the latest software version (4.81) any updates to the payment terminal software will be carried out during the [installation process](#installation-on-site--remote). 
+For existing terminals that are not running the latest software version (4.81) any updates to the payment terminal software will be carried out during the [installation process](#installation-on-site--remote).
+
+Once the customer has a Nets provided terminal we support, ask the customer for their [payment terminal ID](#how-do-i-figure-out-the-id-of-the-payment-terminal). Then, contact Nets to check if the customer's payment terminal is running the latest (supported) version. Nets will need the **payment terminal ID** for this. Any updates to the payment terminal software will be carried over during the [installation process](#installation-on-site--remote). This also **very important** in guaranteeing that the customer does not own an outdated version (Lumo) of the iPP350/iCT250 terminals, for which the integration does not work. If this is the case, ask the customer to change his/her existing terminal to a newer one (Viking version). The customer should fill in a separate [terminal return form](../assets/palautusilmoitus.pdf) to process the return.
 
 ### What type of business is the customer running? Does it include multiple proprietorships or is everybody under a single company?
 
-If the customer consists of multiple proprietorships, Nets will need to enable a so-called **multi-banking support** on the payment terminal. Contact Nets about this and they'll provide us the respective IDs (`OperID`) for identifying each sole proprietorship. **Forward this information to the dev team!**
+If the customer consists of multiple proprietorships, Nets will need to enable a so-called **multi-banking support** on the payment terminal. Mention this in the terminal order/registration form. **Let the dev team know about any multi-banking terminals!**
 
 ### Does the customer want reconciliation ("päivänpäätös") to be done automatically?
 
