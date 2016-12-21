@@ -56,14 +56,14 @@ If the customer consists of multiple proprietorships, Nets will need to enable a
 
 ### Does the customer want reconciliation ("päivänpäätös") to be done automatically?
 
-If so, inform Nets about this / mention this in the payment terminal order form.
+If so, inform Nets about this / mention this in the payment terminal registration form.
 
 ### What extra equipment & materials does the customer need?
 
 * Receipt rolls (Nets ships only 2 along with the original packaging)
 * Receipt printer (only necessary for iPP350)
   * [Star TSP100 drivers](https://goo.gl/xEvKuw)
-* [USB A to USB B](../assets/images/usb-a-to-usb-b.jpg) cable (with a 90° angle). We should have these lying around
+* [USB A to USB B](../assets/images/usb-a-to-usb-b.jpg) cable (with a 90° angle). Request this in the registration form (or, if this'd be for an existing Nets customer, we can provide one from our own inventory)
 * If the customer is running a Mac, a pre-packaged Windows on a USB stick (see [OS X Integration](./osx-integration.md) for more).
 
 
@@ -76,22 +76,24 @@ If so, inform Nets about this / mention this in the payment terminal order form.
 
 It might take up to 10 minutes for the installer to complete depending on the OS & existing software installed, so be patient.
 
-### 2. Checking the terminal software for updates
+### 2. Integrating the payment terminal with Timma
 
-You can check the terminal for updates via Timma (skip to step 3.), or directly over the Ethernet cable (preferred alternative):
-
-  1. If you wish to do the update over the Ethernet cable, first ensure the Ethernet cable is connected to the payment terminal and that [the terminal settings are set accordingly](#how-do-i-connect-the-payment-terminal-directly-to-nets-over-ethernet)
-  2. [Update the payment terminal software](#how-do-i-update-the-version-of-the-payment-terminal-software)
-  3. It should take ~5 minutes for the terminal to complete the update
-
-### 3. Integrating the payment terminal with Timma
-
-  1. Change the terminal settings to [communicate with Timma via USB](#how-do-i-prepare-the-payment-terminal-to-be-connected-to-timma)
-  2. Connect the payment terminal to the computer via a [USB A to USB B](../assets/images/usb-a-to-usb-b.jpg) cable
+  1. First, if the customer's payment terminal is configured for multi-banking, see the [instructions on how to update the customer's & users Timma account information accordingly](./multibanking-terminal.md). Otherwise proceed to step 2.
+  2. Change the terminal settings to [communicate with Timma via USB](#how-do-i-prepare-the-payment-terminal-to-be-connected-to-timma)
+  3. Connect the payment terminal to the computer via a [USB A to USB B](../assets/images/usb-a-to-usb-b.jpg) cable
     * If the customer is running Timma on a Mac (= inside a Virtual Machine) make sure the [USB connection is also shared from the host machine](../assets/images/share-host-usb.jpeg). Connect the USB via `Devices` -> `USB` -> `Sagem`
-  3. Launch `Timma.exe` (should be available on the Desktop)
-  4. Wait for the login screen to appear. If the connection was **not** successfully established, a [warning prompt should appear at the top of the application window](../assets/images/terminal-disconnected.jpeg). If this is the case, try [re-connecting the terminal to the computer](reconnecting-the-terminal.md).
+  4. Launch `Timma.exe` (should be available on the Desktop)
+  5. Wait for the login screen to appear. If the connection was **not** successfully established, a [warning prompt should appear at the top of the application window](../assets/images/terminal-disconnected.jpeg). If this is the case, try [re-connecting the terminal to the computer](reconnecting-the-terminal.md).
+  6. Check that everything works by navigating to the [Payment Terminal](../assets/images/payment_terminal_version.png) view and printing out e.g. a `Z-report`. For multi-banking customers, you should try this for each account (change accounts via the `Select account` drop-down on the Payment Terminal view)
+  7. Done!
 
+### 3. Checking the terminal software for updates
+
+First, [check if the terminal version is outdated](#how-do-i-check-the-payment-terminal-version) and an update is required. If so, you can update the terminal via the (Timma) USB connection, or over the Ethernet cable (preferred alternative):
+
+  1. If you wish to do the update over the Ethernet cable, first ensure the Ethernet cable (if the customer has one) is connected to the payment terminal and that [the terminal is set to communicate via Ethernet](#how-do-i-connect-the-payment-terminal-directly-to-nets-over-ethernet)
+  2. [Update the payment terminal software](#how-do-i-update-the-version-of-the-payment-terminal-software)
+  3. It should take ~5 minutes for the terminal to complete the update (vs. ~40min via USB). Once the update has been fetched, the terminal will restart itself (USB connection will be lost in the process).
 
 ## FAQ
 
@@ -130,8 +132,12 @@ Make sure power is turned on the terminal, swipe the merchant card on the termin
 
 `8. Program` -> `1. Fetch Program`
 
-If updates are avaialble, this will download & install the latest software (rebooting the terminal in the process). If the payment terminal has the most up-to-date version of the software, it will print out the software version number. The version of the software should be at least that of the [abovementioned version](#supported-terminal-version).
+If updates are available, this will download & install the latest software (rebooting the terminal in the process). If the payment terminal has the most up-to-date version of the software, it will print out the software version number. The version of the software should be at least that of the [abovementioned version](#supported-terminal-version). If you are unable to fetch the required update, contact Nets as they will need to set it available for download first.
+
+### How do I check the software version of the payment terminal?
+
+Open Timma and navigate to the [Payment Terminal](../assets/images/payment_terminal_version.png) view. The version is given as four numbers where e.g. `0481` would correspond to version `4.81`. If the version is lower than [what we currently support](#minimum-supported-terminal-version), you will need to [update the terminal software](#how-do-i-update-the-version-of-the-payment-terminal-software).
 
 ### The terminal refuses to print receipt/reports and displays an "unknown function" error. What to do?
 
-Update the terminal (see [above](#how-do-i-update-the-version-of-the-payment-terminal-software)).
+The terminal is running an old software version. Update the terminal ([see above](#how-do-i-update-the-version-of-the-payment-terminal-software)).
