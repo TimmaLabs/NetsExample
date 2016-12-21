@@ -9,7 +9,7 @@ Payment terminals provided by Nets that we currently support:
   * [iCT250](https://shop.nets.eu/fi/web/fin/40?terminal_id=TFIN4400-7648-R) (preferred)
   * [iPP350](https://shop.nets.eu/fi/web/fin/40?terminal_id=TFIN4100-7641-R) (requires an external receipt printer)
 
-### Supported terminal version
+### Minimum supported terminal version
 
 * 🇫🇮 `4.81` (equivalent test terminal version `43.19`)
 * 🇸🇪 `4.62`
@@ -25,30 +25,30 @@ Payment terminals provided by Nets that we currently support:
 
 ### What type of payment terminal solution does the customer currently have?
 
-* None: ask which one of the [supported terminals](#supported-payment-terminals) the customer would be interested in. We will deal with ordering it from [Nets](https://www.signom.com/nets/PowerForm.signom?powerFormId=NETS_FINLAND_HELPER).
+* None: ask which one of the [supported terminals](#supported-payment-terminals) the customer would be interested in. We will deal with ordering it from [Nets](#what-do-i-need-to-register-a-newexisting-customer-with-nets).
 
 * Standalone or integrated:
   * If the terminal is **not** provided by Nets, ask the customer to terminate his/her current contract and proceed as above
-  * If the terminal is **not** one that we support, proceed as above.
+  * If the terminal is **not** one that we support, proceed as above (ask the customer to fill in the [terminal return form](../assets/palautusilmoitus.pdf).
 
 ### What do I need to register a (new/existing) customer with Nets?
 
-* 🇫🇮 [Nets registration form](https://www.signom.com/nets/PowerForm.signom?powerFormId=NETS_FINLAND_HELPER)
-* 🇸🇪 [PDF](../assets/bestallningsblankett.pdf)
+* 🇫🇮 [Nets registration form](https://www.signom.com/nets/PowerForm.signom?powerFormId=NETS_FINLAND_HELPER) (online, see the [instructions](../assets/nets_registration_form.pdf) for help)
+* 🇸🇪 [Nets registration form](../assets/bestallningsblankett.pdf) (PDF)
 
-See [nets_registration_form.pdf](../assets/nets_registration_form.pdf) for instructions. Information you will need...
+Information you will need...
 
 * seller number: `108398`
 * password: `n87y62`
-* [customer information](https://timma.fi/hallinta)
+* [customer contact/business information](https://timma.fi/hallinta)
 * device software version: `Viking`
 * cables: `USB`
-* terminals to replaced (if any): [payment terminal ID](#how-do-i-figure-out-the-id-of-the-payment-terminal) or serial number found on a sticker at the bottom of the terminal device (ask the customer to fill in the [terminal return form](../assets/palautusilmoitus.pdf) as well)
 * additional information: "Payment terminal version 4.81 required"
+* if the customer is returning his/her existing payment terminal: [payment terminal ID](#how-do-i-figure-out-the-id-of-the-payment-terminal) (or, for older payment terminals, the serial number found on a sticker at the bottom of the terminal device).
 
-For existing terminals that are not running the latest software version (4.81) any updates to the payment terminal software will be carried out during the [installation process](#installation-on-site--remote).
+In case the customer's payment terminal is not running the [supported software version](#minimum-supported-terminal-version) (see [here]() for instructions) you will need to contact Nets and ask them to enable the update. For this Nets will need the customer's business (organization) ID or the [payment terminal ID](#how-do-i-figure-out-the-id-of-the-payment-terminal). Any updates to the payment terminal software will be carried out during the [installation process](#installation-on-site--remote).
 
-Once the customer has a Nets provided terminal we support, ask the customer for their [payment terminal ID](#how-do-i-figure-out-the-id-of-the-payment-terminal). Then, contact Nets to check if the customer's payment terminal is running the latest (supported) version. Nets will need the **payment terminal ID** for this. Any updates to the payment terminal software will be carried over during the [installation process](#installation-on-site--remote). This also **very important** in guaranteeing that the customer does not own an outdated version (Lumo) of the iPP350/iCT250 terminals, for which the integration does not work. If this is the case, ask the customer to change his/her existing terminal to a newer one (Viking version). The customer should fill in a separate [terminal return form](../assets/palautusilmoitus.pdf) to process the return.
+**NOTE** If the customer has an old iPP350/iCT250 terminal (e.g. the Lumo version), you will need to order him/her a new one (Viking version) using the registration form provided above. The customer will need to fill in a separate [terminal return form](../assets/palautusilmoitus.pdf) to process the return of the older terminal.
 
 ### What type of business is the customer running? Does it include multiple proprietorships or is everybody under a single company?
 
@@ -81,7 +81,7 @@ It might take up to 10 minutes for the installer to complete depending on the OS
 You can check the terminal for updates via Timma (skip to step 3.), or directly over the Ethernet cable (preferred alternative):
 
   1. If you wish to do the update over the Ethernet cable, first ensure the Ethernet cable is connected to the payment terminal and that [the terminal settings are set accordingly](#how-do-i-connect-the-payment-terminal-directly-to-nets-over-ethernet)
-  2. [Check/update the payment terminal software](#how-do-i-updatecheck-the-version-of-the-payment-terminal-software)
+  2. [Update the payment terminal software](#how-do-i-update-the-version-of-the-payment-terminal-software)
   3. It should take ~5 minutes for the terminal to complete the update
 
 ### 3. Integrating the payment terminal with Timma
@@ -124,7 +124,7 @@ Make sure power is turned on the terminal, swipe the merchant card on the termin
 
 Then connect the payment terminal to the Internet via the Ethernet cable, that is, plug in the Ethernet cable to the payment terminal and a nearby router/switch. The merchant should have an Ethernet cable available as it's typically provided by Nets together with the payment terminal.
 
-### How do I update/check the version of the payment terminal software?
+### How do I update the version of the payment terminal software?
 
 Make sure power is turned on the terminal, swipe the merchant card on the terminal and select:
 
@@ -134,4 +134,4 @@ If updates are avaialble, this will download & install the latest software (rebo
 
 ### The terminal refuses to print receipt/reports and displays an "unknown function" error. What to do?
 
-Update the terminal (see [above](#how-do-i-updatecheck-the-version-of-the-payment-terminal-software)).
+Update the terminal (see [above](#how-do-i-update-the-version-of-the-payment-terminal-software)).
