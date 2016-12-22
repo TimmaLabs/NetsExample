@@ -200,36 +200,64 @@ namespace Timma.Browser
         /// <summary>
         /// Check/update the terminal software
         /// </summary>
+        /// <param name="options">Options in JSON string format</param>
+        /// <param name="options.baxiArgs">TransferAmount arguments in JSON string format</param>
         /// <returns>JSON payload sent to the terminal</returns>
-        public string Update()
+        public string Update(string options = "{}")
         {
-            Update r = new Update();
-            terminalCtrl.SendAdminOperation(r);
-            return JsonConvert.SerializeObject(r.Args);
+            var opts = JsonConvert.DeserializeObject<OperationOptions>(options);
+            Update op = new Update(baxiArgs: opts.baxiArgs);
+            terminalCtrl.SendAdminOperation(op);
+            return JsonConvert.SerializeObject(op.Args);
+        }
+
+        /// <summary>
+        /// Check/update the terminal software
+        /// </summary>
+        /// <param name="options">Options in JSON string format</param>
+        /// <param name="options.baxiArgs">TransferAmount arguments in JSON string format</param>
+        /// <returns>JSON payload sent to the terminal</returns>
+        public string FetchCards(string options = "{}")
+        {
+            var opts = JsonConvert.DeserializeObject<OperationOptions>(options);
+            CardData op = new CardData(baxiArgs: opts.baxiArgs);
+            terminalCtrl.SendAdminOperation(op);
+            return JsonConvert.SerializeObject(op.Args);
+        }
+        /// <summary>
+        /// API (admin operations) END
+        /// </summary>
+
+
+        /// <summary>
+        /// API helpers START
+        /// </summary>
+        
+        /// <summary>
+        /// Check if terminal connection has been opened
+        /// </summary>
+        public bool IsOpen()
+        {
+            return terminalCtrl.IsOpen();
         }
 
         /// <summary>
         /// Change terminal UI language (receipts will still use the card's language)
         /// </summary>
         /// <param name="langID">Language ID</param>
-        /// <returns>Success code (1 = success, 0 = fail)</returns>
+        /// <returns>MethodRejectCode</returns>
         public int ChangeLanguage(string langID = "en")
         {
             return terminalCtrl.SetLanguage(langID);
         }
 
+        /// <summary>
+        /// Ping terminal host
+        /// </summary>
+        /// <returns>MethodRejectCode</returns>
         public int PingHost()
         {
             return terminalCtrl.PingHost();
-        }
-
-        /// <summary>
-        /// API (admin operations) END
-        /// </summary>
-
-        public bool IsOpen()
-        {
-            return terminalCtrl.IsOpen();
         }
 
         public string OptionalData(string txnref = "", int autodcc = 1, int merch = -1)
@@ -247,5 +275,8 @@ namespace Timma.Browser
             TerminalInfo info = terminalCtrl.GetInfo();
             return JsonConvert.SerializeObject(info);
         }
+        /// <summary>
+        /// API helpers END
+        /// </summary>
     }
 }

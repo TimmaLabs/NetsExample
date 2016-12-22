@@ -1,8 +1,8 @@
 ﻿namespace Timma.Operations.Admin
 {
-    class Update : Administration
+    class CardData : Administration
     {
-        public Update(string baxiArgs = "{}") : base("", baxiArgs)
+        public CardData(string baxiArgs = "{}") : base("", baxiArgs)
         {
         }
 
@@ -10,7 +10,7 @@
         {
             get
             {
-                return (int)Type.SoftwareDownload;
+                return (int)Type.DatasetDownload;
             }
         }
     }

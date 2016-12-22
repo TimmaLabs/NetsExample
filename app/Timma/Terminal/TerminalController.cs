@@ -179,10 +179,11 @@ namespace Timma.Terminal
 
         internal int PingHost()
         {
-            SendTldArgs a = new SendTldArgs();
-            a.TldType = "REQ";
-            a.TldField = Encoding.ASCII.GetBytes("1012");
-           return  _terminal.SendTLD(a);
+            SendTldArgs args = new SendTldArgs();
+            args.TldType = "REQ";
+            args.TldField = Encoding.ASCII.GetBytes("1012");
+            int code = _terminal.SendTLD(args);
+            return _terminal.MethodRejectCode;
         }
     }
 }

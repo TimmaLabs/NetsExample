@@ -7,6 +7,7 @@
         HardCancel = 0x313B,
         Reconciliation = 0x3130,
         SoftwareDownload = 0x313E,
+        DatasetDownload = 0x313F,
         // Reports
         XReport = 0x3136,
         ZReport = 0x3137,
@@ -20,6 +21,5 @@
         Balance = 0x3135,
         LatestFinancialTransactionResult = 0x313D,
         SendOfflineTransactions = 0x3138,
-        DatasetDownload = 0x313F
     }
 }

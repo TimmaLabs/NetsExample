@@ -183,6 +183,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Timma\Browser\OperationOptions.cs" />
+    <Compile Include="Timma\Operations\Admin\CardData.cs" />
     <Compile Include="Timma\Operations\Admin\Update.cs" />
     <Compile Include="Timma\Print\Header.cs" />
     <Compile Include="Timma\Print\Rows\BlankRow.cs" />
