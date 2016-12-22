@@ -3,7 +3,7 @@
 
   <?include $(sys.CURRENTDIR)Includes\Variables.wxi ?>
 
-  <Product Id="313E5B5C-02DA-4459-A39D-A78491B8E344" Name="Timma" Language="1033" Version="1.1.0.1" Manufacturer="Timma Oy Ab" UpgradeCode="dced035b-2e9a-4337-9976-d0684aefbad0">
+  <Product Id="FB922421-E38D-4BF7-BAEC-BC5DB822A8E5" Name="Timma" Language="1033" Version="1.1.1.0" Manufacturer="Timma" UpgradeCode="dced035b-2e9a-4337-9976-d0684aefbad0">
     
     <!-- Do not add an Id attribute for package to avoid collisions with non-identical .msi files -->
     <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />

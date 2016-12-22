@@ -1,6 +1,6 @@
 {
   "name": "timma-nets",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Nets payments integration for Timma (Windows)",
   "main": "example.js",
   "directories": {
