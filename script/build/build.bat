@@ -19,7 +19,7 @@ if "%mode%" == "Debug" (
 )
 
 if DEFINED local_build  (
-	SET CONSTANTS=%CONSTANTS%;LOCAL
+	SET CONSTANTS=%CONSTANTS%;LOCALHOST
 )
 
 %msbuild% "app\timma.csproj" /t:rebuild /p:Configuration=%mode%;Platform=%arch%;DefineConstants="!CONSTANTS!"

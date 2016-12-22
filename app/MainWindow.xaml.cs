@@ -22,10 +22,8 @@ namespace Timma
         private string Address {
             get
             {
-                #if (PRODUCTION && !DEBUG && !LOCAL)
+                #if (PRODUCTION && !LOCALHOST)
                 return "https://timma.fi/admin";
-                #elif (PRODUCTION && DEBUG && !LOCAL)
-                return "http://testi.timma.fi/admin";
                 #else
                 return "http://customer.timma.dev";
                 #endif
