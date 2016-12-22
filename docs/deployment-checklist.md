@@ -132,7 +132,7 @@ Make sure power is turned on the terminal, swipe the merchant card on the termin
 
 `8. Program` -> `1. Fetch Program`
 
-If updates are available, this will download & install the latest software (rebooting the terminal in the process). If the payment terminal has the most up-to-date version of the software, it will print out the software version number. The version of the software should be at least that of the [abovementioned version](#supported-terminal-version). If you are unable to fetch the required update, contact Nets as they will need to set it available for download first.
+If updates are available, this will download & install the latest software (rebooting the terminal in the process). If the payment terminal has the most up-to-date version of the software, it will print out the software version number. The version of the software should be at least that of the [abovementioned version](#minimum-supported-terminal-version). If you are unable to fetch the required update, contact Nets as they will need to set it available for download first.
 
 ### How do I check the software version of the payment terminal?
 
