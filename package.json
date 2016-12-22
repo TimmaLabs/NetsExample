@@ -1,0 +1,36 @@
+{
+  "name": "timma-nets",
+  "version": "1.1.0",
+  "description": "Nets payments integration for Timma (Windows)",
+  "main": "example.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "commit": "git-cz"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TimmaLabs/TimmaNets.git"
+  },
+  "keywords": [
+    "Timma",
+    "Nets",
+    "ECR"
+  ],
+  "author": "Marko Raatikka",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/TimmaLabs/TimmaNets/issues"
+  },
+  "homepage": "https://github.com/TimmaLabs/TimmaNets#readme",
+  "devDependencies": {
+    "commitizen": "^2.9.2",
+    "cz-conventional-changelog": "^1.2.0"
+  }
+}
