@@ -56,7 +56,7 @@ If the customer consists of multiple proprietorships, Nets will need to enable a
 
 ### Does the customer want reconciliation ("päivänpäätös") to be done automatically?
 
-If so, inform Nets about this / mention this in the payment terminal registration form.
+If so, inform Nets about this / mention this in the payment terminal registration form. **NOTE** It is strongly advised that the customer does manual reconciliation, since automatic reconciliation **requires** that the terminal & kassa are running. If the automatic reconciliation does not complete successfully, the customer will not be able to accept payments until he/she does manual reconciliation (via the [Payment Terminal](../assets/images/payment_terminal_version.png) view).
 
 ### What extra equipment & materials does the customer need?
 
