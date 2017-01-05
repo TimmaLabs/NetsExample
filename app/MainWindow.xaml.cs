@@ -6,6 +6,7 @@ using CefSharp.Wpf;
 using BBS.BAXI;
 using Timma.Browser;
 using Timma.Terminal;
+using System;
 
 namespace Timma
 {
@@ -18,6 +19,8 @@ namespace Timma
         private BrowserController browserApi;
         private TerminalController terminalCtrl;
         private bool browserReloading = false;
+        private double maxZoomLevel = 2.0;
+        private double minZoomLevel = -1.0;
 
         private string Address {
             get
@@ -46,10 +49,14 @@ namespace Timma
             browserApi = new BrowserController(browser, terminalCtrl);
 
             browser.FrameLoadEnd += HandleFrameLoaded;
+            browser.ZoomLevelIncrement = 0.25;
 
             TimmaBrowser.Children.Add(browser);
 
             CommandBindings.Add(new CommandBinding(NavigationCommands.Refresh, Reload));
+            CommandBindings.Add(new CommandBinding(NavigationCommands.IncreaseZoom, ZoomIn));
+            CommandBindings.Add(new CommandBinding(NavigationCommands.DecreaseZoom, ZoomOut));
+            CommandBindings.Add(new CommandBinding(NavigationCommands.Zoom, ZoomReset));
         }
 
         private void HandleFrameLoaded(object sender, FrameLoadEndEventArgs e)
@@ -86,5 +93,27 @@ namespace Timma
                 terminalCtrl.Close();
             }
         }
+
+        private void ZoomIn(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (browser.ZoomLevel < maxZoomLevel)
+            {
+                browser.ZoomInCommand.Execute(null);
+            }
+        }
+
+        private void ZoomOut(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (browser.ZoomLevel > minZoomLevel)
+            {
+                browser.ZoomOutCommand.Execute(null);
+            }
+        }
+
+        private void ZoomReset(object sender, ExecutedRoutedEventArgs e)
+        {
+            browser.ZoomResetCommand.Execute(null);
+        }
+
     }
 }
