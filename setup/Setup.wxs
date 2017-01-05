@@ -3,10 +3,14 @@
 
   <?include $(sys.CURRENTDIR)Includes\Variables.wxi ?>
 
-  <Product Id="FB922421-E38D-4BF7-BAEC-BC5DB822A8E5" Name="Timma" Language="1033" Version="1.1.1.0" Manufacturer="Timma" UpgradeCode="dced035b-2e9a-4337-9976-d0684aefbad0">
+  <!-- Change Id & Version on Major Upgrades --><!-- Component GUID change => Major Upgrade -->
+  <!-- Major Upgrade: https://www.firegiant.com/wix/tutorial/upgrades-and-modularization/replacing-ourselves/ -->
+  <!-- Change Version on Minor Upgrades -->
+  <Product Id="FB922421-E38D-4BF7-BAEC-BC5DB822A8E5" Name="Timma" Language="1033" Version="1.2.0.0" Manufacturer="Timma" UpgradeCode="dced035b-2e9a-4337-9976-d0684aefbad0">
     
-    <!-- Do not add an Id attribute for package to avoid collisions with non-identical .msi files -->
-    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    <!-- Change Id on Major Upgrades -->
+    <!-- Change Id on Minor/Patch/Build Upgrades -->
+    <Package Id="33CBEC99-D501-4CC7-BC9C-76FB59FD1761" InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
     
 		<MajorUpgrade DowngradeErrorMessage="A newer version of Timma is already installed." />
 		<MediaTemplate />
