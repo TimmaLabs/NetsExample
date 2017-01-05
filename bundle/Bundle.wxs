@@ -9,7 +9,7 @@
     </BootstrapperApplicationRef>
 
 		<Chain>
-      <!-- Ingenico USB for iCT250 Nets payment terminal -->
+      <!-- Ingenico USB for Nets (Viking) payment terminal -->
       <PackageGroupRef Id="ingenico" />
 
       <!-- .NET Framework 4.5.2 web setup -->

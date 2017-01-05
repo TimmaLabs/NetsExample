@@ -8,11 +8,11 @@ using System.Windows;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Timma")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Timma POS integration")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Timma")]
 [assembly: AssemblyProduct("Timma")]
-[assembly: AssemblyCopyright("Copyright © Timma 2016")]
+[assembly: AssemblyCopyright("Copyright © Timma 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
