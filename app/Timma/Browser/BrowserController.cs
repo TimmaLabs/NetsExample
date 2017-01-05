@@ -30,7 +30,7 @@ namespace Timma.Browser
         {
             this.browser = browser;
             this.terminalCtrl = terminalCtrl;
-            this.browser.RegisterJsObject(NAMESPACE, new BrowserAPI(terminalCtrl));
+            this.browser.RegisterAsyncJsObject(NAMESPACE, new BrowserAPI(terminalCtrl));
             this.ctx = SynchronizationContext.Current;
 
             terminalCtrl.OnSuccess += HandleTerminalSuccess;

@@ -22,6 +22,8 @@ namespace Timma
             var settings = new CefSettings();
             settings.SetOffScreenRenderingBestPerformanceArgs();
 
+            CefSharpSettings.WcfEnabled = false;
+
             if (Cef.Initialize(settings))
             {
                 base.OnStartup(e);
