@@ -50,13 +50,20 @@ If Visual Studio complains about a missing `BBS` (Baxi API) reference when you t
 
 ## Version Control
 
-If the release will include breaking changes, start with incrementing the version numbers (`major`/`minor`/`patch`):
+The version format is `major.minor.patch.revision`. If the release includes changes, start with incrementing the version numbers (`major`/`minor`/`patch`/`revision`):
 
 1. Assembly version: right-click on `Timma` project -> `Properties` -> `Application` -> `Assembly Information...` -> `Assembly Version` and `File Version` (can be identical, see http://stackoverflow.com/a/65062 for more information)
 2. Installer ([Setup.wxs](setup/Setup.wxs) and [Bundle.wxs](Bundle/bundle.wxs)) versions: https://www.firegiant.com/wix/tutorial/upgrades-and-modularization/
 3. `NetsService` version in [timma_admin_new](https://bitbucket.org/lauriorkoneva/timma_admin_new)
 
-The version format is `major.minor.patch.build`. The `build` version can be freely incremented for internal revisioning purposes, but changes to `major`/`minor`/`patch` versions require updating the version/GUID entries in the installer files as described in step 2 above.
+The general revisioning principles are as follows:
+
+* Breaking changes: bump `major`
+* New features (backwards compatible): bump `minor` (increment by the number of new features)
+* Bug fixes/refactoring: bump `patch`
+* Stylistic changes, docs, build: bump `revision`
+
+In .NET lingo, `patch` is often referred to as the `build` version.
 
 ## FAQ
 
