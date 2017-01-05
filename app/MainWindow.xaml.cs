@@ -19,8 +19,8 @@ namespace Timma
         private BrowserController browserApi;
         private TerminalController terminalCtrl;
         private bool browserReloading = false;
-        private double maxZoomLevel = 2.0;
-        private double minZoomLevel = -1.0;
+        private double maxZoomLevel = 5.0;
+        private double minZoomLevel = -5.0;
 
         private string Address {
             get

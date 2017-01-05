@@ -15,9 +15,9 @@
         Background="#158F77">
     <Window.InputBindings>
         <KeyBinding Key="r" Modifiers="Ctrl" Command="Refresh" />
-        <KeyBinding Key="OemPlus" Modifiers="Alt" Command="IncreaseZoom" />
-        <KeyBinding Key="OemMinus" Modifiers="Alt" Command="DecreaseZoom" />
-        <KeyBinding Gesture="Alt+0" Command="Zoom" />
+        <KeyBinding Key="OemPlus" Modifiers="Ctrl" Command="IncreaseZoom" />
+        <KeyBinding Key="OemMinus" Modifiers="Ctrl" Command="DecreaseZoom" />
+        <KeyBinding Gesture="Ctrl+0" Command="Zoom" />
     </Window.InputBindings>
     <Grid>
         <Grid.ColumnDefinitions>
