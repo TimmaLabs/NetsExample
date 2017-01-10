@@ -154,6 +154,9 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Timma.App</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="baxi_dotnet">
       <HintPath>..\Baxi.net_1.4.2.1\baxi.net45\baxi_dotnet.dll</HintPath>
@@ -164,6 +167,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -178,10 +182,10 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
+    <Page Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </ApplicationDefinition>
+    </Page>
     <Compile Include="Timma\Browser\OperationOptions.cs" />
     <Compile Include="Timma\Operations\Admin\CardData.cs" />
     <Compile Include="Timma\Operations\Admin\Update.cs" />
@@ -201,6 +205,7 @@
     <Compile Include="Timma\Operations\Admin\Report\ZReport.cs" />
     <Compile Include="Timma\Print\Document.cs" />
     <Compile Include="Timma\Print\Rows\TextRow.cs" />
+    <Compile Include="Timma\SingleInstance.cs" />
     <Compile Include="Timma\Terminal\TerminalInfo.cs" />
     <Compile Include="Timma\Utils.cs" />
     <Compile Include="Timma\Operations\Transactions\Purchase.cs" />
