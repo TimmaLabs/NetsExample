@@ -7,7 +7,7 @@
 Payment terminals provided by Nets that we currently support:
 
   * [iCT250](https://shop.nets.eu/fi/web/fin/40?terminal_id=TFIN4400-7648-R) (preferred)
-  * [iPP350](https://shop.nets.eu/fi/web/fin/40?terminal_id=TFIN4100-7641-R) (requires an external receipt printer)
+  * [iPP350](https://shop.nets.eu/fi/web/fin/40?terminal_id=TFIN4100-7641-R) (requires an external receipt printer, no automatic reconciliation capability)
 
 ### Minimum supported terminal version
 
@@ -41,13 +41,15 @@ Information you will need...
 * password: `n87y62`
 * [customer contact/business information](https://timma.fi/hallinta)
 * device software version: `Viking`
-* cables: `USB`
-* additional information: "Payment terminal version 4.81 required"
+* cables: `USB` and `Ethernet`
+* additional information: "Payment terminal version 4.82 required"
 * if the customer is returning his/her existing payment terminal: [payment terminal ID](#how-do-i-figure-out-the-id-of-the-payment-terminal) (or, for older payment terminals, the serial number found on a sticker at the bottom of the terminal device).
 
-In case the customer's payment terminal is not running the [supported software version](#minimum-supported-terminal-version) (see [here]() for instructions) you will need to contact Nets and ask them to enable the update. For this Nets will need the customer's business (organization) ID or the [payment terminal ID](#how-do-i-figure-out-the-id-of-the-payment-terminal). Any updates to the payment terminal software will be carried out during the [installation process](#installation-on-site--remote).
+In case the customer's payment terminal is not running the [supported software version](#minimum-supported-terminal-version) you will need to contact Nets and ask them to enable the update. For this Nets will need the customer's business (organization) ID or the [payment terminal ID](#how-do-i-figure-out-the-id-of-the-payment-terminal). Any updates to the payment terminal software will be carried out during the [installation process](#installation-on-site--remote).
 
 **NOTE** If the customer has an old iPP350/iCT250 terminal (e.g. the Lumo version), you will need to order him/her a new one (Viking version) using the registration form provided above. The customer will need to fill in a separate [terminal return form](../assets/palautusilmoitus.pdf) to process the return of the older terminal.
+
+**NOTE** Customers should not have to pay any opening/new contract fees. If Nets sends them an invoice about this, tell them to contact us.
 
 ### What type of business is the customer running? Does it include multiple proprietorships or is everybody under a single company?
 
@@ -55,13 +57,17 @@ If the customer consists of multiple proprietorships, Nets will need to enable a
 
 ### Does the customer want reconciliation ("päivänpäätös") to be done automatically?
 
-If so, inform Nets about this / mention this in the payment terminal registration form. **NOTE** It is strongly advised that the customer does manual reconciliation, since automatic reconciliation **requires** that the terminal & kassa are running. If the automatic reconciliation does not complete successfully, the customer will not be able to accept payments until he/she does manual reconciliation (via the [Payment Terminal](../assets/images/payment_terminal_version.png) view).
+If so, inform Nets about this / mention this in the payment terminal registration form. **NOTE** Automatic reconciliation is only possible if the customer has...
+
+* iCT250
+* Ethernet cable (shipped together with the terminal)
+* router/switch/Ethernet outlet the Ethernet can be connected to.
 
 ### What extra equipment & materials does the customer need?
 
 * Receipt rolls (Nets ships only 2 along with the original packaging)
 * Receipt printer (only necessary for iPP350)
-  * [Star TSP100 drivers](https://goo.gl/xEvKuw)
+  * [Star TSP100 drivers](https://goo.gl/xEvKuw) for Windows 10
 * [USB A to USB B](../assets/images/usb-a-to-usb-b.jpg) cable (with a 90° angle). Request this in the registration form (or, if this'd be for an existing Nets customer, we can provide one from our own inventory)
 * If the customer is running a Mac, a pre-packaged Windows on a USB stick (see [OS X Integration](./osx-integration.md) for more).
 
@@ -79,7 +85,7 @@ It might take up to 10 minutes for the installer to complete depending on the OS
 
   1. First, if the customer's payment terminal is configured for multi-banking, see the [instructions on how to update the customer's & users Timma account information accordingly](./multibanking-terminal.md). Otherwise proceed to step 2.
   2. Change the terminal settings to [communicate with Timma via USB](#how-do-i-prepare-the-payment-terminal-to-be-connected-to-timma)
-  3. Connect the payment terminal to the computer via a [USB A to USB B](../assets/images/usb-a-to-usb-b.jpg) cable
+  3. Connect the payment terminal to the computer via a [USB A to USB B](../assets/images/usb-a-to-usb-b.jpg) cable (and if applicable, the Ethernet cable to a router/switch/Ethernet outlet)
     * If the customer is running Timma on a Mac (= inside a Virtual Machine) make sure the [USB connection is also shared from the host machine](../assets/images/share-host-usb.jpeg). Connect the USB via `Devices` -> `USB` -> `Sagem`
   4. Launch `Timma.exe` (should be available on the Desktop)
   5. Wait for the login screen to appear. If the connection was **not** successfully established, a [warning prompt should appear at the top of the application window](../assets/images/terminal-disconnected.jpeg). If this is the case, try [re-connecting the terminal to the computer](reconnecting-the-terminal.md).
@@ -88,17 +94,15 @@ It might take up to 10 minutes for the installer to complete depending on the OS
 
 ### 3. Checking the terminal software for updates
 
-First, [check if the terminal version is outdated](#how-do-i-check-the-payment-terminal-version) and an update is required. If so, you can update the terminal via the (Timma) USB connection, or over the Ethernet cable (preferred alternative):
+First, [check if the terminal version is outdated](#how-do-i-check-the-payment-terminal-version) and an update is required. If so, proceed with [updating the payment terminal software](#how-do-i-update-the-version-of-the-payment-terminal-software).
 
-  1. If you wish to do the update over the Ethernet cable, first ensure the Ethernet cable (if the customer has one) is connected to the payment terminal and that [the terminal is set to communicate via Ethernet](#how-do-i-connect-the-payment-terminal-directly-to-nets-over-ethernet)
-  2. [Update the payment terminal software](#how-do-i-update-the-version-of-the-payment-terminal-software)
-  3. It should take ~5 minutes for the terminal to complete the update (vs. ~40min via USB). Once the update has been fetched, the terminal will restart itself (USB connection will be lost in the process).
+It should take ~5 minutes for the terminal to complete the update if its connected to the Internet via an Ethernet cable (vs ~30min via USB only). Once the update has been fetched, the terminal will restart itself (USB connection will be lost in the process).
 
 ## FAQ
 
 ### How do I figure out the ID of the payment terminal?
 
-Make sure power is turned on the terminal, swipe the merchant card on the terminal and select:
+If you have installed Timma and configured, you can see the payment terminal ID via [Payment Terminal](../assets/images/payment_terminal_version.png) page. Otherwise, make sure power is turned on the terminal, swipe the merchant card on the terminal and select:
 
 `6. Parameters` -> `1. Other` -> `1. Main Settings` (terminal ID should appear on the screen)
 
@@ -106,24 +110,21 @@ Make sure power is turned on the terminal, swipe the merchant card on the termin
 
 Make sure power is turned on the terminal, swipe the merchant card on the terminal and select:
 
+For iCT250 (with Ethernet access == Ethernet cable + router/switch/outlet to connect it to):
+
   * `6. Parameters` -> `1. Other`
-  * `2. Connections` -> `Comm. type = Cashier`
-  * `3. Cashier` -> `Cashier = Yes`
-  * `3. Cashier` -> `Comm. type = USB SLAVE`
+    * `2. Connections` -> `Comm. type = Ethernet`
+    * `3. Cashier` -> `Cashier = Yes`
+    * `3. Cashier` -> `Comm. type = USB SLAVE`
+
+For iPP350 (and iCT250 without Ethernet access):
+
+  * `6. Parameters` -> `1. Other`
+    * `2. Connections` -> `Comm. type = Cashier`
+    * `3. Cashier` -> `Cashier = Yes`
+    * `3. Cashier` -> `Comm. type = USB SLAVE`
 
 Return to the default view by hitting the `Back` button (red) a couple of times. The terminal should now restart itself.
-
-### How do I connect the payment terminal directly to Nets (over Ethernet)?
-
-Make sure power is turned on the terminal, swipe the merchant card on the terminal and select:
-
-  * `6. Parameters` -> `1. Other`
-  * `2. Connections` -> `Comm. type = Ethernet`
-  * `2. Connections` -> `Host IP Address = 91.102.24.142` (might be different in Sweden?)
-  * `2. Connections` -> `Host Port = 9670`
-  * `3. Cashier` -> `Cashier = No`
-
-Then connect the payment terminal to the Internet via the Ethernet cable, that is, plug in the Ethernet cable to the payment terminal and a nearby router/switch. The merchant should have an Ethernet cable available as it's typically provided by Nets together with the payment terminal.
 
 ### How do I update the version of the payment terminal software?
 
@@ -140,3 +141,7 @@ Open Timma and navigate to the [Payment Terminal](../assets/images/payment_termi
 ### The terminal refuses to print receipt/reports and displays an "unknown function" error. What to do?
 
 The terminal is running an old software version. Update the terminal ([see above](#how-do-i-update-the-version-of-the-payment-terminal-software)).
+
+### The customer does not want the merchant receipt to be printed automatically (iCT250). What to do?
+
+`6. Parameters` -> `1. Other` -> `1. Function` -> `Always Copy = No`
