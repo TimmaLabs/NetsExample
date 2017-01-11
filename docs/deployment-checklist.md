@@ -94,7 +94,7 @@ It might take up to 10 minutes for the installer to complete depending on the OS
 
 ### 3. Checking the terminal software for updates
 
-First, [check if the terminal version is outdated](#how-do-i-check-the-payment-terminal-version) and an update is required. If so, proceed with [updating the payment terminal software](#how-do-i-update-the-version-of-the-payment-terminal-software).
+First, [check if the terminal version is outdated](#how-do-i-check-the-software-version-of-the-payment-terminal) and an update is required. If so, proceed with [updating the payment terminal software](#how-do-i-update-the-version-of-the-payment-terminal-software).
 
 It should take ~5 minutes for the terminal to complete the update if its connected to the Internet via an Ethernet cable (vs ~30min via USB only). Once the update has been fetched, the terminal will restart itself (USB connection will be lost in the process).
 
