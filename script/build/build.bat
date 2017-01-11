@@ -8,6 +8,7 @@ SET local_build=%3
 
 SET ROOT_DIR=%cd%
 SET SCRIPT_DIR=%ROOT_DIR%\script
+SET ASSETS_DIR=%ROOT_DIR%\assets
 SET BIN_DIR=bin
 SET OUTPUT_DIR=%BIN_DIR%\%mode%\%arch%
 SET CONSTANTS=PRODUCTION
@@ -28,12 +29,12 @@ if DEFINED local_build  (
 %msbuild% "bundle\bundle.wixproj" /t:rebuild /p:Configuration=%mode%;Platform=x86;DefineConstants="!CONSTANTS!"
 
 :: sign the setup (.msi)
-call %SCRIPT_DIR%\sign-msi.bat "%SCRIPT_DIR%\Timma.pfx" %ROOT_DIR%\setup\bin\%mode%\ voittaja
+call %SCRIPT_DIR%\sign-msi.bat "%ASSETS_DIR%\certs\Timma.pfx" %ROOT_DIR%\setup\bin\%mode%\ voittaja
 :: sign the bundle (.exe)
-call %SCRIPT_DIR%\sign-bundle.bat "%SCRIPT_DIR%\Timma.pfx" %ROOT_DIR%\bundle\bin\%mode%\ voittaja
+call %SCRIPT_DIR%\sign-bundle.bat "%ASSETS_DIR%\certs\Timma.pfx" %ROOT_DIR%\bundle\bin\%mode%\ voittaja
 
 rd /S /Q %OUTPUT_DIR%
 
 xcopy %ROOT_DIR%\setup\bin\%mode%\* %OUTPUT_DIR% /F /Y /I
 xcopy %ROOT_DIR%\bundle\bin\%mode%\* %OUTPUT_DIR% /F /Y /I
-copy %SCRIPT_DIR%\Timma.cer %OUTPUT_DIR%
+copy %ASSETS_DIR%\certs\Timma.cer %OUTPUT_DIR%

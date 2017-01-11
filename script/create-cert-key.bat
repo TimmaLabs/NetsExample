@@ -1,12 +1,12 @@
 @echo off
 
-SET validFrom="01/11/2017"
-SET validTill="01/11/2022"
+SET validFrom="11/01/2017"
+SET validTill="11/01/2022"
 SET subjectName="Timma"
 SET storeName="Root"
 SET outputCertFile="Timma.cer"
 SET outputKeyFile="Timma.pvk"
-SET storeLocation="LocalMachine"
+SET storeLocation="CurrentUser"
 SET makecert="%PROGRAMFILES(x86)%\Windows Kits\10\bin\x64\makecert"
 
 :: For values, see HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Cryptography\Defaults\Provider Types via regedit
