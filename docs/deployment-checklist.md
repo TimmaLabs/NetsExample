@@ -90,7 +90,8 @@ It might take up to 10 minutes for the installer to complete depending on the OS
   4. Launch `Timma.exe` (should be available on the Desktop)
   5. Wait for the login screen to appear. If the connection was **not** successfully established, a [warning prompt should appear at the top of the application window](../assets/images/terminal-disconnected.jpeg). If this is the case, try [re-connecting the terminal to the computer](reconnecting-the-terminal.md).
   6. Check that everything works by navigating to the [Payment Terminal](../assets/images/payment_terminal_version.png) view and printing out e.g. a `Z-report`. For multi-banking customers, you should try this for each account (change accounts via the `Select account` drop-down on the Payment Terminal view)
-  7. Done!
+  7. If this is a new payment terminal, **reconcile** ("päivänpäätös") via the green reconcile button (otherwise the customer won't be able to accept card payments)
+  8. Done!
 
 ### 3. Checking the terminal software for updates
 
