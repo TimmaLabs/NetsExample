@@ -50,13 +50,7 @@ If Visual Studio complains about a missing `BBS` (Baxi API) reference when you t
 
 ## Version Control
 
-The version format is `major.minor.patch.revision`. If the release includes changes, start with incrementing the version numbers (`major`/`minor`/`patch`/`revision`):
-
-1. Assembly version: right-click on `Timma` project -> `Properties` -> `Application` -> `Assembly Information...` -> `Assembly Version` and `File Version` (can be identical, see http://stackoverflow.com/a/65062 for more information)
-2. Installer ([Setup.wxs](setup/Setup.wxs) and [Bundle.wxs](Bundle/bundle.wxs)) versions: https://www.firegiant.com/wix/tutorial/upgrades-and-modularization/
-3. `NetsService` version in [timma_admin_new](https://bitbucket.org/lauriorkoneva/timma_admin_new)
-
-The general revisioning principles are as follows:
+The version format is `major.minor.patch.revision`. The general revisioning principles are as follows:
 
 * Breaking changes: bump `major`
 * New features (backwards compatible): bump `minor` (increment by the number of new features)
@@ -64,6 +58,13 @@ The general revisioning principles are as follows:
 * Stylistic changes, docs, build: bump `revision`
 
 In .NET lingo, `patch` is often referred to as the `build` version.
+
+If the release includes changes, start with incrementing the respective version numbers (`major`/`minor`/`patch`/`revision`):
+
+1. Assembly version: right-click on `Timma` project -> `Properties` -> `Application` -> `Assembly Information...` -> `Assembly Version` and `File Version` (can be identical, see http://stackoverflow.com/a/65062 for more information)
+2. Installer ([Setup.wxs](setup/Setup.wxs) and [Bundle.wxs](Bundle/bundle.wxs)) versions (see code comments & https://www.firegiant.com/wix/tutorial/upgrades-and-modularization/ for reference)
+3. [package.json](./package.json) version
+4. And, if `major` version bump: `NetsService` version in [timma_admin_new](https://bitbucket.org/lauriorkoneva/timma_admin_new)
 
 ## FAQ
 
