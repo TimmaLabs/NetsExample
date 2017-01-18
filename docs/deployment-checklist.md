@@ -103,13 +103,13 @@ It should take ~5 minutes for the terminal to complete the update if its connect
 
 ### How do I figure out the ID of the payment terminal?
 
-If you have installed Timma and configured, you can see the payment terminal ID via [Payment Terminal](../assets/images/payment_terminal_version.png) page. Otherwise, make sure power is turned on the terminal, swipe the merchant card on the terminal and select:
+If you have installed Timma and configured, you can see the payment terminal ID via [Payment Terminal](../assets/images/payment_terminal_version.png) page. Otherwise, make sure power is turned on the terminal, swipe the merchant card on the terminal and select (from `Main menu / Adminmeny / Kauppiasmenu`):
 
 `6. Parameters / Inställningar` -> `1. Other / Ändra` -> `1. Function` (terminal ID should appear on the screen)
 
 ### How do I prepare the payment terminal to be connected to Timma?
 
-Make sure power is turned on the terminal, swipe the merchant card on the terminal and select:
+Make sure power is turned on the terminal, swipe the merchant card on the terminal and select (from `Main menu / Adminmeny / Kauppiasmenu`):
 
 For iCT250 (with Ethernet access == Ethernet cable + router/switch/outlet to connect it to):
 
@@ -129,7 +129,7 @@ Return to the default view by hitting the `Back` button (red) a couple of times.
 
 ### How do I update the version of the payment terminal software?
 
-Make sure power is turned on the terminal, swipe the merchant card on the terminal and select:
+Make sure power is turned on the terminal, swipe the merchant card on the terminal and select (from `Main menu / Adminmeny / Kauppiasmenu`):
 
 `8. Program / Programvara` -> `1. Fetch Program / Hämta Program`
 
@@ -144,5 +144,7 @@ Open Timma and navigate to the [Payment Terminal](../assets/images/payment_termi
 The terminal is running an old software version. Update the terminal ([see above](#how-do-i-update-the-version-of-the-payment-terminal-software)).
 
 ### The customer does not want the merchant receipt to be printed automatically (iCT250). What to do?
+
+Make sure power is turned on the terminal, swipe the merchant card on the terminal and select (from `Main menu / Adminmeny / Kauppiasmenu`):
 
 `6. Parameters / Kommunikation` -> `1. Other / Ändra` -> `1. Function` -> `Always Copy = No`
