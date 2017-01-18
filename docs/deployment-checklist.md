@@ -143,6 +143,10 @@ Open Timma and navigate to the [Payment Terminal](../assets/images/payment_termi
 
 The terminal is running an old software version. Update the terminal ([see above](#how-do-i-update-the-version-of-the-payment-terminal-software)).
 
+### The terminal rejects any transactions and prompts "OGILTIG ANVÄNDARE ID" / "Virheellinen myyjä ID". What to do?
+
+For multi-banking terminals, you need to specify a `Nets ID` for the customer and/or each user account via [hallinta](https://timma.fi/hallinta). See [Setting up multi-banking terminal](./multibanking-terminal.md) for more information.
+
 ### The customer does not want the merchant receipt to be printed automatically (iCT250). What to do?
 
 Make sure power is turned on the terminal, swipe the merchant card on the terminal and select (from `Main menu / Adminmeny / Kauppiasmenu`):
