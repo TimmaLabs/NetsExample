@@ -76,7 +76,7 @@ If so, inform Nets about this / mention this in the payment terminal registratio
 
 ### 1. Installing the Timma software
 
-  * If the customer is running Windows, download the installer from [bit.ly/timma-for-windows](http://bit.ly/timma-for-windows) (either `32-bit` or `64-bit` architecture, check via `Search` -> `System` in Windows) and install Timma
+  * If the customer is running Windows, download the installer from [bit.ly/timma-for-windows](http://bit.ly/timma-for-windows) (either `32-bit` or `64-bit` architecture, check via `Search` -> `System` in Windows) and install `Timma.bundle`
   * If the customer is running OS X, see the docs for [OS X Integration](./osx-integration.md).
 
 It might take up to 10 minutes for the installer to complete depending on the OS & existing software installed, so be patient.
