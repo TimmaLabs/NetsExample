@@ -105,7 +105,7 @@ It should take ~5 minutes for the terminal to complete the update if its connect
 
 If you have installed Timma and configured, you can see the payment terminal ID via [Payment Terminal](../assets/images/payment_terminal_version.png) page. Otherwise, make sure power is turned on the terminal, swipe the merchant card on the terminal and select:
 
-`6. Parameters` -> `1. Other` -> `1. Main Settings` (terminal ID should appear on the screen)
+`6. Parameters / Inställningar` -> `1. Other / Ändra` -> `1. Function` (terminal ID should appear on the screen)
 
 ### How do I prepare the payment terminal to be connected to Timma?
 
@@ -113,16 +113,16 @@ Make sure power is turned on the terminal, swipe the merchant card on the termin
 
 For iCT250 (with Ethernet access == Ethernet cable + router/switch/outlet to connect it to):
 
-  * `6. Parameters` -> `1. Other`
-    * `2. Connections` -> `Comm. type = Ethernet`
-    * `3. Cashier` -> `Cashier = Yes`
-    * `3. Cashier` -> `Comm. type = USB SLAVE`
+  * `6. Parameters / Inställningar` -> `1. Other / Ändra`
+    * `2. Connections / Kommunikation` -> `Comm. type = Ethernet`
+    * `3. Cashier / Kassa` -> `Cashier / ECR = Yes`
+    * `3. Cashier / Kassa` -> `Comm. type = USB SLAVE`
 
 For iPP350 (and iCT250 without Ethernet access):
 
-  * `6. Parameters` -> `1. Other`
-    * `2. Connections` -> `Comm. type = Cashier`
-    * `3. Cashier` -> `Cashier = Yes`
+  * `6. Parameters / Inställningar` -> `1. Other / Ändra`
+    * `2. Connections / Kommunikation` -> `Comm. type = Cashier`
+    * `3. Cashier / Kassa` -> `Cashier / ECR = Yes`
     * `3. Cashier` -> `Comm. type = USB SLAVE`
 
 Return to the default view by hitting the `Back` button (red) a couple of times. The terminal should now restart itself.
@@ -131,7 +131,7 @@ Return to the default view by hitting the `Back` button (red) a couple of times.
 
 Make sure power is turned on the terminal, swipe the merchant card on the terminal and select:
 
-`8. Program` -> `1. Fetch Program`
+`8. Program / Programvara` -> `1. Fetch Program / Hämta Program`
 
 If updates are available, this will download & install the latest software (rebooting the terminal in the process). If the payment terminal has the most up-to-date version of the software, it will print out the software version number. The version of the software should be at least that of the [abovementioned version](#minimum-supported-terminal-version). If you are unable to fetch the required update, contact Nets as they will need to set it available for download first.
 
@@ -145,4 +145,4 @@ The terminal is running an old software version. Update the terminal ([see above
 
 ### The customer does not want the merchant receipt to be printed automatically (iCT250). What to do?
 
-`6. Parameters` -> `1. Other` -> `1. Function` -> `Always Copy = No`
+`6. Parameters / Kommunikation` -> `1. Other / Ändra` -> `1. Function` -> `Always Copy = No`
