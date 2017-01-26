@@ -28,7 +28,7 @@ Payment terminals provided by Nets that we currently support:
 
 * Standalone or integrated:
   * If the terminal is **not** provided by Nets, ask the customer to terminate his/her current contract and proceed as above
-  * If the terminal is **not** one that we support, proceed as above (ask the customer to fill in the [terminal return form](../assets/palautusilmoitus.pdf).
+  * If the terminal is **not** one that we support, proceed as above (ask the customer to fill in the [terminal return form](../assets/palautusilmoitus.pdf)).
 
 ### What do I need to register a (new/existing) customer with Nets?
 
@@ -45,9 +45,9 @@ Information you will need...
 * additional information: "Payment terminal version 4.82 required"
 * if the customer is returning his/her existing payment terminal: [payment terminal ID](#how-do-i-figure-out-the-id-of-the-payment-terminal) (or, for older payment terminals, the serial number found on a sticker at the bottom of the terminal device).
 
-In case the customer's payment terminal is not running the [supported software version](#minimum-supported-terminal-version) you will need to contact Nets and ask them to enable the update. For this Nets will need the customer's business (organization) ID or the [payment terminal ID](#how-do-i-figure-out-the-id-of-the-payment-terminal). Any updates to the payment terminal software will be carried out during the [installation process](#installation-on-site--remote).
+In case the customer's payment terminal is not running the [supported software version](#minimum-supported-terminal-version) you will need to contact Nets and ask them to enable the update. For this Nets will need the customer's business (organization) ID or the [payment terminal ID](#how-do-i-figure-out-the-id-of-the-payment-terminal). Any updates to the payment terminal software will be carried out later during the [integration process](#installation-on-site--remote).
 
-**NOTE** If the customer has an old iPP350/iCT250 terminal (e.g. the Lumo version), you will need to order him/her a new one (Viking version) using the registration form provided above. The customer will need to fill in a separate [terminal return form](../assets/palautusilmoitus.pdf) to process the return of the older terminal.
+**NOTE** If the customer has an old iPP350/iCT250 terminal (e.g. the Lumo version), you will need to order him/her a new one (Viking version) using the registration form provided above. The customer will need to fill in and mail a separate [terminal return form](../assets/palautusilmoitus.pdf) to process the return of the older terminal.
 
 **NOTE** Customers should not have to pay any opening/new contract fees. If Nets sends them an invoice about this, tell them to contact us.
 
@@ -61,14 +61,14 @@ If so, inform Nets about this / mention this in the payment terminal registratio
 
 * iCT250
 * Ethernet cable (shipped together with the terminal)
-* router/switch/Ethernet outlet the Ethernet can be connected to.
+* router/switch/Ethernet outlet the Ethernet cable can be connected to.
 
 ### What extra equipment & materials does the customer need?
 
 * Receipt rolls (Nets ships only 2 along with the original packaging)
 * Receipt printer (only necessary for iPP350)
   * [Star TSP100 drivers](https://goo.gl/xEvKuw) for Windows 10
-* [USB A to USB B](../assets/images/usb-a-to-usb-b.jpg) cable (with a 90° angle). Request this in the registration form (or, if this'd be for an existing Nets customer, we can provide one from our own inventory)
+* [USB A to USB B](../assets/images/usb-a-to-usb-b.jpg) cable (with a 90° angle). Request this in the registration form (or, if this would be for an existing Nets customer, we can provide one from our own inventory)
 * If the customer is running a Mac, a pre-packaged Windows on a USB stick (see [OS X Integration](./osx-integration.md) for more).
 
 
@@ -83,9 +83,9 @@ It might take up to 10 minutes for the installer to complete depending on the OS
 
 ### 2. Integrating the payment terminal with Timma
 
-  1. First, if the customer's payment terminal is configured for multi-banking, see the [instructions on how to update the customer's & users Timma account information accordingly](./multibanking-terminal.md). Otherwise proceed to step 2.
+  1. First, if the customer's payment terminal is configured for multi-banking, see the [instructions on how to update the customer's & users' Timma account information accordingly](./multibanking-terminal.md). Otherwise proceed to step 2.
   2. Change the terminal settings to [communicate with Timma via USB](#how-do-i-prepare-the-payment-terminal-to-be-connected-to-timma)
-  3. Connect the payment terminal to the computer via a [USB A to USB B](../assets/images/usb-a-to-usb-b.jpg) cable (and if applicable, the Ethernet cable to a router/switch/Ethernet outlet)
+  3. Connect the payment terminal to the computer via a [USB A to USB B](../assets/images/usb-a-to-usb-b.jpg) cable (and if possible, the Ethernet cable to a router/switch/Ethernet outlet)
     * If the customer is running Timma on a Mac (= inside a Virtual Machine) make sure the [USB connection is also shared from the host machine](../assets/images/share-host-usb.jpeg). Connect the USB via `Devices` -> `USB` -> `Sagem`
   4. Launch `Timma.exe` (should be available on the Desktop)
   5. Wait for the login screen to appear. If the connection was **not** successfully established, a [warning prompt should appear at the top of the application window](../assets/images/terminal-disconnected.jpeg). If this is the case, try [re-connecting the terminal to the computer](reconnecting-the-terminal.md).
@@ -103,15 +103,15 @@ It should take ~5 minutes for the terminal to complete the update if its connect
 
 ### How do I figure out the ID of the payment terminal?
 
-If you have installed Timma and configured, you can see the payment terminal ID via [Payment Terminal](../assets/images/payment_terminal_version.png) page. Otherwise, make sure power is turned on the terminal, swipe the merchant card on the terminal and select (from `Main menu / Adminmeny / Kauppiasmenu`):
+If you have already installed & configured Timma, you can see the payment terminal ID via [Payment Terminal](../assets/images/payment_terminal_version.png) page. Otherwise, make sure power is turned on the terminal, swipe the Nets merchant card on it and select (from `Main menu / Adminmeny / Kauppiasmenu`):
 
 `6. Parameters / Inställningar` -> `1. Other / Ändra` -> `1. Function` (terminal ID should appear on the screen)
 
 ### How do I prepare the payment terminal to be connected to Timma?
 
-Make sure power is turned on the terminal, swipe the merchant card on the terminal and select (from `Main menu / Adminmeny / Kauppiasmenu`):
+Make sure power is turned on the terminal, swipe the merchant card on it and select (in `Main menu / Adminmeny / Kauppiasmenu`):
 
-For iCT250 (with Ethernet access == Ethernet cable + router/switch/outlet to connect it to):
+For iCT250 (with Ethernet access possibility == Ethernet cable + router/switch/outlet to connect it to):
 
   * `6. Parameters / Inställningar` -> `1. Other / Ändra`
     * `2. Connections / Kommunikation` -> `Comm. type = Ethernet`
@@ -129,7 +129,7 @@ Return to the default view by hitting the `Back` button (red) a couple of times.
 
 ### How do I update the version of the payment terminal software?
 
-Make sure power is turned on the terminal, swipe the merchant card on the terminal and select (from `Main menu / Adminmeny / Kauppiasmenu`):
+Make sure power is turned on the terminal, swipe the merchant card on it and select (in `Main menu / Adminmeny / Kauppiasmenu`):
 
 `8. Program / Programvara` -> `1. Fetch Program / Hämta Program`
 
@@ -149,6 +149,6 @@ For multi-banking terminals, you need to specify a `Nets ID` for the customer an
 
 ### The customer does not want the merchant receipt to be printed automatically (iCT250). What to do?
 
-Make sure power is turned on the terminal, swipe the merchant card on the terminal and select (from `Main menu / Adminmeny / Kauppiasmenu`):
+Make sure power is turned on the terminal, swipe the merchant card on it and select (in `Main menu / Adminmeny / Kauppiasmenu`):
 
 `6. Parameters / Kommunikation` -> `1. Other / Ändra` -> `1. Function` -> `Always Copy = No`
