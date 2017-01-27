@@ -6,7 +6,8 @@
 
 ### Production
 
-See the relevant section in the [Deployment Checklist](./docs/deployment-checklist.md#installation-on-site--remote).
+* [Ordering/registering a new POS](./docs/deployment-checklist.md#deployment-checklist)
+* [Setting up the integration](./docs/deployment-checklist.md#installation-on-site--remote)
 
 ### Development
 
