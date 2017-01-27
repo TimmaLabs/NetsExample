@@ -32,6 +32,8 @@ Payment terminals provided by Nets that we currently support:
 
 ### What do I need to register a (new/existing) customer with Nets?
 
+#### START BY ADDING AN ENTRY TO THE "POS (Finland/Sweden)" DOC IN GOOGLE DRIVE: https://goo.gl/2hnAxf
+
 * 🇫🇮 [Nets registration form](https://www.signom.com/nets/PowerForm.signom?powerFormId=NETS_FINLAND_HELPER) (online, see the [instructions](../assets/nets_registration_form.pdf) for help)
 * 🇸🇪 [Nets registration form](../assets/bestallningsblankett.pdf) (PDF)
 
