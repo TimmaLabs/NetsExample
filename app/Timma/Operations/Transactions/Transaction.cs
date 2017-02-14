@@ -21,14 +21,13 @@ namespace Timma.Operations.Transactions
 
         private TransferAmountArgs getTransactionArgs(string baxiArgs)
         {
-            baxiArgs = string.IsNullOrWhiteSpace(baxiArgs) ? "{}" : baxiArgs;
+            baxiArgs = String.IsNullOrWhiteSpace(baxiArgs) ? "{}" : baxiArgs;
             return JsonConvert.DeserializeObject<TransferAmountArgs>(baxiArgs);
         }
 
         private void setup (TransferAmountArgs args)
         {
-            args.OperID = args.OperID ?? DEFAULT_OPERATOR_ID;
-
+            args.OperID = String.IsNullOrWhiteSpace(args.OperID) ? DEFAULT_OPERATOR_ID : args.OperID;
             args.Type1 = Type1;
             args.Type2 = Type2;
             args.Type3 = Type3;

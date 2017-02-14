@@ -20,13 +20,13 @@ namespace Timma.Operations.Admin
 
         private AdministrationArgs getAdministrationArgs(string baxiArgs)
         {
-            baxiArgs = string.IsNullOrWhiteSpace(baxiArgs) ? "{}" : baxiArgs;
+            baxiArgs = String.IsNullOrWhiteSpace(baxiArgs) ? "{}" : baxiArgs;
             return JsonConvert.DeserializeObject<AdministrationArgs>(baxiArgs);
         }
 
         private void setup(AdministrationArgs args)
         {
-            args.OperID = args.OperID ?? DEFAULT_OPERATOR_ID;
+            args.OperID = String.IsNullOrWhiteSpace(args.OperID) ? DEFAULT_OPERATOR_ID : args.OperID;
             args.AdmCode = AdmCode;
 
             Args = args;
