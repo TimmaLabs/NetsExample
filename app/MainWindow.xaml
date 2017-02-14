@@ -26,8 +26,7 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Rectangle Grid.Column="1" PresentationOptions:Freeze="True" Fill="{StaticResource logo_white}"  />
-
         <Grid Grid.ColumnSpan="3" x:Name="TimmaBrowser" ZIndex="1"></Grid>
+        <Rectangle Grid.Column="1" PresentationOptions:Freeze="True" Fill="{StaticResource logo_white}"  />
     </Grid>
 </Window>
