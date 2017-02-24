@@ -70,4 +70,4 @@ If the release includes changes, start with incrementing the respective version 
 ## FAQ
 
 ### What to do if the test payment terminal rejects all/some of the test cards?
-The card parameters need to be updated. You can do this via `3. Cards` -> `1. Get cards` in the terminal's merchant menu. Or, if that doesn't help, reconcile (tee "päivänpäätös"). If the cards continue to act up, just try each one until one starts working (or, shoot [Nets](mailto:salessupport-fi@nets.eu) a message)
+The card parameters need to be updated. You can do this via `1. Cards` -> `1. Get cards` in the terminal's merchant menu. Or, if that doesn't help, reconcile (tee "päivänpäätös"). If the cards continue to act up, just try each one until one starts working (or, shoot [Nets](mailto:salessupport-fi@nets.eu) a message)
