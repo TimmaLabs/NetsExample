@@ -65,7 +65,7 @@ If the release includes changes, start with incrementing the respective version 
 1. Assembly version: right-click on `Timma` project -> `Properties` -> `Application` -> `Assembly Information...` -> `Assembly Version` and `File Version` (can be identical, see http://stackoverflow.com/a/65062 for more information)
 2. Installer ([Setup.wxs](setup/Setup.wxs) and [Bundle.wxs](Bundle/bundle.wxs)) versions (see code comments & https://www.firegiant.com/wix/tutorial/upgrades-and-modularization/ for reference)
 3. [package.json](./package.json) version
-4. And, if `major` version bump: `NetsService` version in [timma_admin_new](https://bitbucket.org/lauriorkoneva/timma_admin_new)
+4. And, if `major` version bump: `NetsService` version in [TimmaCustomer](https://github.com/TimmaLabs/TimmaCustomer)
 
 ## FAQ
 
