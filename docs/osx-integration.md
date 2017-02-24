@@ -6,9 +6,10 @@
   1. Choose `File` -> `Import Appliance...`
   2. Import the downloaded Windows distribution (`.ova`)
 4. Start the Virtual Machine via the [VirtualBox Manager dialog](../assets/images/virtuabox-manager-dialog.png)
+  - if the VM fails to start and complains about a USB error, reset USB devices by disabling them via the toolbar: `Machine` -> `Settings...` -> `Ports` -> `USB` -> Untick _Enable USB controller_ and restart the VM
 5. Prevent the host machine (Mac) from going to sleep:
 
-  Open `System Preferences` -> `Energy Saver` -> `Power Adapter` (tab) and make sure `Prevent computer from sleeping automatically when the display is off` checked. This will help preventing the VM from losing USB connectivity when the host machine (Mac) is left idle. If the host machine is put to sleep/restarted, the user will need to [share the USB connection to the VM](../assets/images/share-host-usb.jpeg) again (toggle `Sagem` off & on)
+  Open `System Preferences` -> `Energy Saver` -> `Power Adapter` (tab) and make sure `Prevent computer from sleeping automatically when the display is off` checked. This will help preventing the VM from losing USB connectivity when the host machine (Mac) is left idle. If the host machine is put to sleep/restarted, the user will need to [share the USB connection to the VM](../assets/images/share-host-usb.jpeg) again (toggle `Sagem` off & on). To enable auto-mounting of the USB device, add the device to VirtualBox's **USB Device Filters**: `Devices` -> `USB` -> `USB Settings...` -> Add new USB filter via the + icon and choose the device from the dropdown.
 
 6. Proceed with [installing Timma](./deployment-checklist.md#1-installing-the-timma-software).
 
