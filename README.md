@@ -35,7 +35,7 @@
 
   These should match the respective entries in your Mac's `/etc/hosts`.
 
-5. [Expose USB from the host machine to your VM](./assets/images/share-host-usb.jpeg) (`Devices` -> `USB` -> `Sagem`)
+5. [Expose USB from the host machine to your VM](./assets/images/share-host-usb.jpeg) (`Devices` -> `USB` -> `Sagem`). Refer to the [OS X Integration docs](./docs/osx-integration.md) for enabling USB auto-mounting.
 
 6. Optional: download [Microsoft Expression Design 4](https://www.microsoft.com/en-us/download/details.aspx?id=36180) for converting vector art (e.g. `.ai`) into XAML
 
@@ -70,4 +70,4 @@ If the release includes changes, start with incrementing the respective version 
 ## FAQ
 
 ### What to do if the test payment terminal rejects all/some of the test cards?
-The card parameters need to be updated. You can do this via `1. Cards` -> `1. Get cards` in the terminal's merchant menu. Or, if that doesn't help, reconcile (tee "päivänpäätös"). If the cards continue to act up, just try each one until one starts working (or, shoot [Nets](mailto:salessupport-fi@nets.eu) a message)
+Perform reconciliation for each of the Nets accounts via the [Payment Terminal](./assets/images/payment_terminal_version.png) view. If that doesn't help, try fetching the latest dataset via the _Print information_ button on the Payment Terminal page. If the cards continue to act up, just try each one until one starts working, or shoot [Nets](mailto:salessupport-fi@nets.eu) a message
