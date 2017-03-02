@@ -11,7 +11,7 @@ Payment terminals provided by Nets that we currently support:
 
 ### Minimum supported terminal version
 
-* 🇫🇮 `4.82` (equivalent test terminal version `43.19`)
+* 🇫🇮 `4.81` (equivalent test terminal version `43.19`)
 * 🇸🇪 `4.62`
 
 ## Before Going On-site
@@ -28,9 +28,9 @@ Payment terminals provided by Nets that we currently support:
 
 * Standalone or integrated:
   * If the terminal is **not** provided by Nets, ask the customer to terminate his/her current contract and proceed as above
-  * If the terminal is **not** one that we support, proceed as above (ask the customer to fill in the [terminal return form](../assets/palautusilmoitus.pdf)).
+  * If the terminal is **not** one that we support, proceed as above & ask the customer to fill in the [terminal return form](../assets/palautusilmoitus.pdf).
 
-### What do I need to register a (new/existing) customer with Nets?
+### What do I need for registering a (new/existing) customer with Nets?
 
 #### START BY ADDING AN ENTRY TO THE "POS (Finland/Sweden)" DOC IN GOOGLE DRIVE: https://goo.gl/2hnAxf
 
@@ -47,15 +47,15 @@ Information you will need...
 * additional information: "Payment terminal version 4.82 required" (required for Nets Finland only)
 * if the customer is returning his/her existing payment terminal: [payment terminal ID](#how-do-i-figure-out-the-id-of-the-payment-terminal) (or, for older payment terminals, the serial number found on a sticker at the bottom of the terminal device).
 
-In case the customer's payment terminal is not running the [supported software version](#minimum-supported-terminal-version) you will need to contact Nets and ask them to enable the update. For this Nets will need the customer's business (organization) ID or the [payment terminal ID](#how-do-i-figure-out-the-id-of-the-payment-terminal). Any updates to the payment terminal software will be carried out later during the [integration process](#installation-on-site--remote).
+In case the customer's payment terminal is not running the [supported software version](#minimum-supported-terminal-version) you will need to contact Nets and ask them to enable the update. For this Nets will need the customer's business ID (or the [payment terminal ID](#how-do-i-figure-out-the-id-of-the-payment-terminal)). Any updates to the payment terminal software will be carried out later during the [integration process](#installation-on-site--remote).
 
-**NOTE** If the customer has an old iPP350/iCT250 terminal (e.g. the Lumo version), you will need to order him/her a new one (Viking version) using the registration form provided above. The customer will need to fill in and mail a separate [terminal return form](../assets/palautusilmoitus.pdf) to process the return of the older terminal.
+**NOTE** If the customer has an old iPP350/iCT250 terminal (e.g. the Lumo version), you will need to order him/her a new one (Viking version) using the registration form provided above. The customer will need to fill in and mail a separate [terminal return form](../assets/palautusilmoitus.pdf) to process the return of the older terminal (withing 30 days).
 
 **NOTE** Customers should not have to pay any opening/new contract fees. If Nets sends them an invoice about this, tell them to contact us.
 
 ### What type of business is the customer running? Does it include multiple proprietorships or is everybody under a single company?
 
-If the customer consists of multiple proprietorships, Nets will need to enable a so-called **multi-banking support** on the payment terminal. Mention this in the terminal order/registration form. **Let the dev team know about any multi-banking terminals!**
+If the customer consists of multiple proprietorships, Nets will need to enable a so-called **multi-banking support** ("monipankki") on the payment terminal. Mention this in the terminal order/registration form. **Let the dev team know about any multi-banking terminals!**
 
 ### Does the customer want reconciliation ("päivänpäätös") to be done automatically?
 
@@ -85,14 +85,14 @@ It might take up to 10 minutes for the installer to complete depending on the OS
 
 ### 2. Integrating the payment terminal with Timma
 
-  1. First, if the customer's payment terminal is configured for multi-banking, see the [instructions on how to update the customer's & users' Timma account information accordingly](./multibanking-terminal.md). Otherwise proceed to step 2.
-  2. Change the terminal settings to [communicate with Timma via USB](#how-do-i-prepare-the-payment-terminal-to-be-connected-to-timma)
-  3. Connect the payment terminal to the computer via a [USB A to USB B](../assets/images/usb-a-to-usb-b.jpg) cable (and if possible, the Ethernet cable to a router/switch/Ethernet outlet)
+  1. First, change the terminal settings to [communicate with Timma via USB](#how-do-i-prepare-the-payment-terminal-to-be-connected-to-timma)
+  2. Connect the payment terminal to the computer via a [USB A to USB B](../assets/images/usb-a-to-usb-b.jpg) cable (and if possible, the Ethernet cable to a router/switch/Ethernet outlet)
     * If the customer is running Timma on a Mac (= inside a Virtual Machine) make sure the [USB connection is also shared from the host machine](../assets/images/share-host-usb.jpeg). Connect the USB via `Devices` -> `USB` -> `Sagem`
-  4. Launch `Timma.exe` (should be available on the Desktop)
-  5. Wait for the login screen to appear. If the connection was **not** successfully established, a [warning prompt should appear at the top of the application window](../assets/images/terminal-disconnected.jpeg). If this is the case, try [re-connecting the terminal to the computer](reconnecting-the-terminal.md)
-  6. Check that everything works by navigating to the [Payment Terminal](../assets/images/payment_terminal_version.png) view and printing out e.g. a `Z-report`. For multi-banking customers, you should try this for each account (change accounts via the `Select account` drop-down on the Payment Terminal view)
-  7. If this is a new payment terminal, **reconcile** ("päivänpäätös") via the green reconcile button (otherwise the customer won't be able to accept card payments)
+  3. Launch `Timma.exe` (should be available on the Desktop)
+  4. Wait for the login screen to appear. If the connection was **not** successfully established, a [warning prompt should appear at the top of the application window](../assets/images/terminal-disconnected.jpeg). If this is the case, try [re-connecting the terminal to the computer](reconnecting-the-terminal.md)
+  5. If the customer's payment terminal is configured for **multi-banking**, see the [instructions on how to update the customer's & users' Timma account information accordingly](./multibanking-terminal.md). Otherwise proceed to step 6.
+  6. Check that everything works by navigating to the [Payment Terminal](../assets/images/payment_terminal_version.png) view and printing out e.g. a `Z-report`. For a multi-banking terminal, you should try this for each account (change accounts via the `Select account` drop-down on the Payment Terminal view)
+  7. If this is a **new** payment terminal, **reconcile** ("päivänpäätös") via the green reconcile button (otherwise the customer won't be able to accept card payments). Again, for a multi-banking terminal, do this for each account
   8. Done!
 
 ### 3. Checking the terminal software for updates
@@ -101,11 +101,13 @@ First, [check if the terminal version is outdated](#how-do-i-check-the-software-
 
 It should take ~5 minutes for the terminal to complete the update if its connected to the Internet via an Ethernet cable (vs ~30min via USB only). Once the update has been fetched, the terminal will restart itself (USB connection will be lost in the process).
 
+**NOTE** If the customer has been using automatic reconciliation, the update is likely to disable that configuration (#nets-things). Thus, you should contact Nets and ask them to re-enable/reset the automatic reconciliation after the update.
+
 ## FAQ
 
 ### How do I figure out the ID of the payment terminal?
 
-If you have already installed & configured Timma, you can see the payment terminal ID via [Payment Terminal](../assets/images/payment_terminal_version.png) page. Otherwise, make sure power is turned on the terminal, swipe the Nets merchant card on it and select (from `Main menu / Adminmeny / Kauppiasmenu`):
+If you have already installed & configured Timma, you can see the payment terminal ID via the [Payment Terminal](../assets/images/payment_terminal_version.png) view. Otherwise, make sure power is turned on the terminal, swipe the Nets merchant card on it and select (from `Main menu / Adminmeny / Kauppiasmenu`):
 
 `6. Parameters / Inställningar` -> `1. Other / Ändra` -> `1. Function` (terminal ID should appear on the screen)
 
@@ -131,7 +133,7 @@ Return to the default view by hitting the `Back` button (red) a couple of times.
 
 ### How do I update the version of the payment terminal software?
 
-Make sure power is turned on the terminal, swipe the merchant card on it and select (in `Main menu / Adminmeny / Kauppiasmenu`):
+If you have already installed & configured Timma, you can do this via the [Payment Terminal](../assets/images/payment_terminal_version.png) view. Otherwise, make sure power is turned on the terminal, swipe the merchant card on it and select (in `Main menu / Adminmeny / Kauppiasmenu`):
 
 `8. Program / Programvara` -> `1. Fetch Program / Hämta Program`
 
