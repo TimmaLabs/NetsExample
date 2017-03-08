@@ -39,7 +39,7 @@ Payment terminals provided by Nets that we currently support:
 
 Information you will need...
 
-* seller number: `108398`
+* seller number: `300549394`
 * password: `n87y62`
 * [customer contact/business information](https://timma.fi/hallinta)
 * device software version: `Viking`
