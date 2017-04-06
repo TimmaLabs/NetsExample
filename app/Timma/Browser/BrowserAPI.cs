@@ -1,4 +1,4 @@
-﻿using BBS.BAXI;
+using BBS.BAXI;
 using Newtonsoft.Json;
 using System;
 using System.Diagnostics;
@@ -101,7 +101,7 @@ namespace Timma.Browser
         /// </summary>
 
         /// <summary>
-        /// Cancel ongoing operation
+        /// Cancel an ongoing operation
         /// </summary>
         /// <param name="hard">
         ///     If set to false, the terminal has the choice to ignore the request. 
@@ -126,7 +126,7 @@ namespace Timma.Browser
         }
 
         /// <summary>
-        /// Close for the day & print EOD report
+        /// Close the day & print the reconciliation report
         /// </summary>
         /// <param name="options">Options in JSON string format</param>
         /// <param name="options.printText">
@@ -212,7 +212,7 @@ namespace Timma.Browser
         }
 
         /// <summary>
-        /// Check/update the terminal software
+        /// Fetch card information for an account
         /// </summary>
         /// <param name="options">Options in JSON string format</param>
         /// <param name="options.baxiArgs">TransferAmount arguments in JSON string format</param>
@@ -252,7 +252,7 @@ namespace Timma.Browser
         }
 
         /// <summary>
-        /// Ping terminal host
+        /// Ping the terminal host
         /// </summary>
         /// <returns>MethodRejectCode</returns>
         public int PingHost()
