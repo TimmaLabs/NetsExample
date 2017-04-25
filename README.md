@@ -4,6 +4,8 @@
 
 Run your web application on a fully compliant ES6 environment based on the Chromium web browser engine with access to OS resources &ndash; JavaScript &rarr; .NET (CEFSharp & CEF) &rarr; Baxi.NET &rarr; Payment terminal
 
+Available @ https://goo.gl/tDLYHj
+
 ## Development
 
 1. Install the required USB drivers for terminal communication: [IngenicoUSBDrivers_2.80_setup.exe](./IngenicoUSBDrivers_2.80/)
