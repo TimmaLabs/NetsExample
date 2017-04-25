@@ -121,9 +121,9 @@ namespace NetsExample.Browser
         private string JSLogFunction(string level = "LOG", string color = "gray")
         {
             return string.Format(@"
-            function(payload = '', ns = '{0}', level = '{1}', color = '{2}') {{
+            function(payload = '', level = '{1}', color = '{2}') {{
                 const timestamp = window.moment ? moment().format('HH:mm:ss:SSS') : (new Date()).toLocaleTimeString()
-                console.log(`%c ${{timestamp}} ${{ns}}:${{level}}`, `color: ${{color}}`, payload ? '>' : '', payload)
+                console.log(`%c ${{timestamp}} {0}:${{level}}`, `color: ${{color}}`, payload ? '>' : '', payload)
             }}", NAMESPACE, level, color);
         }
 
