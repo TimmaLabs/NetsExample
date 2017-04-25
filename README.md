@@ -18,13 +18,22 @@
 
   * .ico generator: https://iconverticons.com/online/
 
-See [example/README.md](./example/README.md) for usage examples.
+6. Run `npm install` (make sure you have Node.js installed and available in your %PATH%)
+
+7. Launch the application:
+
+  * run `npm run example` to start example web application
+  * open the solution (`app/NetsExample.sln`) in Visual Studio (or alike) and run it
 
 If Visual Studio complains about a missing `BBS` (Baxi API) reference when you try building/running the application, do the following:
 
   1. Right-click on the `NetsExample` project
   2. `Add` -> `Reference...`
   3. Select `..Baxi.net_1.4.2.1\baxi.net45\baxi_dotnet.dll`
+
+When running in `DEBUG` mode, a browser console will be opened alongside the application to allow interactive debugging/inspection of the application. See [example/README.md](./example/README.md) for usage examples.
+
+The solution consist of 3 projects: the application (`NetsExample`) and two installer projects (`setup` and `bundle`). `setup` packages the installer (`.msi`) for the application whereas `bundle` includes the application installer together with its dependencies (USB driver and .NET 4.5.2). Run `npm run` for an overview of all the available scripts for building & signing the application.
 
 ## Tips for Versioning
 
