@@ -18,14 +18,14 @@ Run your web application on a fully compliant ES6 environment based on the Chrom
 
 5. Optional: download [Microsoft Expression Design 4](https://www.microsoft.com/en-us/download/details.aspx?id=36180) for converting vector art (e.g. `.ai`) into XAML
 
-  * .ico generator: https://iconverticons.com/online/
+    * .ico generator: https://iconverticons.com/online/
 
 6. Run `npm install` (make sure you have Node.js installed and available in your %PATH%)
 
 7. Launch the application:
 
-  * run `npm run example` to start example web application
-  * open the solution (`app/NetsExample.sln`) in Visual Studio (or alike) and run it.
+    * run `npm run example` to start example web application
+    * open the solution (`app/NetsExample.sln`) in Visual Studio (or alike) and run it.
 
 If Visual Studio complains about a missing `BBS` (Baxi API) reference when you try building/running the application, do the following:
 
