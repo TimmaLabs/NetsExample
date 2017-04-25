@@ -12,7 +12,7 @@
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
         Closing="MainWindow_Closing"
-        Background="#158F77">
+        Background="#eee">
     <Window.InputBindings>
         <KeyBinding Key="r" Modifiers="Ctrl" Command="Refresh" />
         <KeyBinding Key="OemPlus" Modifiers="Ctrl" Command="IncreaseZoom" />

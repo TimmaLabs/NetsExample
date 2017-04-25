@@ -2,6 +2,8 @@
 
 # NetsExample
 
+Run your web application on a fully compliant ES6 environment based on the Chromium web browser engine with access to OS resources &ndash; JavaScript &rarr; .NET (CEFSharp & CEF) &rarr; Baxi.NET &rarr; Payment terminal
+
 ## Development
 
 1. Install the required USB drivers for terminal communication: [IngenicoUSBDrivers_2.80_setup.exe](./IngenicoUSBDrivers_2.80/)
@@ -23,7 +25,7 @@
 7. Launch the application:
 
   * run `npm run example` to start example web application
-  * open the solution (`app/NetsExample.sln`) in Visual Studio (or alike) and run it
+  * open the solution (`app/NetsExample.sln`) in Visual Studio (or alike) and run it.
 
 If Visual Studio complains about a missing `BBS` (Baxi API) reference when you try building/running the application, do the following:
 
@@ -33,7 +35,7 @@ If Visual Studio complains about a missing `BBS` (Baxi API) reference when you t
 
 When running in `DEBUG` mode, a browser console will be opened alongside the application to allow interactive debugging/inspection of the application. See [example/README.md](./example/README.md) for usage examples.
 
-The solution consist of 3 projects: the application (`NetsExample`) and two installer projects (`setup` and `bundle`). `setup` packages the installer (`.msi`) for the application whereas `bundle` includes the application installer together with its dependencies (USB driver and .NET 4.5.2). Run `npm run` for an overview of all the available scripts for building & signing the application.
+The solution consist of 3 projects: the application (`NetsExample`) and two installer projects (`setup` and `bundle`). `setup` packages the installer (`.msi`) for the application whereas `bundle` includes the application installer together with its dependencies (USB driver and .NET 4.5.2). Run `npm run` for an overview of all the available scripts for building & signing the application (e.g. `npm run build:release` will build a release version of the application under `./bin`)
 
 ## Tips for Versioning
 
@@ -56,3 +58,6 @@ If the release includes changes, start with incrementing the respective version 
 
 ### What to do if the test payment terminal rejects all/some of the test cards?
 Perform reconciliation for each Nets accounts configured on the terminal. If that doesn't help, try fetching the latest dataset (_Fetch cards_). If the test cards continue to act up, just try each one until one starts working, or shoot [Nets](mailto:salessupport-fi@nets.eu) a message.
+
+### What to do if terminal connection can not be established?
+Confirm that the USB driver was successfully installed. Open `Device Manager` and upon connecting the payment terminal via USB you should see `Sagem Telium` appear under `Ports (COM & LPT)`. Also, confirm that [Force COM port is enabled and set to the appropriate value](./assets/images/com-port-settings.png) (`COM9`)
