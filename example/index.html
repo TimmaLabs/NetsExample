@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>ExamplePOS</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+  <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16" />
+
+  <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="css/vendor/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/flags.css">
+  <link rel="stylesheet" href="css/animate.css">
+</head>
+<body oncontextmenu="return false;">
+  <nav class="navbar navbar-inverse navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">ExamplePOS</a>
+      </div>
+    </div>
+  </nav>
+  <nav class="navbar navbar-default navbar-fixed-bottom">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand js-pos-example__output-link pos-example__output-link" href="#output">Terminal output <span class="glyphicon glyphicon-menu-up js-pos-example__output-link-indicator pos-example__output-link-indicator"></span>
+        </a>
+      </div>
+      <span class="js-pos-example__process-indicator pos-example__process-indicator">
+        <i class="glyphicon glyphicon-repeat spinner"></i> Waiting for terminal...
+      </span>
+      <div class="js-pos-example__output-view-container pos-example__output-view-container">
+        <div class="row pos-example__output-view">
+          <div class="col-xs-4 pos-example__output-view-item pos-example__output-view-term-display-container">
+            <div class="js-pos-example__output-view-term-display pos-example__output-view-term-display dotted">
+            </div>
+            <div class="js-pos-example__output-view-term-model pos-example__output-view-term-model">
+            </div>
+          </div>
+          <div class="col-xs-3 col-xs-offset-1 pos-example__output-view-item pos-example__output-view-term-print-txt-container">
+            <div class="pos-example__output-view-term-print-txt">
+            </div>
+          </div>
+          <div class="col-xs-3 col-xs-offset-1 pos-example__output-view-item pos-example__output-view-log-container dotted">
+            <div class="pos-example__output-view-log-header">Logs</div>
+            <div class="js-pos-example__output-view-log-content pos-example__output-view-log-content"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>Fully compliant ES6 environment based on the Chromium web browser engine: JavaScript → .NET (CEFSharp &amp; CEF) → Baxi.NET → Payment terminal.</p>
+      </div>
+      <div class="col-md-3 pos-example__settings">
+        <h2>Settings</h2>
+        <p>Here you can define <b>oper ID</b> and <b>merchant ID</b> values to be used when interacting with a multi-banking (multi-user) enabled terminal:</p>
+        <div class="input-group">
+          <span class="input-group-addon">Oper ID</span>
+          <input type="text" class="form-control" placeholder="0000" id="oper-id" maxlength="4" minlength="4" autocomplete="on">
+        </div>
+        <div class="input-group">
+          <span class="input-group-addon">Merchant ID</span>
+          <input type="text" class="form-control" placeholder="000000" id="merchant-id" maxlength="6" minlength="6" autocomplete="on">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <h2>Purchase</h2>
+        <p>Initiate a purchase transaction. <i>Amount</i> indicates the total amount to charge and <i>VAT</i> the amount of VAT <u>included</u> in <i>Amount</i> (in Euros, or alike). For example, a 10€ purchase with a 10% VAT rate would include 1€ of <i>VAT</i>.</p>
+        <div class="input-group">
+          <span class="input-group-addon">€</span>
+          <input type="number" class="form-control" placeholder="Amount" id="purchase-amount">
+          <span class="input-group-addon">€</span>
+          <input type="number" class="form-control" placeholder="VAT" id="purchase-vat">
+          <span class="input-group-addon pos-example__input-group-addon__no-padding">
+            <a class="btn btn-primary pos-example__btn-flat" href="#purchase" role="button">Purchase &raquo;</a>
+          </span>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <h2>Reverse</h2>
+        <p>Reverse a previous purchase. Allows cardless refund. Amount to reverse is read from the purchase <i>Amount</i> field.</p>
+        <p>
+         <a class="btn btn-default" href="#reverse" role="button">Reverse &raquo;</a>
+        </p>
+      </div>
+      <div class="col-md-3">
+        <h2>Refund</h2>
+        <p>Initiate a refund transaction. Allows refunding a specific amount of currency onto a card. Requires the card to be inserted into the terminal (PIN not required).</p>
+        <div class="input-group">
+          <span class="input-group-addon">€</span>
+          <input type="number" class="form-control" placeholder="Amount" id="refund-amount">
+          <span class="input-group-addon pos-example__input-group-addon__no-padding">
+            <a class="btn btn-default pos-example__btn-flat" href="#refund" role="button">Refund &raquo;</a>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <h2>Print</h2>
+        <p>Print a payment terminal report, or alternatively, specify a custom print text. On a multi-banking terminal custom printing "requires" specifying a valid <b>merchant ID</b> (see Settings above), otherwise a (superfluous) <i>Invalid Merchant ID</i> error is returned by the terminal upon printing.</p>
+        <ul class="pos-example__list">
+          <li>
+            <label>
+              <input name="reports" type="radio" value="x" checked=""> X Report
+            </label>
+          </li>
+          <li>
+            <label>
+              <input name="reports" type="radio" value="z"> Z Report
+            </label>
+          </li>
+          <li>
+            <label>
+              <input name="reports" type="radio" value="eot"> EOT Report
+            </label>
+          </li>
+          <li>
+            <label>
+              <input name="reports" type="radio" value="latest"> Latest Transaction
+            </label>
+          </li>
+          <li>
+            <label>
+              <input name="reports" type="radio" value="custom"> Custom
+            </label>
+          </li>
+        </ul>
+        <div class="js-pos-example__print-custom-container pos-example__print-custom-container hidden">
+          Print request in JSON format:<br />
+          <textarea class="js-report-custom-value form-control">
+{
+  "printmsg": {
+    "ver": "1.00",
+    "rows": [
+      { "type": "txt", "data": "foobar", "align": "left" },
+      { "type": "txt", "blank": 15 }
+    ]
+  },
+  "o": {
+    "ver": "1.00",
+    "merch": ""
+  }
+}</textarea>
+        </div>
+        <a class="btn btn-default" href="#print" role="button">Print &raquo;</a>
+      </div>
+      <div class="col-md-4">
+        <h2>Utilities</h2>
+        <p>Various utility functions to query terminal connectivity, information and/or set the interface language. The application version refers to the version of the (.NET) software that integrates with the Baxi API. The terminal software version can be found under the terminal information. All output is viewable via <i>Terminal output</i>.</p>
+        <ul class="pos-example__list pos-example__utilities-list">
+          <li>
+            <label>
+              <input name="utilities" type="radio" value="is-open" checked=""> Test terminal connection (USB)
+            </label>
+          </li>
+          <li>
+            <label>
+              <input name="utilities" type="radio" value="ping-host"> Ping host (Nets server)
+            </label>
+          </li>
+          <li>
+            <label>
+              <input name="utilities" type="radio" value="change-language"> Change terminal language
+            </label>
+          </li>
+          <li>
+            <label>
+              <input name="utilities" type="radio" value="get-version"> Get application version
+            </label>
+          </li>
+          <li>
+            <label>
+              <input name="utilities" type="radio" value="get-info"> Get terminal information
+            </label>
+          </li>
+          <li>
+            <label>
+              <input name="utilities" type="radio" value="optional-data"> Generate <i>OptionalData</i> JSON blob
+            </label>
+          </li>
+          <li>
+            <label>
+              <input name="utilities" type="radio" value="fetch-account"> Fetch Nets account information
+            </label>
+          </li>
+          <li>
+            <label>
+              <input name="utilities" type="radio" value="update-terminal"> Update/check terminal version
+            </label>
+          </li>
+        </ul>
+        <div class="dropdown dropup js-pos-example__utilities-language-container pos-example__utilities-language-container hidden">
+          <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+            Language <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu pos-example__utilities-language-selector">
+            <li>
+              <label>
+                <input name="languages" type="radio" value="gb">
+                <span class="flag flag-gb" alt="English"></span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input name="languages" type="radio" value="fi">
+                <span class="flag flag-fi" alt="Finnish"></span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input name="languages" type="radio" value="sv">
+                <span class="flag flag-se" alt="Swedish"></span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input name="languages" type="radio" value="dk">
+                <span class="flag flag-dk" alt="Danish"></span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input name="languages" type="radio" value="no">
+                <span class="flag flag-no" alt="Norwegian"></span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input name="languages" type="radio" value="de">
+                <span class="flag flag-de" alt="German"></span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input name="languages" type="radio" value="hu">
+                <span class="flag flag-hu" alt="Hungarian"></span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input name="languages" type="radio" value="et">
+                <span class="flag flag-ee" alt="Estonian"></span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input name="languages" type="radio" value="pl">
+                <span class="flag flag-pl" alt="Polish"></span>
+              </label>
+            </li>
+          </ul>
+        </div>
+        <div class="row js-pos-example__utilities-optional-data-container pos-example__utilities-optional-data-container hidden">
+          <div class="input-group">
+            <span class="input-group-addon">txnref</span>
+            <input type="text" class="form-control" id="txnref">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon">autodcc</span>
+            <input type="number" class="form-control" placeholder="1" id="autodcc">
+          </div>
+          <div class="input-group">
+            <span class="input-group-addon">merch</span>
+            <input type="number" class="form-control" id="merch">
+          </div>
+        </div>
+        <a class="btn btn-default js-process-utility-btn" href="#process-utility" role="button">Process &raquo;</a>
+      </div>
+      <div class="col-md-2">
+        <h2>Reconcile</h2>
+        <p>Initiate (manual) reconciliation. To configure automatic reconciliation for a terminal, contact Nets.</p>
+        <p>
+         <a class="btn btn-default" href="#reconcile" role="button">Reconcile &raquo;</a>
+       </p>
+      </div>
+      <div class="col-md-2">
+        <h2>Cancel</h2>
+        <p>Cancel a pending transaction. Transactions in-flight (requests sent to the Nets host) can not be cancelled.</p>
+        <p>
+          <a class="btn btn-danger" href="#cancel" role="button">Cancel &raquo;</a>
+        </p>
+      </div>
+    </div>
+
+    <hr>
+
+    <footer>
+      <p>&copy; Nets 2017</p>
+    </footer>
+  </div>
+
+  <script src="js/vendor/jquery-1.11.2.min.js"></script>
+  <script src="js/vendor/bootstrap-3.3.7.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
