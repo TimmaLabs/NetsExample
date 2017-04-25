@@ -1,4 +1,5 @@
-var terminal = __TimmaECR;
+```js
+var terminal = window.__TimmaECR;
 
 /**
  * EVENT LISTENERS (overridable, defaults to Timma.Browser.BrowserController.JSLogFunction)
@@ -72,7 +73,7 @@ terminal.cancel(false); // Soft cancel a pending operation (soft, as in, ask the
 
 terminal.reconcile(); // AKA "päivänpäätös"
 terminal.reconcile(JSON.stringify({ printText: foobar }) ); // ... with custom print text
-terminal.reconcile(JSON.stringify({ baxiArgs: JSON.stringify({ Amount2: 1234 }) }) ); // ... with custom Baxi arguments
+terminal.reconcile(JSON.stringify({ baxiArgs: JSON.stringify({ OptionalData: JSON.stringify({}) }) }) ); // ... with custom Baxi arguments
 
 // Print custom receipt (see Baxi API docs for valid print payload format)
 terminal.print( JSON.stringify({ printmsg: { ver:'1.0', rows: [{ type:'txt', data: 'foo' }, { type: 'txt', blank: 15 }] } }) );
@@ -80,22 +81,23 @@ terminal.print( JSON.stringify({ printmsg: { ver:'1.0', rows: [{ type:'txt', dat
 terminal.printReport('x') // Print X-report (see app/Timma/Browser/BrowserAPI.cs in TimmaLabs/TimmaNets for all the supported report types)
 terminal.printReport('x', JSON.stringify({ printText: foobar }) ); // ... with custom print text (stored in variable `foobar`)
 
-terminal.update(); // Check/update the terminal software
-terminal.fetchCards(); // Fetch card information for an account
-terminal.pingHost(); // Send a ping to the host (Nets server)
-
+/**
+ * Utilities
+ */
 terminal.changeLanguage('se'); // Change terminal language to Swedish
 terminal.changeLanguage(); // Change terminal language to English (default)
-
-/**
- * Helpers
- */
-terminal.isOpen(); // Check if connection to the terminal was ever established
 
 // Output OptionalData structure including the available fields (txnref, autodcc, merch)
 terminal.optionalData('txnref-goes-here', 1, 567);
 terminal.optionalData('txnref-goes-here');
 terminal.optionalData('', 2);
 
-terminal.getVersion(); // Get TimmaNets version
-terminal.getTerminalInfo(); // Get terminal related info
+terminal.update(); // Check/update the terminal software
+terminal.fetchCards(); // Fetch card information for an account
+terminal.pingHost(); // Send a ping to the host (Nets server)
+
+terminal.getVersion(); // Get POS application version
+terminal.getTerminalInfo(); // Get terminal information (ID, type, baud rate...)
+terminal.isOpen(); // Test POS connection (USB)
+terminal.log(message, prefix, color); // Log a (pre-formatted) message to the browser console
+```

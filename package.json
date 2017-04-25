@@ -7,7 +7,10 @@
     "doc": "docs"
   },
   "scripts": {
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "build:release": ".\\script\\build\\build-release.bat",
+    "build:debug": ".\\script\\build\\build-debug.bat",
+    "example": "node ./node_modules/http-server/bin/http-server -o --cors example"
   },
   "config": {
     "commitizen": {
@@ -31,6 +34,7 @@
   "homepage": "https://github.com/TimmaLabs/TimmaNets#readme",
   "devDependencies": {
     "commitizen": "^2.9.2",
-    "cz-conventional-changelog": "^1.2.0"
+    "cz-conventional-changelog": "^1.2.0",
+    "http-server": "^0.9.0"
   }
 }

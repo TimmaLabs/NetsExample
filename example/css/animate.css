@@ -1,0 +1,47 @@
+.animated {
+  animation-duration: 1.10s;
+  animation-fill-mode: both;
+}
+
+@keyframes glyphicon-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(359deg);
+  }
+}
+@keyframes rubberBand {
+  from {
+    transform: scale3d(1, 1, 1);
+  }
+
+  30% {
+    transform: scale3d(1.10, 0.85, 1);
+  }
+
+  40% {
+    transform: scale3d(0.85, 1.10, 1);
+  }
+
+  50% {
+    transform: scale3d(1.05, 0.95, 1);
+  }
+
+  65% {
+    transform: scale3d(.975, 1.025, 1);
+  }
+
+  75% {
+    transform: scale3d(1.025, .995, 1);
+  }
+
+  to {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+.rubberBand {
+  animation-name: rubberBand;
+}
