@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Shell;
 
-namespace Timma
+namespace NetsExample
 {
     /// <summary>
     /// Interaction logic for App.xaml

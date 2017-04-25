@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -6,7 +6,7 @@
     <ProductVersion>3.10</ProductVersion>
     <ProjectGuid>59c6f0ec-3511-48e7-b0c7-db6e190a8b0e</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
-    <OutputName>Timma</OutputName>
+    <OutputName>NetsExample</OutputName>
     <OutputType>Package</OutputType>
     <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' AND '$(MSBuildExtensionsPath32)' != '' ">$(MSBuildExtensionsPath32)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
     <WixTargetsPath Condition=" '$(WixTargetsPath)' == '' ">$(MSBuildExtensionsPath)\Microsoft\WiX\v3.x\Wix.targets</WixTargetsPath>
@@ -28,16 +28,6 @@
     <Compile Include="Setup.wxs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\app\Timma.csproj">
-      <Name>Timma</Name>
-      <Project>{e2147f85-9d37-4a10-825f-2ae349a6aef6}</Project>
-      <Private>True</Private>
-      <DoNotHarvest>True</DoNotHarvest>
-      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
-      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <WixExtension Include="WixUIExtension">
       <HintPath>$(WixExtDir)\WixUIExtension.dll</HintPath>
       <Name>WixUIExtension</Name>
@@ -50,10 +40,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="gfx\logo.bmp" />
-    <Content Include="Gfx\Timma.ico" />
+    <Content Include="Gfx\NetsExample.ico" />
     <Content Include="gfx\top_banner.bmp" />
     <Content Include="Includes\Variables.wxi" />
     <Content Include="LICENSE.rtf" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\app\NetsExample.csproj">
+      <Name>NetsExample</Name>
+      <Project>{e2147f85-9d37-4a10-825f-2ae349a6aef6}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(WixTargetsPath)" />
   <PropertyGroup>

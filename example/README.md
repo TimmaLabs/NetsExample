@@ -1,8 +1,8 @@
 ```js
-var terminal = window.__TimmaECR;
+var terminal = window.__NetsTerminal;
 
 /**
- * EVENT LISTENERS (overridable, defaults to Timma.Browser.BrowserController.JSLogFunction)
+ * EVENT LISTENERS (overridable, defaults to NetsExample.Browser.BrowserController.JSLogFunction)
  */
 
 /**
@@ -78,7 +78,7 @@ terminal.reconcile(JSON.stringify({ baxiArgs: JSON.stringify({ OptionalData: JSO
 // Print custom receipt (see Baxi API docs for valid print payload format)
 terminal.print( JSON.stringify({ printmsg: { ver:'1.0', rows: [{ type:'txt', data: 'foo' }, { type: 'txt', blank: 15 }] } }) );
 
-terminal.printReport('x') // Print X-report (see app/Timma/Browser/BrowserAPI.cs in TimmaLabs/TimmaNets for all the supported report types)
+terminal.printReport('x') // Print X-report (see app/src/Browser/BrowserAPI.cs)
 terminal.printReport('x', JSON.stringify({ printText: foobar }) ); // ... with custom print text (stored in variable `foobar`)
 
 /**

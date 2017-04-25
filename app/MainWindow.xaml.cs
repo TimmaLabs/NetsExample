@@ -1,14 +1,14 @@
-﻿using System.Windows;
+using System.Windows;
 using System.Windows.Input;
 using System.ComponentModel;
 using CefSharp;
 using CefSharp.Wpf;
 using BBS.BAXI;
-using Timma.Browser;
-using Timma.Terminal;
+using NetsExample.Browser;
+using NetsExample.Terminal;
 using System;
 
-namespace Timma
+namespace NetsExample
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -25,10 +25,10 @@ namespace Timma
         private string Address {
             get
             {
-                #if (PRODUCTION && !LOCALHOST)
-                return "https://timma.fi/admin";
+                #if (PRODHOST && !DEVHOST)
+                return "http://localhost:8080"; // TODO: Change this to point to your production instance
                 #else
-                return "http://customer.timma.dev";
+                return "http://localhost:8080";
                 #endif
             }
         }
@@ -51,7 +51,7 @@ namespace Timma
             browser.FrameLoadEnd += HandleFrameLoaded;
             browser.ZoomLevelIncrement = 0.25;
 
-            TimmaBrowser.Children.Add(browser);
+            NetsBrowser.Children.Add(browser);
 
             CommandBindings.Add(new CommandBinding(NavigationCommands.Refresh, Reload));
             CommandBindings.Add(new CommandBinding(NavigationCommands.IncreaseZoom, ZoomIn));
@@ -82,7 +82,7 @@ namespace Timma
 
         void MainWindow_Closing(object sender, CancelEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("Are you sure you wish to exit the application?", "Timma", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
+            MessageBoxResult result = MessageBox.Show("Are you sure you wish to exit the application?", "NetsExample", MessageBoxButton.YesNo, MessageBoxImage.Exclamation);
 
             if (result == MessageBoxResult.No)
             {

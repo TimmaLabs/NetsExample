@@ -1,11 +1,12 @@
 @echo off
 
-SET validFrom="11/01/2017"
-SET validTill="11/01/2022"
-SET subjectName="Timma"
+SET ROOT_DIR=%cd%
+SET validFrom="04/01/2017"
+SET validTill="04/01/2022"
+SET subjectName="NetsExample"
 SET storeName="Root"
-SET outputCertFile="Timma.cer"
-SET outputKeyFile="Timma.pvk"
+SET outputCertFile="%ROOT_DIR%\assets\certs\Nets.cer"
+SET outputKeyFile="%ROOT_DIR%\assets\certs\Nets.pvk"
 SET storeLocation="CurrentUser"
 SET makecert="%PROGRAMFILES(x86)%\Windows Kits\10\bin\x64\makecert"
 

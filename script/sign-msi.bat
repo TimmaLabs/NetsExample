@@ -11,4 +11,4 @@ for /f %%i in ('dir /b %targetDir%*.msi') do SET msiPath=%targetDir%%%i
 
 CALL %signtool% sign /v /f %pfxPath% /p %password% %cabPath%
 CALL %insignia% -v -nologo -im %msiPath%
-CALL %signtool% sign /v /f %pfxPath% /d Timma /du https://timma.fi/company /p %password% %msiPath%
+CALL %signtool% sign /v /f %pfxPath% /d NetsExample /du https://nets.eu /p %password% %msiPath%

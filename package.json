@@ -1,37 +1,47 @@
 {
-  "name": "timma-nets",
-  "version": "1.4.1",
-  "description": "Nets payments integration for Timma (Windows)",
-  "main": "example.js",
+  "name": "nets-example",
+  "version": "1.0.0",
+  "description": "Reference implementation for integrating a web application with Nets payment terminals via CEFSharp and Baxi.NET",
+  "main": "example/index.html",
   "directories": {
     "doc": "docs"
   },
   "scripts": {
     "commit": "git-cz",
     "build:release": ".\\script\\build\\build-release.bat",
+    "build:release:devhost": "npm run build:release -- --devhost",
     "build:debug": ".\\script\\build\\build-debug.bat",
+    "build:debug:devhost": "npm run build:debug -- --devhost",
+    "create-cert-key": ".\\script\\create-cert-key.bat",
+    "create-pfx": ".\\script\\create-pfx.bat",
     "example": "node ./node_modules/http-server/bin/http-server -o --cors example"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    },
+    "nets": {
+      "password": "nets"
     }
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TimmaLabs/TimmaNets.git"
+    "url": ""
   },
   "keywords": [
-    "Timma",
     "Nets",
-    "ECR"
+    "Baxi.NET",
+    "web",
+    "application",
+    "integration",
+    "cef"
   ],
-  "author": "Marko Raatikka",
+  "author": "Nets",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/TimmaLabs/TimmaNets/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/TimmaLabs/TimmaNets#readme",
+  "homepage": "",
   "devDependencies": {
     "commitizen": "^2.9.2",
     "cz-conventional-changelog": "^1.2.0",

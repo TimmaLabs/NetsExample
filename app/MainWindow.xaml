@@ -1,13 +1,13 @@
-﻿<Window x:Class="Timma.MainWindow"
+﻿<Window x:Class="NetsExample.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Timma"
+        xmlns:local="clr-namespace:NetsExample"
         xmlns:cefSharp="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
         xmlns:PresentationOptions="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options"
         mc:Ignorable="d PresentationOptions"
-        Title="Timma"
+        Title="NetsExample"
         Height="720" Width="1280"
         WindowStartupLocation="CenterScreen"
         WindowState="Maximized"
@@ -26,7 +26,7 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.ColumnSpan="3" x:Name="TimmaBrowser" ZIndex="1"></Grid>
+        <Grid Grid.ColumnSpan="3" x:Name="NetsBrowser" ZIndex="1"></Grid>
         <Rectangle Grid.Column="1" PresentationOptions:Freeze="True" Fill="{StaticResource logo_white}"  />
     </Grid>
 </Window>

@@ -1,7 +1,7 @@
-﻿<Application x:Class="Timma.App"
+﻿<Application x:Class="NetsExample.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Timma"
+             xmlns:local="clr-namespace:NetsExample"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>

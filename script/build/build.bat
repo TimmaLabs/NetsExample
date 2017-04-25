@@ -11,7 +11,7 @@ SET SCRIPT_DIR=%ROOT_DIR%\script
 SET ASSETS_DIR=%ROOT_DIR%\assets
 SET BIN_DIR=bin
 SET OUTPUT_DIR=%BIN_DIR%\%mode%\%arch%
-SET CONSTANTS=PRODUCTION
+SET CONSTANTS=PRODHOST
 
 SET msbuild="%PROGRAMFILES(x86)%\MSBuild\14.0\Bin\MSBuild"
 
@@ -20,21 +20,21 @@ if "%mode%" == "Debug" (
 )
 
 if DEFINED local_build  (
-	SET CONSTANTS=%CONSTANTS%;LOCALHOST
+	SET CONSTANTS=%CONSTANTS%;DEVHOST
 )
 
-%msbuild% "app\timma.csproj" /t:rebuild /p:Configuration=%mode%;Platform=%arch%;DefineConstants="!CONSTANTS!"
+%msbuild% "app\nets_example.csproj" /t:rebuild /p:Configuration=%mode%;Platform=%arch%;DefineConstants="!CONSTANTS!"
 :: x86 only for the installers
 %msbuild% "setup\setup.wixproj" /t:rebuild /p:Configuration=%mode%;Platform=x86;DefineConstants="!CONSTANTS!"
 %msbuild% "bundle\bundle.wixproj" /t:rebuild /p:Configuration=%mode%;Platform=x86;DefineConstants="!CONSTANTS!"
 
 :: sign the setup (.msi)
-call %SCRIPT_DIR%\sign-msi.bat "%ASSETS_DIR%\certs\Timma.pfx" %ROOT_DIR%\setup\bin\%mode%\ voittaja
+call %SCRIPT_DIR%\sign-msi.bat "%ASSETS_DIR%\certs\Nets.pfx" %ROOT_DIR%\setup\bin\%mode%\ %npm_package_config_nets_password%
 :: sign the bundle (.exe)
-call %SCRIPT_DIR%\sign-bundle.bat "%ASSETS_DIR%\certs\Timma.pfx" %ROOT_DIR%\bundle\bin\%mode%\ voittaja
+call %SCRIPT_DIR%\sign-bundle.bat "%ASSETS_DIR%\certs\Nets.pfx" %ROOT_DIR%\bundle\bin\%mode%\ %npm_package_config_nets_password%
 
 rd /S /Q %OUTPUT_DIR%
 
 xcopy %ROOT_DIR%\setup\bin\%mode%\* %OUTPUT_DIR% /F /Y /I
 xcopy %ROOT_DIR%\bundle\bin\%mode%\* %OUTPUT_DIR% /F /Y /I
-copy %ASSETS_DIR%\certs\Timma.cer %OUTPUT_DIR%
+copy %ASSETS_DIR%\certs\Nets.cer %OUTPUT_DIR%
