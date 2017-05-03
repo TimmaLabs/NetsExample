@@ -22,7 +22,7 @@ Available @ https://goo.gl/tDLYHj
 
     * .ico generator: https://iconverticons.com/online/
 
-6. Run `npm install` (make sure you have Node.js installed and available in your %PATH%)
+6. Run `npm install` (make sure you have [Node.js](https://nodejs.org/en/download/) installed and available in your _%PATH%_)
 
 7. Launch the application:
 
