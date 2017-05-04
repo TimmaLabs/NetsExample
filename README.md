@@ -23,14 +23,16 @@
 
     ```
     # <TimmaDocker>
-    10.0.30.11 api.timma.dev
-    10.0.30.12 timma.dev
-    10.0.30.13 customer.timma.dev
-    10.0.30.14 business.timma.dev
-    10.0.30.15 customer-sites.timma.dev
-    10.0.30.16 controlpanel.timma.dev
-    10.0.30.17 blog.timma.dev
-    10.0.30.20 db.timma.dev
+    127.0.0.1 api.timma.dev
+    127.0.0.1 customer.timma.dev
+    127.0.0.1 controlpanel.timma.dev
+    127.0.0.1 timma.dev
+    127.0.0.1 business.timma.dev
+    127.0.0.1 customer-sites.timma.dev
+    127.0.0.1 blog.timma.dev
+    127.0.0.1 db.timma.dev
+    127.0.0.1 db-blog.timma.dev
+    127.0.0.1 livereload.timma.dev
     # </TimmaDocker>
     ```
 
