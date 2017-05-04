@@ -28,7 +28,7 @@ namespace Timma
                 #if (PRODUCTION && !LOCALHOST)
                 return "https://timma.fi/admin";
                 #else
-                return "http://customer.timma.dev";
+                return "//customer.timma.dev";
                 #endif
             }
         }
