@@ -59,7 +59,7 @@ If the release includes changes, start with incrementing the respective version 
 ## FAQ
 
 ### What to do if the test payment terminal rejects all/some of the test cards?
-Perform reconciliation for each Nets accounts configured on the terminal. If that doesn't help, try fetching the latest dataset (_Fetch cards_). If the test cards continue to act up, just try each one until one starts working, or shoot [Nets](mailto:salessupport-fi@nets.eu) a message.
+Perform reconciliation for each Nets account configured on the terminal. If that doesn't help, try fetching the latest dataset (_Fetch cards_). If the test cards continue to act up, just try each one until one starts working, or shoot [Nets](mailto:salessupport-fi@nets.eu) a message.
 
 ### What to do if terminal connection can not be established?
 Confirm that the USB driver was successfully installed. Open `Device Manager` and upon connecting the payment terminal via USB you should see `Sagem Telium` appear under `Ports (COM & LPT)`. Also, confirm that [Force COM port is enabled and set to the appropriate value](./assets/images/com-port-settings.png) (`COM9`)
