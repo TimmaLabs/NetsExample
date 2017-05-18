@@ -43,7 +43,7 @@ Information you will need...
 * password: `n87y62`
 * [customer contact/business information](https://timma.fi/hallinta)
 * device software version: `Viking`
-* cables: `USB` and `Ethernet`
+* cables: `USB` & `Ethernet` (for iCT250) **OR** `USB` (for iPP350)
 * additional information: "Payment terminal version 4.82 required" (required for Nets Finland only)
 * if the customer is returning his/her existing payment terminal: [payment terminal ID](#how-do-i-figure-out-the-id-of-the-payment-terminal) (or, for older payment terminals, the serial number found on a sticker at the bottom of the terminal device).
 
