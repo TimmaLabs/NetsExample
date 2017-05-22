@@ -54,8 +54,12 @@ namespace NetsExample
             var settings = new CefSettings();
             settings.SetOffScreenRenderingBestPerformanceArgs();
 
-            CefSharpSettings.WcfEnabled = false;
+            #if (!PRODUCTION)
+            settings.IgnoreCertificateErrors = true; // allow self-signed certs
+            #endif
 
+            CefSharpSettings.WcfEnabled = false;
+            
             if (Cef.Initialize(settings))
             {
                 base.OnStartup(e);
