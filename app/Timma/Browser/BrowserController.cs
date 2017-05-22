@@ -38,6 +38,7 @@ namespace Timma.Browser
             terminalCtrl.OnReady += HandleTerminalReady;
             terminalCtrl.OnPrintText += HandleTerminalPrint;
             terminalCtrl.OnDisplayText += HandleTerminalDisplay;
+
             browser.FrameLoadEnd += HandleFrameLoaded;
         }
 
@@ -100,6 +101,8 @@ namespace Timma.Browser
 
         private void HandleFrameLoaded(object sender, FrameLoadEndEventArgs e)
         {
+            if (!e.Frame.IsMain) { return; }
+
             AddJSFunction(JS_FUNC_ONLOADED, JSLogFunction(JS_FUNC_ONLOADED, "magenta"));
             AddJSFunction(JS_FUNC_ONSUCCESS, JSLogFunction(JS_FUNC_ONSUCCESS, "green"));
             AddJSFunction(JS_FUNC_ONREADY, JSLogFunction(JS_FUNC_ONREADY, "blue"));
