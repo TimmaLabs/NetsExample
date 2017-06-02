@@ -15,7 +15,7 @@ $(function () {
     init()
   }
 
-  terminal.onLoaded = function handleOnLoaded () {
+  terminal.onReady = function handleOnLoaded () {
     return terminal.getTerminalInfo().then(function (infoStr) {
       var info = JSON.parse(infoStr)
       var type = getTerminalTypeByCode(info.type)
