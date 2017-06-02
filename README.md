@@ -26,7 +26,7 @@ Available @ https://goo.gl/tDLYHj
 
 7. Launch the application:
 
-    * run `npm run example` to start example web application
+    * run `npm start` to start example web application
     * open the solution (`app/NetsExample.sln`) in Visual Studio (or alike) and run it.
 
 If Visual Studio complains about a missing `BBS` (Baxi API) reference when you try building/running the application, do the following:

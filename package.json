@@ -14,7 +14,7 @@
     "build:debug:devhost": "npm run build:debug -- --devhost",
     "create-cert-key": ".\\script\\create-cert-key.bat",
     "create-pfx": ".\\script\\create-pfx.bat",
-    "example": "node ./node_modules/http-server/bin/http-server -o --cors example"
+    "start": "node ./node_modules/http-server/bin/http-server -o --cors example"
   },
   "config": {
     "commitizen": {
