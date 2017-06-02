@@ -35,9 +35,17 @@ If Visual Studio complains about a missing `BBS` (Baxi API) reference when you t
   2. `Add` -> `Reference...`
   3. Select `..Baxi.net_1.4.2.1\baxi.net45\baxi_dotnet.dll`
 
-When running in `DEBUG` mode, a browser console will be opened alongside the application to allow interactive debugging/inspection of the application. See [example/README.md](./example/README.md) for usage examples.
+When running in `Debug` mode, a browser console will be opened alongside the application to allow interactive debugging/inspection of the application. See [example/README.md](./example/README.md) for usage examples.
 
 The solution consist of 3 projects: the application (`NetsExample`) and two installer projects (`setup` and `bundle`). `setup` packages the installer (`.msi`) for the application whereas `bundle` includes the application installer together with its dependencies (USB driver and .NET 4.5.2). Run `npm run` for an overview of all the available scripts for building & signing the application (e.g. `npm run build:release` will build a release version of the application under `./bin`)
+
+### Build Macros
+
+The following build variables can be used to customize the build (see [build.bat](./script/build/build.bat)):
+
+* `PRODUCTION`: flag to use for production builds, enabled by default
+* `DEVHOST`: flag to indicate whether or not to open the development version of the web application (hosted locally/on development server), enabled for debug builds
+* `DEBUG`: flag to use for debug focused logic, enabled for debug builds
 
 ## Tips for Versioning
 

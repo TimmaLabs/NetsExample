@@ -18,7 +18,7 @@ namespace NetsExample.Terminal
         {
             get
             {
-                #if (PRODHOST && !DEBUG)
+                #if (PRODUCTION && !DEBUG)
                 return "91.102.24.142"; // Nets production server
                 #else
                 return "91.102.24.111"; // Nets test server
