@@ -15,35 +15,61 @@ $(function () {
     init()
   }
 
-  terminal.onReady = function handleOnLoaded () {
+  terminal.onLoaded = (payload) => {
+    terminal.log(payload, 'onLoaded', 'magenta')
+    handleAppLoaded().then(handleTerminalReady).then(init).catch(e => console.log('Failed to initialize the app.', e))
+  }
+
+  function handleAppLoaded () {
     return terminal.getTerminalInfo().then(function (infoStr) {
+
       var info = JSON.parse(infoStr)
-      var type = getTerminalTypeByCode(info.type)
+      if (info.type) { return Promise.resolve(info) }
 
-      var html = Object.keys(info).map(function (key) {
-        var val = key === 'type' ? type : info[key]
-        return `
-          <div class="row">
-            <dt class="col-xs-5 pos-example__term-info-item-key">${key}</dt>
-            <dd class="col-xs-7 pos-example__term-info-item-val">${val}</dd>
-          </div>
-        `.trim()
-      })
+      return waitUntilReady()
+    })
+  }
 
-      $display.html(`
-        <dl class="pos-example__term-info">
-          <h5 class="pos-example__term-info-title">Terminal info</h3>
-          ${html.join('\n')}
-        </dl>
-      `.trim())
-
-      $('.js-pos-example__output-view-term-model').text(type || 'Terminal disconnected!')
-
-      if (SUPPORTED_TERMINAL_TYPES.iPP350 === info.type.slice(0, 2)) {
-        $('input[name="reports"][value="custom"]').attr('disabled', true)
-        isIPP350 = true
+  function waitUntilReady () {
+    return new Promise((resolve, reject) => {
+      terminal.onReady = function (payload) {
+        onReady(payload)
+        return handleAppLoaded().then(info => resolve(info))
       }
-    }).then(init)
+      terminal.onError = function (payload) {
+        onError(payload)
+        if (payload.code === 2011) { return resolve({}) } // terminal disconnected
+        reject(payload)
+      }
+    })
+  }
+
+  function handleTerminalReady (info) {
+    var type = getTerminalTypeByCode(info.type || '')
+
+    var html = Object.keys(info).map(function (key) {
+      var val = key === 'type' ? type : info[key]
+      return `
+        <div class="row">
+          <dt class="col-xs-5 pos-example__term-info-item-key">${key}</dt>
+          <dd class="col-xs-7 pos-example__term-info-item-val">${val}</dd>
+        </div>
+      `.trim()
+    })
+
+    $display.html(`
+      <dl class="pos-example__term-info">
+        <h5 class="pos-example__term-info-title">Terminal info</h3>
+        ${html.join('\n')}
+      </dl>
+    `.trim())
+
+    $('.js-pos-example__output-view-term-model').text(type || 'Terminal disconnected!')
+
+    if (SUPPORTED_TERMINAL_TYPES.iPP350 === (info.type || '').slice(0, 2)) {
+      $('input[name="reports"][value="custom"]').attr('disabled', true)
+      isIPP350 = true
+    }
   }
 
   function init () {
@@ -147,16 +173,24 @@ $(function () {
     }
 
     terminal.onError = function (payload) {
-      addLog(payload.message, 'error')
-      terminal.log(payload, 'onError', 'red')
+      onError(payload)
       setProcessing(false)
     }
 
     terminal.onReady = function (payload) {
-      terminal.log(payload, 'onReady', '#0091ff')
-      addLog(payload || 'Terminal ready!', 'ready')
+      onReady(payload)
       setProcessing(false)
     }
+  }
+
+  function onReady (payload) {
+    terminal.log(payload, 'onReady', '#0091ff')
+    addLog(payload || 'Terminal ready!', 'ready')
+  }
+
+  function onError (payload) {
+    addLog(payload.message, 'error')
+    terminal.log(payload, 'onError', 'red')
   }
 
   function preparePrintObj (printRows) {
