@@ -12,7 +12,7 @@ namespace NetsExample.Browser
 {
     internal class BrowserController
     {
-        private readonly string NAMESPACE = "__NetsTerminal";
+        private readonly string NAMESPACE = "NetsExample";
         private TerminalController terminalCtrl;
         private ChromiumWebBrowser browser;
         private SynchronizationContext ctx;

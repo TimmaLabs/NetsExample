@@ -1,6 +1,6 @@
 $(function () {
 
-  var terminal = window.__NetsTerminal || {}
+  var terminal = window.NetsExample || {}
   var SUPPORTED_TERMINAL_TYPES = { iCT250: '34', iPP350: '32' }
   var $display = $('.js-pos-example__output-view-term-display')
   var $log = $('.js-pos-example__output-view-log-content')

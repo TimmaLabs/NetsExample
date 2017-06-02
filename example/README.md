@@ -1,5 +1,5 @@
 ```js
-var terminal = window.__NetsTerminal;
+var terminal = window.NetsExample;
 
 /**
  * EVENT LISTENERS (overridable, defaults to NetsExample.Browser.BrowserController.JSLogFunction)
