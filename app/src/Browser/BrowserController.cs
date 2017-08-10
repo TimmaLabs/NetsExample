@@ -160,6 +160,5 @@ namespace NetsExample.Browser
                 browser.ExecuteScriptAsync(statement);
             }
         }
-
     }
 }

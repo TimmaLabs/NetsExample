@@ -190,6 +190,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="src\Browser\DownloadHandler.cs" />
     <Compile Include="src\Browser\OperationOptions.cs" />
     <Compile Include="src\Operations\Admin\CardData.cs" />
     <Compile Include="src\Operations\Admin\Update.cs" />

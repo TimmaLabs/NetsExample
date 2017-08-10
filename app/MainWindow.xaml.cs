@@ -16,7 +16,7 @@ namespace NetsExample
     public partial class MainWindow : Window
     {
         private ChromiumWebBrowser browser;
-        private BrowserController browserApi;
+        private BrowserController browserCtrl;
         private TerminalController terminalCtrl;
         private bool browserReloading = false;
         private double maxZoomLevel = 5.0;
@@ -46,8 +46,9 @@ namespace NetsExample
                 Address = Address
             };
 
-            browserApi = new BrowserController(browser, terminalCtrl);
+            browserCtrl = new BrowserController(browser, terminalCtrl);
 
+            browser.DownloadHandler = new DownloadHandler();
             browser.FrameLoadEnd += HandleFrameLoaded;
             browser.ZoomLevelIncrement = 0.25;
 
