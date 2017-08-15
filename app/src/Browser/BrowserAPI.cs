@@ -104,23 +104,27 @@ namespace NetsExample.Browser
         /// Cancel an ongoing operation
         /// </summary>
         /// <param name="hard">
-        ///     If set to false, the terminal has the choice to ignore the request. 
+        ///     If set to false, the terminal has the choice to ignore the request.
         ///     The OnLocalMode result will determine the final status of the transaction.
         /// </param>
-        public void Cancel(bool hard = true)
+        /// <param name="options">Options in JSON string format</param>
+        /// <param name="options.baxiArgs">TransferAmount arguments in JSON string format</param>
+        public void Cancel(bool hard = true, string options = "{}")
         {
             Debug.Write("Canceling");
+
+            var opts = JsonConvert.DeserializeObject<OperationOptions>(options);
 
             if (hard)
             {
                 Debug.WriteLine(" hard...");
-                HardCancel op = new HardCancel();
+                HardCancel op = new HardCancel(printText: opts.printText, baxiArgs: opts.baxiArgs);
                 terminalCtrl.SendAdminOperation(op);
             }
             else
             {
                 Debug.WriteLine(" soft...");
-                SoftCancel op = new SoftCancel();
+                SoftCancel op = new SoftCancel(printText: opts.printText, baxiArgs: opts.baxiArgs);
                 terminalCtrl.SendAdminOperation(op);
             }
         }
@@ -188,7 +192,7 @@ namespace NetsExample.Browser
         /// Raw print
         /// </summary>
         /// <param name="printText">
-        ///     Document to print (must be in the appropriate Baxi 
+        ///     Document to print (must be in the appropriate Baxi
         ///     JSON print format, see BAXI.Net Programmers Guide)
         /// </param>
         /// <returns>Success code (1 = success, 0 = fail)</returns>
@@ -232,7 +236,7 @@ namespace NetsExample.Browser
         /// <summary>
         /// API helpers START
         /// </summary>
-        
+
         /// <summary>
         /// Check if terminal connection has been opened
         /// </summary>
