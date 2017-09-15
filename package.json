@@ -1,7 +1,7 @@
 {
   "name": "nets-example",
   "version": "1.0.2",
-  "description": "Reference implementation for integrating a web application with Nets payment terminals via CEFSharp and Baxi.NET",
+  "description": "Reference implementation for integrating a web-based POS application with Nets payment terminals via CEFSharp and Baxi.NET",
   "main": "example/index.html",
   "directories": {
     "doc": "docs"
@@ -26,25 +26,27 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/TimmaLabs/TimmaExample.git"
   },
+  "bugs": {
+    "url": "https://github.com/TimmaLabs/TimmaExample/issues"
+  },
+  "homepage": "https://timma.fi",
   "keywords": [
     "Nets",
     "Baxi.NET",
-    "web",
-    "application",
-    "integration",
+    "POS",
+    "iCT250",
+    "iPP350",
+    "Ingenico",
     "cef"
   ],
-  "author": "Nets",
-  "license": "UNLICENSED",
-  "bugs": {
-    "url": ""
-  },
-  "homepage": "",
+  "author": "Timma Oy Ab",
+  "license": "Apache-2.0",
   "devDependencies": {
     "commitizen": "^2.9.2",
     "cz-conventional-changelog": "^1.2.0",
     "http-server": "^0.9.0"
-  }
+  },
+  "private": true
 }
