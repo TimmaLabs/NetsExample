@@ -317,10 +317,16 @@ $(function () {
         handleResponse(promise)
         break
       case 'fetch-account':
-        process(() => { return terminal.fetchCards() })
+        process(() => {
+          var options = prepareOptions()
+          return terminal.fetchCards(options)
+        })
         break
       case 'update-terminal':
-        process(() => { return terminal.update() })
+        process(() => {
+          var options = prepareOptions()
+          return terminal.update(options)
+        })
         break
     }
   }
@@ -357,7 +363,8 @@ $(function () {
   }
 
   function cancel () {
-    return terminal.cancel()
+    var options = prepareOptions()
+    return terminal.cancel(true, options)
   }
 
   function reconcile () {
