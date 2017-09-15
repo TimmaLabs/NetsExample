@@ -2,15 +2,13 @@
 
 # NetsExample
 
-Run your web application on a fully compliant ES6 environment based on the Chromium web browser engine with access to OS resources &ndash; JavaScript &rarr; .NET (CEFSharp & CEF) &rarr; Baxi.NET &rarr; Payment terminal
-
-Available @ https://goo.gl/tDLYHj
+Run your web-based POS application on a fully compliant ES6 environment based on the Chromium web browser engine with access to OS resources: JavaScript &rarr; .NET (CEFSharp & CEF) &rarr; Baxi.NET &rarr; Payment terminal
 
 ## Development
 
 1. Install the required USB drivers for terminal communication: [IngenicoUSBDrivers_2.80_setup.exe](./IngenicoUSBDrivers_2.80/)
 
-  * Enable the `Force COM Port Feature` and type in `9` in the [leftmost input field at the bottom of the dialog](./assets/images/force-com-port.png)
+    * Enable the `Force COM Port Feature` and type in `9` in the [leftmost input field at the bottom of the dialog](./assets/images/force-com-port.png)
 
 2. Install the required [Visual C++ runtime components](https://www.microsoft.com/en-us/download/details.aspx?id=40784) (both `x86` and `x64` architectures if you're running Windows 10)
 
@@ -67,7 +65,7 @@ If the release includes changes, start with incrementing the respective version 
 ## FAQ
 
 ### What to do if the test payment terminal rejects all/some of the test cards?
-Perform reconciliation for each Nets account configured on the terminal. If that doesn't help, try fetching the latest dataset (_Fetch cards_). If the test cards continue to act up, just try each one until one starts working, or shoot [Nets](mailto:salessupport-fi@nets.eu) a message.
+Perform reconciliation for each Nets account configured on the terminal. If that doesn't help, try fetching the latest dataset (_Fetch cards_).
 
 ### What to do if terminal connection can not be established?
 Confirm that the USB driver was successfully installed. Open `Device Manager` and upon connecting the payment terminal via USB you should see `Sagem Telium` appear under `Ports (COM & LPT)`. Also, confirm that [Force COM port is enabled and set to the appropriate value](./assets/images/com-port-settings.png) (`COM9`)
