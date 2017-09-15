@@ -46,6 +46,7 @@ $(function () {
 
   function handleTerminalReady (info) {
     var type = getTerminalTypeByCode(info.type || '')
+    var merchId = (info.id || '').slice(0, 6)
 
     var html = Object.keys(info).map(function (key) {
       var val = key === 'type' ? type : info[key]
@@ -56,6 +57,10 @@ $(function () {
         </div>
       `.trim()
     })
+
+    $('#merchant-id').val(merchId)
+
+    setTimeout(() => $('#merchant-id').trigger('change'))
 
     $display.html(`
       <dl class="pos-example__term-info">
@@ -140,6 +145,7 @@ $(function () {
       var $textarea = $('.js-report-custom-value')
       var merchantId = $(e.currentTarget).val()
       var printmsgStr = $textarea.val()
+
       try {
         obj = JSON.parse(printmsgStr)
         obj.printmsg = obj.printmsg || {}
