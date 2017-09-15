@@ -296,7 +296,7 @@ $(function () {
         break
       case 'ping-host':
         var promise = terminal.pingHost()
-        process(() => { return handleResponse(promise) })
+        handleResponse(promise)
         break
       case 'get-version':
         var promise = terminal.getVersion()
