@@ -7,12 +7,12 @@ using System.Windows;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Nets")]
-[assembly: AssemblyDescription("Nets POS integration")]
+[assembly: AssemblyTitle("NetsExample")]
+[assembly: AssemblyDescription("Nets POS integration example")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Nets")]
-[assembly: AssemblyProduct("Nets")]
-[assembly: AssemblyCopyright("Copyright © Nets 2017")]
+[assembly: AssemblyCompany("Timma Oy Ab")]
+[assembly: AssemblyProduct("NetsExample")]
+[assembly: AssemblyCopyright("Copyright © Timma")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -51,7 +51,7 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.2.0")]
-[assembly: AssemblyFileVersion("1.0.2.0")]
+[assembly: AssemblyVersion("1.0.3.0")]
+[assembly: AssemblyFileVersion("1.0.3.0")]
 [assembly: Guid("FF0697D9-DCEE-42B3-8C2B-6C721226E273")]
 
