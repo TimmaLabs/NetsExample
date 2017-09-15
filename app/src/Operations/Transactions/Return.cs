@@ -2,7 +2,7 @@
 {
     internal class Return : Transaction
     {
-        public Return(int amount, string printText = "", string baxiArgs = "{}") : base(amount, printText, baxiArgs) { }
+        public Return(int amount, string baxiArgs = "{}") : base(amount, baxiArgs) { }
 
         override protected int Type1
         {

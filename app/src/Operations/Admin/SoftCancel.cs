@@ -2,7 +2,7 @@ namespace NetsExample.Operations.Admin
 {
     class SoftCancel : Administration
     {
-        public SoftCancel(string printText = "", string baxiArgs = "{}") : base(printText, baxiArgs) { }
+        public SoftCancel(string baxiArgs = "{}") : base(baxiArgs) { }
 
         protected override int AdmCode
         {

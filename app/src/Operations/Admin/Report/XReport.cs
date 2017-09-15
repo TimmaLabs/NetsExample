@@ -2,7 +2,7 @@
 {
     internal class XReport : Administration
     {
-        public XReport(string printText = "", string baxiArgs = "{}") : base(printText, baxiArgs) { }
+        public XReport(string baxiArgs = "{}") : base(baxiArgs) { }
 
         protected override int AdmCode
         {

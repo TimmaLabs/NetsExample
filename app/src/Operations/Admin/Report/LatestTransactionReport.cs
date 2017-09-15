@@ -2,7 +2,7 @@
 {
     internal class LatestTransactionReport : Administration
     {
-        public LatestTransactionReport(string printText = "", string baxiArgs = "{}") : base(printText, baxiArgs) { }
+        public LatestTransactionReport(string baxiArgs = "{}") : base(baxiArgs) { }
 
         protected override int AdmCode
         {
@@ -11,7 +11,5 @@
                 return (int)Type.LatestFinancialTransactionReceipt;
             }
         }
-
-        protected override string EmptyPrintText { get; } = "No recent transactions found.";
     }
 }

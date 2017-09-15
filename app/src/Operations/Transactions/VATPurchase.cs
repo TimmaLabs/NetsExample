@@ -4,7 +4,7 @@ namespace NetsExample.Operations.Transactions
 {
     internal class VATPurchase : Transaction
     {
-        public VATPurchase(int amount, int VATamount, string printText = "", string baxiArgs = "{}") : base(amount, printText, baxiArgs)
+        public VATPurchase(int amount, int VATamount, string baxiArgs = "{}") : base(amount, baxiArgs)
         {
             Args.Amount3 = Args.Amount3 == 0 ? VATamount : Args.Amount3;
         }

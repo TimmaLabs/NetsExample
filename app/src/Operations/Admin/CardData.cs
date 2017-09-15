@@ -2,7 +2,7 @@
 {
     class CardData : Administration
     {
-        public CardData(string baxiArgs = "{}") : base("", baxiArgs)
+        public CardData(string baxiArgs = "{}") : base(baxiArgs)
         {
         }
 

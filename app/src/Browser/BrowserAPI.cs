@@ -29,10 +29,6 @@ namespace NetsExample.Browser
         /// <param name="amount">Amount to charge (in cents)</param>
         /// <param name="VAT">Amount of VAT</param>
         /// <param name="options">Options in JSON string format</param>
-        /// <param name="options.printText">
-        ///     Custom print text, use the {{baxiTxt}} placeholder tag
-        ///     to embed the Baxi print: { type: 'txt', data: '{{baxiTxt}}' }
-        /// </param>
         /// <param name="options.baxiArgs">TransferAmount arguments in JSON string format</param>
         /// <returns>JSON payload sent to the terminal</returns>
         public string ProcessPurchase(int amount, int VAT = 0, string options = "{}")
@@ -42,11 +38,11 @@ namespace NetsExample.Browser
 
             if (VAT > 0)
             {
-                t = new VATPurchase(amount, VAT, printText: opts.printText, baxiArgs: opts.baxiArgs);
+                t = new VATPurchase(amount, VAT, baxiArgs: opts.baxiArgs);
             }
             else
             {
-                t = new Purchase(amount, printText: opts.printText, baxiArgs: opts.baxiArgs);
+                t = new Purchase(amount, baxiArgs: opts.baxiArgs);
             }
 
             terminalCtrl.SendTransactionOperation(t);
@@ -58,16 +54,12 @@ namespace NetsExample.Browser
         /// </summary>
         /// <param name="amount">Amount of the previous transaction (must match!)</param>
         /// <param name="options">Options in JSON string format</param>
-        /// <param name="options.printText">
-        ///     Custom print text, use the {{baxiTxt}} placeholder tag
-        ///     to embed the Baxi print: { type: 'txt', data: '{{baxiTxt}}' }
-        /// </param>
         /// <param name="options.baxiArgs">TransferAmount arguments in JSON string format</param>
         /// <returns>JSON payload sent to the terminal</returns>
         public string ProcessReversal(int amount, string options = "{}")
         {
             var opts = JsonConvert.DeserializeObject<OperationOptions>(options);
-            Reversal t = new Reversal(amount, printText: opts.printText, baxiArgs: opts.baxiArgs);
+            Reversal t = new Reversal(amount, baxiArgs: opts.baxiArgs);
             terminalCtrl.SendTransactionOperation(t);
             return JsonConvert.SerializeObject(t.Args);
         }
@@ -77,16 +69,12 @@ namespace NetsExample.Browser
         /// </summary>
         /// <param name="amount">Amount to return/refund</param>
         /// <param name="options">Options in JSON string format</param>
-        /// <param name="options.printText">
-        ///     Custom print text, use the {{baxiTxt}} placeholder tag
-        ///     to embed the Baxi print: { type: 'txt', data: '{{baxiTxt}}' }
-        /// </param>
         /// <param name="options.baxiArgs">TransferAmount arguments in JSON string format</param>
         /// <returns>JSON payload sent to the terminal</returns>
         public string ProcessReturn(int amount, string options = "{}")
         {
             var opts = JsonConvert.DeserializeObject<OperationOptions>(options);
-            Return t = new Return(amount, printText: opts.printText, baxiArgs: opts.baxiArgs);
+            Return t = new Return(amount, baxiArgs: opts.baxiArgs);
             terminalCtrl.SendTransactionOperation(t);
             return JsonConvert.SerializeObject(t.Args);
         }
@@ -118,13 +106,13 @@ namespace NetsExample.Browser
             if (hard)
             {
                 Debug.WriteLine(" hard...");
-                HardCancel op = new HardCancel(printText: opts.printText, baxiArgs: opts.baxiArgs);
+                HardCancel op = new HardCancel(baxiArgs: opts.baxiArgs);
                 terminalCtrl.SendAdminOperation(op);
             }
             else
             {
                 Debug.WriteLine(" soft...");
-                SoftCancel op = new SoftCancel(printText: opts.printText, baxiArgs: opts.baxiArgs);
+                SoftCancel op = new SoftCancel(baxiArgs: opts.baxiArgs);
                 terminalCtrl.SendAdminOperation(op);
             }
         }
@@ -133,16 +121,12 @@ namespace NetsExample.Browser
         /// Close the day & print the reconciliation report
         /// </summary>
         /// <param name="options">Options in JSON string format</param>
-        /// <param name="options.printText">
-        ///     Custom print text, use the {{baxiTxt}} placeholder tag
-        ///     to embed the Baxi print: { type: 'txt', data: '{{baxiTxt}}' }
-        /// </param>
         /// <param name="options.baxiArgs">TransferAmount arguments in JSON string format</param>
         /// <returns>JSON payload sent to the terminal</returns>
         public string Reconcile(string options = "{}")
         {
             var opts = JsonConvert.DeserializeObject<OperationOptions>(options);
-            Reconciliation r = new Reconciliation(printText: opts.printText, baxiArgs: opts.baxiArgs);
+            Reconciliation r = new Reconciliation(baxiArgs: opts.baxiArgs);
             terminalCtrl.SendAdminOperation(r);
             return JsonConvert.SerializeObject(r.Args);
         }
@@ -152,10 +136,6 @@ namespace NetsExample.Browser
         /// </summary>
         /// <param name="type">Report to print</param>
         /// <param name="options">Options in JSON string format</param>
-        /// <param name="options.printText">
-        ///     Custom print text, use the {{baxiTxt}} placeholder tag
-        ///     to embed the Baxi print: { type: 'txt', data: '{{baxiTxt}}' }
-        /// </param>
         /// <param name="options.baxiArgs">TransferAmount arguments in JSON string format</param>
         /// <returns>JSON payload sent to the terminal</returns>
         public string PrintReport(string type, string options = "{}")
@@ -166,18 +146,18 @@ namespace NetsExample.Browser
             switch (type.ToUpper())
             {
                 case "Z":
-                    op = new ZReport(printText: opts.printText, baxiArgs: opts.baxiArgs);
+                    op = new ZReport(baxiArgs: opts.baxiArgs);
                     break;
                 case "X":
-                    op = new XReport(printText: opts.printText, baxiArgs: opts.baxiArgs);
+                    op = new XReport(baxiArgs: opts.baxiArgs);
                     break;
                 case "EOT":
-                    op = new EOTReport(printText: opts.printText, baxiArgs: opts.baxiArgs);
+                    op = new EOTReport(baxiArgs: opts.baxiArgs);
                     break;
                 case "LATEST":
                 case "TRANSACTION":
                 case "LATESTTRANSACTION":
-                    op = new LatestTransactionReport(printText: opts.printText, baxiArgs: opts.baxiArgs);
+                    op = new LatestTransactionReport(baxiArgs: opts.baxiArgs);
                     break;
                 default:
                     throw new NotImplementedException(string.Format("Report of type {0} is not supported.", type));

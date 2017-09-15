@@ -2,7 +2,7 @@ namespace NetsExample.Operations.Admin
 {
     class HardCancel : Administration
     {
-        public HardCancel(string printText = "", string baxiArgs = "{}") : base(printText, baxiArgs) { }
+        public HardCancel(string baxiArgs = "{}") : base(baxiArgs) { }
 
         protected override int AdmCode
         {

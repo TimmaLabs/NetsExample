@@ -2,7 +2,7 @@
 {
     internal class ZReport : Administration
     {
-        public ZReport(string printText = "", string baxiArgs = "{}") : base(printText, baxiArgs) {}
+        public ZReport(string baxiArgs = "{}") : base(baxiArgs) {}
 
         protected override int AdmCode
         {

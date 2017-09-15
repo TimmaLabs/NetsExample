@@ -7,12 +7,10 @@ namespace NetsExample.Operations.Admin
     abstract class Administration : Operation<AdministrationArgs>
     {
         public override AdministrationArgs Args { get; protected set; }
-        public override string PrintText { get; protected set; }
 
-        public Administration(string printText = "", string baxiArgs = "{}")
+        public Administration(string baxiArgs = "{}")
         {
             AdministrationArgs args = getAdministrationArgs(baxiArgs);
-            PrintText = printText;
             setup(args);
         }
 

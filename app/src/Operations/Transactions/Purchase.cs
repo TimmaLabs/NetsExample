@@ -2,7 +2,7 @@
 {
     internal class Purchase : Transaction
     {
-        public Purchase(int amount, string printText = "", string baxiArgs = "{}") : base(amount, printText, baxiArgs) {
+        public Purchase(int amount, string baxiArgs = "{}") : base(amount, baxiArgs) {
 
         }
 

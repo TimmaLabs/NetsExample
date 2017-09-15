@@ -2,7 +2,7 @@
 {
     internal class EOTReport : Administration
     {
-        public EOTReport(string printText = "", string baxiArgs = "{}") : base(printText, baxiArgs) { }
+        public EOTReport(string baxiArgs = "{}") : base(baxiArgs) { }
 
         protected override int AdmCode
         {

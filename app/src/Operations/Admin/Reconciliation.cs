@@ -2,7 +2,7 @@
 {
     class Reconciliation : Administration
     {
-        public Reconciliation(string printText = "", string baxiArgs = "{}") : base(printText, baxiArgs) { }
+        public Reconciliation(string baxiArgs = "{}") : base(baxiArgs) { }
 
         protected override int AdmCode
         {

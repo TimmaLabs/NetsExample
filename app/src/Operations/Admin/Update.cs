@@ -2,9 +2,7 @@
 {
     class Update : Administration
     {
-        public Update(string baxiArgs = "{}") : base("", baxiArgs)
-        {
-        }
+        public Update(string baxiArgs = "{}") : base(baxiArgs) {}
 
         protected override int AdmCode
         {

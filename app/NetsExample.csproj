@@ -194,10 +194,6 @@
     <Compile Include="src\Browser\OperationOptions.cs" />
     <Compile Include="src\Operations\Admin\CardData.cs" />
     <Compile Include="src\Operations\Admin\Update.cs" />
-    <Compile Include="src\Print\Header.cs" />
-    <Compile Include="src\Print\Rows\BlankRow.cs" />
-    <Compile Include="src\Print\Rows\Logo.cs" />
-    <Compile Include="src\Print\Rows\Row.cs" />
     <Compile Include="src\Operations\Admin\Reconciliation.cs" />
     <Compile Include="src\Operations\Admin\Report\LatestTransactionReport.cs" />
     <Compile Include="src\Operations\Admin\Report\EOTReport.cs" />
@@ -208,8 +204,6 @@
     <Compile Include="src\Operations\Admin\SoftCancel.cs" />
     <Compile Include="src\Operations\Admin\Type.cs" />
     <Compile Include="src\Operations\Admin\Report\ZReport.cs" />
-    <Compile Include="src\Print\Document.cs" />
-    <Compile Include="src\Print\Rows\TextRow.cs" />
     <Compile Include="src\SingleInstance.cs" />
     <Compile Include="src\Terminal\TerminalInfo.cs" />
     <Compile Include="src\Utils.cs" />
