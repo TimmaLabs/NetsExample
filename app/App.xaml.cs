@@ -52,7 +52,9 @@ namespace NetsExample
         protected override void OnStartup(StartupEventArgs e)
         {
             var settings = new CefSettings();
+            string cacheDir = Environment.GetFolderPath(Environment.SpecialFolder.InternetCache);
             settings.SetOffScreenRenderingBestPerformanceArgs();
+            settings.CachePath = System.IO.Path.Combine(cacheDir, "NetsExample");
 
             #if (!PRODUCTION)
             settings.IgnoreCertificateErrors = true; // allow self-signed certs
