@@ -10,9 +10,9 @@ Run your web-based POS application on a fully compliant ES6 environment based on
 
     * Enable the `Force COM Port Feature` and type in `9` in the [leftmost input field at the bottom of the dialog](./assets/images/force-com-port.png)
 
-2. Install the required [Visual C++ runtime components](https://www.microsoft.com/en-us/download/details.aspx?id=40784) (both `x86` and `x64` architectures if you're running Windows 10)
+2. Install the required [Visual C++ runtime components](https://www.microsoft.com/en-us/download/details.aspx?id=40784) (both `x86` and `x64` architectures if you're running Windows 10) and WiX Toolset (http://wixtoolset.org/releases)
 
-3. Download & install the Windows 10 SDK: https://go.microsoft.com/fwlink/?LinkID=698771
+3. Download & install the Windows 10 SDK: https://go.microsoft.com/fwlink/?LinkID=698771. Make sure `MSBuild` is included in the installation (or install it separately). Modify its path if necessary (see [build.bat](./script/build/build.bat))
 
 4. Optional: if you're developing inside a VM, [expose USB from the host machine to your VM](./assets/images/share-host-usb.jpeg) (`Devices` -> `USB` -> `Sagem`)
 
