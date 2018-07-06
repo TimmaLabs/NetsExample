@@ -100,4 +100,5 @@ terminal.getVersion(); // Get POS application version
 terminal.getTerminalInfo(); // Get terminal information (ID, type, baud rate...)
 terminal.isOpen(); // Test POS connection (USB)
 terminal.log(message, prefix, color); // Log a (pre-formatted) message to the browser console
+terminal.openCashDrawer(JSON.stringify([ 7 ])); // Open a cash drawer via receipt printer using a predefined control code
 ```
