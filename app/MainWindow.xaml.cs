@@ -25,7 +25,7 @@ namespace NetsExample
         private string Address {
             get
             {
-                #if (PRODUCTION && !DEVHOST)
+                #if (PRODUCTION && !LOCALHOST)
                 return "http://localhost:8080"; // TODO: Change this to point to your production instance
                 #else
                 return "http://localhost:8080";

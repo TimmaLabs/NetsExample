@@ -16,11 +16,11 @@ SET CONSTANTS=PRODUCTION
 SET msbuild="%PROGRAMFILES(x86)%\MSBuild\14.0\Bin\MSBuild"
 
 if "%mode%" == "Debug" (
-	SET CONSTANTS=%CONSTANTS%;DEBUG
+  SET CONSTANTS=DEBUG
 )
 
 if DEFINED local_build  (
-	SET CONSTANTS=%CONSTANTS%;DEVHOST
+  SET CONSTANTS=%CONSTANTS%;LOCALHOST
 )
 
 %msbuild% "app\nets_example.csproj" /t:rebuild /p:Configuration=%mode%;Platform=%arch%;DefineConstants="!CONSTANTS!"

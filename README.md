@@ -42,7 +42,7 @@ The solution consist of 3 projects: the application (`NetsExample`) and two inst
 The following build variables can be used to customize the build (see [build.bat](./script/build/build.bat)):
 
 * `PRODUCTION`: flag to use for production builds, enabled by default
-* `DEVHOST`: flag to indicate whether or not to open the development version of the web application (hosted locally/on development server), enabled for debug builds
+* `LOCALHOST`: flag to indicate whether or not to open the development version of the web application (hosted locally/on development server), enabled for debug builds
 * `DEBUG`: flag to use for debug focused logic, enabled for debug builds
 
 ## Tips for Versioning

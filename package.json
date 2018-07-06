@@ -9,9 +9,9 @@
   "scripts": {
     "commit": "git-cz",
     "build:release": ".\\script\\build\\build-release.bat",
-    "build:release:devhost": "npm run build:release -- --devhost",
+    "build:release:local": "npm run build:release -- --localhost",
     "build:debug": ".\\script\\build\\build-debug.bat",
-    "build:debug:devhost": "npm run build:debug -- --devhost",
+    "build:debug:local": "npm run build:debug -- --localhost",
     "create-cert-key": ".\\script\\create-cert-key.bat",
     "create-pfx": ".\\script\\create-pfx.bat",
     "start": "node ./node_modules/http-server/bin/http-server -o --cors example"
