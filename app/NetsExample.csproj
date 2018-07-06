@@ -171,6 +171,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -190,6 +191,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="src\RawPrinterHelper.cs" />
     <Compile Include="src\Browser\DownloadHandler.cs" />
     <Compile Include="src\Browser\OperationOptions.cs" />
     <Compile Include="src\Operations\Admin\CardData.cs" />

@@ -1,4 +1,4 @@
-using System.Drawing.Printing;
+using System.Text;
 
 namespace NetsExample
 {
@@ -15,7 +15,7 @@ namespace NetsExample
 
         internal static void OpenCashDrawer(byte[] controlCode)
         {
-            var settings = new PrinterSettings();
+            var settings = new System.Drawing.Printing.PrinterSettings();
             RawPrinterHelper.SendStringToPrinter(settings.PrinterName, Encoding.ASCII.GetString(controlCode));
         }
     }

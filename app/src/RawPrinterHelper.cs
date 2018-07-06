@@ -2,7 +2,7 @@ using System;
 using System.IO;
 using System.Runtime.InteropServices;
 
-namespace Timma
+namespace NetsExample
 {
     public class RawPrinterHelper
     {
