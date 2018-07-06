@@ -43,6 +43,7 @@ namespace NetsExample.Terminal
 
             // Baxi.ini settings (see baxi.ini for defaults)
             _terminal.HostIpAddress = HostIpAddress;
+            _terminal.UseExtendedLocalMode = 1;
         }
 
         internal int SendTransactionOperation(Operation<TransferAmountArgs> op)
