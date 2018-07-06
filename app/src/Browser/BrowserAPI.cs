@@ -254,6 +254,12 @@ namespace NetsExample.Browser
             return App.Version;
         }
 
+        public void OpenCashDrawer(string controlCodeJson)
+        {
+            byte[] controlCode = JsonConvert.DeserializeObject<byte[]>(controlCodeJson);
+            Utils.OpenCashDrawer(controlCode);
+        }
+
         public string GetTerminalInfo()
         {
             TerminalInfo info = terminalCtrl.GetInfo();

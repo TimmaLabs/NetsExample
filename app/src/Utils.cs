@@ -1,4 +1,6 @@
-﻿namespace NetsExample
+using System.Drawing.Printing;
+
+namespace NetsExample
 {
     class Utils
     {
@@ -9,6 +11,12 @@
             string txnrefStr = string.IsNullOrWhiteSpace(txnref) ? string.Empty : @", ""txnref"":""" + txnref + @"""";
             string o = @"{ ""ver"": ""1.00""" + autodccStr + merchStr + txnrefStr + " }";
             return @"{ ""od"": { ""ver"": ""1.01"", ""nets"": { ""ver"": ""1.00"", ""ch13"": { ""ver"": ""1.00"", ""ta"": { ""ver"": ""1.00"", ""o"":" + o + " } } } } }";
+        }
+
+        internal static void OpenCashDrawer(byte[] controlCode)
+        {
+            var settings = new PrinterSettings();
+            RawPrinterHelper.SendStringToPrinter(settings.PrinterName, Encoding.ASCII.GetString(controlCode));
         }
     }
 }
