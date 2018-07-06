@@ -3,7 +3,7 @@
      xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"
      xmlns:bal="http://schemas.microsoft.com/wix/BalExtension">
 
-	<Bundle Name="NetsExample" Version="1.0.5.0" Manufacturer="Nets" UpgradeCode="CD89CC6A-22DE-4D1E-BF40-E8D2B0132222">
+	<Bundle Name="NetsExample" Version="1.1.6.0" Manufacturer="Nets" UpgradeCode="CD89CC6A-22DE-4D1E-BF40-E8D2B0132222">
     <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.RtfLicense">
       <bal:WixStandardBootstrapperApplication LicenseFile="$(var.Setup.ProjectDir)LICENSE.rtf" LogoFile="$(var.Setup.ProjectDir)Gfx/logo.bmp" />
     </BootstrapperApplicationRef>
