@@ -23,7 +23,7 @@ if DEFINED local_build  (
   SET CONSTANTS=%CONSTANTS%;LOCALHOST
 )
 
-%msbuild% "app\nets_example.csproj" /t:rebuild /p:Configuration=%mode%;Platform=%arch%;DefineConstants="!CONSTANTS!"
+%msbuild% "app\NetsExample.csproj" /t:rebuild /p:Configuration=%mode%;Platform=%arch%;DefineConstants="!CONSTANTS!"
 :: x86 only for the installers
 %msbuild% "setup\setup.wixproj" /t:rebuild /p:Configuration=%mode%;Platform=x86;DefineConstants="!CONSTANTS!"
 %msbuild% "bundle\bundle.wixproj" /t:rebuild /p:Configuration=%mode%;Platform=x86;DefineConstants="!CONSTANTS!"
